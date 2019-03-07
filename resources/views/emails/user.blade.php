@@ -19,9 +19,12 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->phone}}</td>
-                <td>{{$user->private_key}}</td>
+                <td>{{$user->account->private_key}}</td>
             </tr>
         </table>
+        <div>
+            Verify your account by clicking <a href='{{ asset("verify",$user->verified_link)}}'>Verify</a>
+        </div>
     </div>
 </body>
 </html>

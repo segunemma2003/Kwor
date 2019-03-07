@@ -17,6 +17,17 @@ class UserController extends Controller
             return $number;
         }
     }
+    public  function verify($verify)
+    {
+        if(User::whereVerify_link($verify)->exists()){
+            $user=User::whereVerify_link($verify)->first();
+            $user->verified=1;
+            if($user->save()){
+                Session::flash('message','You have successfully been verified');
+                return view('home');
+            }
+        }
+    }
     //check if number exist
     public function genKeyExists($number){
         return User::wherePrivate_key($number)->exists();
@@ -40,11 +51,12 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->name=$request->name;
             $user->password=\Hash::make($request->password);
-            $user->private_key=uniqid();
+            $user->verified_link=uniqid();
             if($user->save()){
                 $account=new Account;
                 $account->user_id=$user->id;
                 $account->balance=$user->balance;
+                $user->private_key=uniqid();
                 if($account->save()){
                     if(Mail::to($request->email)->send(new UserEmail($user)))
                     {
