@@ -35,7 +35,7 @@ class UserController extends Controller
     //user registeration
     public function register(Request $request)
     {
-        if(User::wherePhone($request->phone) || User::whereEmail($request->email)){
+        if(User::wherePhone($request->phone)->exists() || User::whereEmail($request->email)->exists()){
             return response()->json([
                 "status"=>"405",
                 "message"=>"Phone number or Email already exist. you can click on forgot password to recover your password"
