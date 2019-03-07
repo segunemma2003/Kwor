@@ -40,7 +40,7 @@ class UserController extends Controller
                 "status"=>"405",
                 "message"=>"Phone number or Email already exist. you can click on forgot password to recover your password"
             ]);
-        }elseif(str_len($request->password) <6){
+        }elseif(str_length($request->password) <6){
             return response()->json([
                 "status"=>"406",
                 "message"=>"password must be more than six characters"
