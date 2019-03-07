@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Account;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
 class UserController extends Controller
 {
@@ -35,7 +36,9 @@ class UserController extends Controller
     //user registeration
     public function register(Request $request)
     {
+        // var_dump(User::wherePhone($request->phone)->exists());
         if(User::wherePhone($request->phone)->exists() || User::whereEmail($request->email)->exists()){
+            
             return response()->json([
                 "status"=>"405",
                 "message"=>"Phone number or Email already exist. you can click on forgot password to recover your password"
@@ -55,21 +58,21 @@ class UserController extends Controller
             if($user->save()){
                 $account=new Account;
                 $account->user_id=$user->id;
-                $user->private_key=uniqid();
+                $account->private_key=uniqid();
                 if($account->save()){
-                    if(Mail::to($request->email)->send(new UserEmail($user)))
-                    {
+                    Mail::to($request->email)->send(new UserEmail($user));
+                    
                     return response()->json([
                         "status"=>201,
                         "message"=>"you have successfully registered into our system",
                         "account_details"=>[
                             "name"=>$user->name,
                             "account_number"=>$user->phone,
-                            "private_key"=>$user->private_key,
-                            "balance"=>$account->balance
+                            "private_key"=>$account->private_key,
+                            "balance"=>0
                         ]
                     ]);
-                }
+                
                 }
             }
         }
