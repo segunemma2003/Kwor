@@ -17,3 +17,4 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 Route::post('/user/registration', 'UserController@register');
+Route::post('/user/login','UserController@login');

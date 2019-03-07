@@ -40,7 +40,7 @@ class UserController extends Controller
                 "status"=>"405",
                 "message"=>"Phone number or Email already exist. you can click on forgot password to recover your password"
             ]);
-        }elseif(str_len($request->password) >=6){
+        }elseif(str_len($request->password) <6){
             return response()->json([
                 "status"=>"406",
                 "message"=>"password must be more than six characters"
@@ -55,18 +55,18 @@ class UserController extends Controller
             if($user->save()){
                 $account=new Account;
                 $account->user_id=$user->id;
-                $account->balance=$user->balance;
                 $user->private_key=uniqid();
                 if($account->save()){
                     if(Mail::to($request->email)->send(new UserEmail($user)))
                     {
                     return response()->json([
-                        "status"=>200,
+                        "status"=>201,
                         "message"=>"you have successfully registered into our system",
                         "account_details"=>[
                             "name"=>$user->name,
                             "account_number"=>$user->phone,
-                            "private_key"=>$user->private_key
+                            "private_key"=>$user->private_key,
+                            "balance"=>$account->balance
                         ]
                     ]);
                 }
@@ -76,6 +76,36 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-        return;
+        if(!User::wherePhone($request->phone)->exists()){
+            return response()->json([
+                "status"=>405,
+                "message"=>"No account for this user"
+            ]);
+        }else{
+            if(User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password))){
+                $user=User::wherePhone($request->phone)->first();
+                if($user->verified==0){
+                    return response()->json([
+                        "status"=>305,
+                        "message"=>"You have not yet verified your account"
+                    ]);
+                }elseif($user->verified==1){
+                    return response()->json([
+                    "status"=>200,
+                    "message"=>"You have successfully login",
+                    "account_details"=>[
+                            "account_number"=>$user->phone,
+                            "private_key"=>$user->account->private_key,
+                            "balance"=>$user->account->balance
+                    ]
+                ]);
+                }
+            }else{
+                return response()->json([
+                    "status"=>402,
+                    "message"=>"Login not successful"
+                ]);
+            }
+        }
     }
 }
