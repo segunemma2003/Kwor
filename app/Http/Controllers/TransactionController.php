@@ -15,8 +15,8 @@ class TransactionController extends Controller
      */
     public function request(Request $request)
     {
-        $transaction=new Transaction;
-        
+        $transactions=new Transaction;
+
     }
 
     /**
