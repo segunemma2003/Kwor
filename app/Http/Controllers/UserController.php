@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use QrCode;
 use App\Account;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
@@ -25,7 +26,7 @@ class UserController extends Controller
             $user->verified=1;
             if($user->save()){
                 Session::flash('message','You have successfully been verified');
-                return view('home');
+                return redirect('/login');
             }
         }
     }
@@ -59,7 +60,10 @@ class UserController extends Controller
                 $account=new Account;
                 $account->user_id=$user->id;
                 $account->private_key=uniqid();
+                $account->account_number=$user->phone;
+                
                 if($account->save()){
+                    QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
                     
                     return response()->json([
