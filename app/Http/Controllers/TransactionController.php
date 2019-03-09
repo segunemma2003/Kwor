@@ -25,7 +25,7 @@ class TransactionController extends Controller
         }
     }
     public function genKeyExists($number){
-        return User::wherePrivate_key($number)->exists();
+        return Transaction::wherePrivate_key($number)->exists();
     }
     public function request(Request $request)
     {
