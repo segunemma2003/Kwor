@@ -33,11 +33,11 @@ class TransactionController extends Controller
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
         var_dump($sen->id);
-        $rec=Account::whereAccount_number($request->sender)->first();
+        $rec=Account::whereAccount_number($request->receiver)->first();
         $re=$rec->user_id;
         var_dump($rec->id);
         $receiver_id=User::whereId($re)->first();
-        if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exist()){
+        if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exists()){
             return response()->json([
                 "status"=>405,
                 "message"=>"your sender_id or your receiver_id is wrong"
