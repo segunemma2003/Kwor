@@ -57,7 +57,8 @@ class TransactionController extends Controller
             event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
-                "message"=>"request sent"
+                "message"=>"request sent",
+                "code"=>$transaction->transaction_code
             ]);
         }else{
             return response()->json([
