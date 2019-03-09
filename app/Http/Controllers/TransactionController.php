@@ -29,34 +29,44 @@ class TransactionController extends Controller
     }
     public function request(Request $request)
     {
-        $transaction=new Transaction;
-        $transaction->sender_id=$request->sender;
-        $transaction->receiver_id=$request->receiver;
-        $transaction->amount=$request->amount;
-        $transaction->reason_payment=$request->purpose;
-        $transaction->status=0;
-        $transaction->transaction_code=$this->generateKey();
-     if(!Transaction::whereSender_id($request->sender)->exists() || !Transaction::whereReceiver($request->receiver)->exist()){
-        return response()->json([
-            "status"=>405,
-            "message"=>"your sender_id or your receiver_id is wrong"
-        ]);
-     } 
-     elseif($transaction->save()){
-        //get the account
-        // User::find(2)->notify(new TransactionAlert);
         $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
-        $message="{$sender_id} is requesting for {$request->amount}";
-        event(new TransactionEvent($message));
+
+        $rec=Account::whereAccount_number($request->sender)->first();
+        $re=$rec->user_id;
+        $receiver_id=User::whereId($re)->first();
+        if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exist()){
+            return response()->json([
+                "status"=>405,
+                "message"=>"your sender_id or your receiver_id is wrong"
+            ]);
+         }else{
+            $transaction=new Transaction;
+            $transaction->sender_id=$se->id;
+            $transaction->receiver_id=$rec->id;
+            $transaction->amount=$request->amount;
+            $transaction->reason_payment=$request->purpose;
+            $transaction->status=0;
+            $transaction->transaction_code=$this->generateKey();
+            if($transaction->save()){
+        //get the account
+        // User::find(2)->notify(new TransactionAlert);
+        
+            $message="{$sender_id->name} is requesting for {$request->amount}";
+            event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
                 "message"=>"request sent"
             ]);
+        }else{
+            return response()->json([
+                "status"=>"405",
+                "message"=>"Opps something went wrong"
+            ]);
         }
 
-
+    }
 
     }
 
