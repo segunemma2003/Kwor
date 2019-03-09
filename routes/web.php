@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\TransactionEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/pusher', function () {
+    $message='hey';
+    event(new TransactionEvent($message));
+    return view('pusher');
+});
 Route::get('/', function () {
     return view('welcome');
 });
