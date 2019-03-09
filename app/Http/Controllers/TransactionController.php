@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Transaction;
 use App\Account;
+use App\User;
 use Illuminate\Http\Request;
+use App\Notifications\TransactionAlert;
 
 class TransactionController extends Controller
 {
@@ -40,6 +42,8 @@ class TransactionController extends Controller
         ]);
      } 
      elseif($transaction->save()){
+        //get the account
+        User::find(2)->notify(new TransactionAlert);
             return response()->json([
                 "status"=>"201",
                 "message"=>"request send"
