@@ -13,9 +13,40 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function generateKey(){
+        $number =uniqid();
+        if($this->genKeyExists($number)){
+            return $this->generateKey();
+        }else{
+            return $number;
+        }
+    }
+    public function genKeyExists($number){
+        return User::wherePrivate_key($number)->exists();
+    }
     public function request(Request $request)
     {
-        $transactions=new Transaction;
+        $transaction=new Transaction;
+        $transaction->sender_id=$request->sender;
+        $transaction->receiver_id=$request->receiver;
+        $transaction->amount=$request->amount;
+        $transaction->reason_payment=$request->purpose;
+        $transaction->status=0;
+        $transaction->transaction_code=$this->generateKey();
+     if(!Transaction::whereSender_id($request->sender)->exists() || !Transaction::whereReceiver($request->receiver)->exist()){
+        return response()->json([
+            "status"=>405,
+            "message"=>"your sender_id or your receiver_id is wrong"
+        ]);
+     } 
+     elseif($transaction->save()){
+            return response()->json([
+                "status"=>"201",
+                "message"=>"request send"
+            ]);
+        }
+
+
 
     }
 

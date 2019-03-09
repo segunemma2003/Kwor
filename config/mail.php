@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.googlemail.com'),
+    'host' => env('MAIL_HOST', 'smtp.sendgrid.net'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','ighubfacebook@gmail.com'),
+    'username' => env('MAIL_USERNAME','inaaga'),
 
-    'password' => env('MAIL_PASSWORD','CONTROLLED'),
+    'password' => env('MAIL_PASSWORD','ilovedaniel100'),
 
     /*
     |--------------------------------------------------------------------------
