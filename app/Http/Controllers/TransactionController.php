@@ -44,12 +44,15 @@ class TransactionController extends Controller
      } 
      elseif($transaction->save()){
         //get the account
-        User::find(2)->notify(new TransactionAlert);
-        $message='hey';
+        // User::find(2)->notify(new TransactionAlert);
+        $sen=Account::whereAccount_number($request->sender)->first();
+        $se=$sen->user_id;
+        $sender_id=User::whereId($se)->first();
+        $message="{$sender_id} is requesting for {$request->amount}";
         event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
-                "message"=>"request send"
+                "message"=>"request sent"
             ]);
         }
 
