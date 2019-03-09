@@ -32,10 +32,10 @@ class TransactionController extends Controller
         $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
-        var_dump($sen);
+        var_dump($sen->id);
         $rec=Account::whereAccount_number($request->sender)->first();
         $re=$rec->user_id;
-        var_dump($rec);
+        var_dump($rec->id);
         $receiver_id=User::whereId($re)->first();
         if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exist()){
             return response()->json([
