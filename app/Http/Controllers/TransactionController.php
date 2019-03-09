@@ -43,7 +43,7 @@ class TransactionController extends Controller
             ]);
          }else{
             $transaction=new Transaction;
-            $transaction->sender_id=$se->id;
+            $transaction->sender_id=$sen->id;
             $transaction->receiver_id=$rec->id;
             $transaction->amount=$request->amount;
             $transaction->reason_payment=$request->purpose;
