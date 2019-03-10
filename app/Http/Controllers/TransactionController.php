@@ -91,7 +91,7 @@ class TransactionController extends Controller
                  $transact->status=$request->response;
                  if($transact->save())
                  {
-                    $message="{$userR->name} is has accepted and credited your account with {$transact->amount}units";
+                    $message="{$userR->name} could not credit account";
                     event(new TransactionEvent($message));
                      return response()->json([
                         "status"=>202,
@@ -103,10 +103,13 @@ class TransactionController extends Controller
                 if($sender->balance > $transact->amount)
                 {
                     $sender->balance=$sender->balance - $transact->amount;
-                    if($sender->save())
+                    $receiver->balance=$receiver->balance + $transact->amount;
+                    if($sender->save() && $receiver->save())
                     {
                         $transact->status=1;
                         if($transact->save()){
+                            $message="{$userR->name} is has accepted and credited your account with {$transact->amount}units";
+                            event(new TransactionEvent($message));
                         return response()->json([
                             "status"=>201,
                             "message"=>"{$userS->name} has successfully transferred {$transact->amount} to {$userR->name}"
@@ -116,6 +119,8 @@ class TransactionController extends Controller
                 }else{
                     $transact->status=2;
                     if($transact->save()){
+                        $message="{$userR->name} could not credt account";
+                    event(new TransactionEvent($message));
                         return response()->json([
                             "status"=>401,
                             "message"=>"{$userS->name} has no enough unts to transfer"
