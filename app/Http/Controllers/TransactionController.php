@@ -32,10 +32,10 @@ class TransactionController extends Controller
         $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
-        var_dump($sen->id);
+        // var_dump($sen->id);
         $rec=Account::whereAccount_number($request->receiver)->first();
         $re=$rec->user_id;
-        var_dump($rec->id);
+        // var_dump($rec->id);
         $receiver_id=User::whereId($re)->first();
         if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exists()){
             return response()->json([
@@ -54,7 +54,7 @@ class TransactionController extends Controller
         //get the account
         // User::find(2)->notify(new TransactionAlert);
         
-            $message="{$sender_id->name} is requesting for {$request->amount}";
+            $message="{$sender_id->name} is requesting for {$request->amount}units";
             event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
