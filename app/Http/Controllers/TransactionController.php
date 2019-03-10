@@ -80,7 +80,7 @@ class TransactionController extends Controller
 
      public function response(Request $request)
         {
-            $transact=Transaction::whereTransaction_code($code)->first();
+            $transact=Transaction::whereTransaction_code($request->code)->first();
             $receiver=Account::whereId($transact->receiver_id)->first();
             $userR=User::whereId($receiver->user_id)->first();
             $sender=Account::whereId($transact->sender_id)->first();
