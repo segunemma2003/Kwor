@@ -87,7 +87,7 @@ class TransactionController extends Controller
             $userS=User::whereId($sender->user_id)->first();
              if($request->response==2)
              {
-                 $transact->reason_reject=$request->reject->message;
+                 $transact->reason_reject=$request->reject_message;
                  $transact->status=$request->response;
                  if($transact->save())
                  {
