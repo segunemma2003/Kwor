@@ -77,64 +77,52 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+     public function response(Request $request)
+        {
+            $transact=Transaction::whereTransaction_code($code)->first();
+            $receiver=Account::whereId($transact->receiver_id)->first();
+            $userR=User::whereId($receiver->user_id)->first();
+            $sender=Account::whereId($transact->sender_id)->first();
+            $userS=User::whereId($sender->user_id)->first();
+             if($request->response==2)
+             {
+                 $transact->reason_reject=$request->reject->message;
+                 $transact->status=$request->response;
+                 if($transact->save())
+                 {
+                    $message="{$userR->name} is has accepted and credited your account with {$transact->amount}units";
+                    event(new TransactionEvent($message));
+                     return response()->json([
+                        "status"=>202,
+                        "message"=>"request is successfully rejected"
+                     ]);
+                 }
+             }elseif($request->response==1)
+             {
+                if($sender->balance > $transact->amount)
+                {
+                    $sender->balance=$sender->balance - $transact->amount;
+                    if($sender->save())
+                    {
+                        $transact->status=1;
+                        if($transact->save()){
+                        return response()->json([
+                            "status"=>201,
+                            "message"=>"{$userS->name} has successfully transferred {$transact->amount} to {$userR->name}"
+                        ]);
+                        }
+                    }
+                }else{
+                    $transact->status=2;
+                    if($transact->save()){
+                        return response()->json([
+                            "status"=>401,
+                            "message"=>"{$userS->name} has no enough unts to transfer"
+                        ]);
+                    }
+                }
+             }
+                
+        }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
-    }
-}
