@@ -69,12 +69,11 @@ class UserController extends Controller
                     return response()->json([
                         "status"=>201,
                         "message"=>"you have successfully registered into our system",
-                        "account_details"=>[
-                            "name"=>$user->name,
-                            "account_number"=>$user->phone,
-                            "private_key"=>$account->private_key,
-                            "balance"=>0
-                        ]
+                        "name"=>$user->name,
+                        "account_number"=>$user->phone,
+                        "private_key"=>$account->private_key,
+                        "balance"=>0
+                        
                     ]);
                 
                 }
