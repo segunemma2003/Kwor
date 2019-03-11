@@ -44,7 +44,7 @@ class UserController extends Controller
                 "status"=>"405",
                 "message"=>"Phone number or Email already exist. you can click on forgot password to recover your password"
             ]);
-        }elseif(strlen($request->password) <6){
+        }elseif(strlen($request->password)<6){
             return response()->json([
                 "status"=>"406",
                 "message"=>"password must be more than six characters"
@@ -55,7 +55,7 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->name=$request->name;
             $user->password=\Hash::make($request->password);
-            $user->verified_link=rand(10000,99999);
+            $user->verified_link=mt_rand(10000,99999);
             if($user->save()){
                 $account=new Account;
                 $account->user_id=$user->id;
