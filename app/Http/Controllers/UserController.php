@@ -55,7 +55,7 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->name=$request->name;
             $user->password=\Hash::make($request->password);
-            $user->verified_link=uniqid();
+            $user->verified_link=rand(10000,99999);
             if($user->save()){
                 $account=new Account;
                 $account->user_id=$user->id;
