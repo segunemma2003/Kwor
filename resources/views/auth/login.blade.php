@@ -22,7 +22,7 @@
         <!--navbar-->
              <nav class="reg-nav navbar fixed-top navbar-expand-lg navbar-dark">
                  <div class="container">
-                 <a class="navbar-brand" href="index.html">kwuö</a>
+                 <a class="navbar-brand" href="{{URL('/')}}">kwuö</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                     aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,8 +47,8 @@
                     <div class="row form" style="border: 1px solid #00c851;">
                         <div class="col-lg-6 col-md-6"  style="border-right: 1px solid #00C851;">
                             <h3 style="margin-top: 50px; color: #00C851; ">Log Into Your Account</h3><br>
-                            <a href="#" style="color:  #00C851;">Forgot Password?</a><br>
-                            <a href="register.html" style="color:  #00C851;">Create Account</a>
+                            <a href="{{ route('password.request') }}" style="color:  #00C851;">Forgot Password?</a><br>
+                            <a href="{{URL('/register')}}" style="color:  #00C851;">Create Account</a>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <!-- Default form register -->

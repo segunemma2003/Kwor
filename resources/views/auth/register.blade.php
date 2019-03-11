@@ -48,7 +48,7 @@
                         <div class="col-lg-6"  style="border-right: 1px solid #00C851;">
                             <h3 style="margin-top: 50px; color: #00C851; ">Create Your Account</h3><br><br>
                             <p>Our vision at Quidax is to create a world where sending money and value around the globe is as easy as sending a text message. We have created a uniquely simple and seamless way for you to buy and sell cryptocurrencies using your local currency. We hope you love it as much as we do. Thank you for joining us to build this future.<br><br> - Team IgHub</p>
-                            <a href="#" style="color:  #00C851;">Already have an account? SignIn</a>
+                            <a href="{{URL('/login')}}" style="color:  #00C851;">Already have an account? SignIn</a>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <!-- Default form register -->
