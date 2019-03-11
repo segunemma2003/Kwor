@@ -1,73 +1,122 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>kwuö-register</title> 
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('register.css') }}">
+   </head>
+    <body>
+        
+        
+        <!--navbar-->
+             <nav class="reg-nav navbar fixed-top navbar-expand-lg navbar-dark">
+                 <div class="container">
+                 <a class="navbar-brand" href="index.html">kwuö</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class=" collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul class="navbar-nav ml-auto mt-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#screenshot">Screenshot</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                        <li class="nav-item active"><a href="login.html" class="nav-link">Login</a> </li>
+                        <li class="nav-item "><a class="nav-link" href="register.html">Create Account</a></li>
+                        </ul>
+                      </div>
+                  </div>
+                </nav>  
+                    
+                <!--form-->
+                
+                <div class="container" style="margin-top: 100px;">
+                    <div class="row form" style="border: 1px solid #00c851;">
+                        <div class="col-lg-6 col-md-6"  style="border-right: 1px solid #00C851;">
+                            <h3 style="margin-top: 50px; color: #00C851; ">Log Into Your Account</h3><br>
+                            <a href="#" style="color:  #00C851;">Forgot Password?</a><br>
+                            <a href="register.html" style="color:  #00C851;">Create Account</a>
                         </div>
+                        <div class="col-lg-6 col-md-6">
+                            <!-- Default form register -->
+                            <form class="text-center  p-5">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <p class="h4 mb-4"></p>
+                                
+                                
+                                <div style="text-align: left;">
+                                    <label>PHONE NUMBER*</label><br>
+                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control">
+                                </div><br>
+                                
+                                 <div style="text-align: left;">
+                                 <!-- Password -->
+                                <label>PASSWORD*</label>
+                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                </div><br>
+                                      
+                                     <!-- Sign up button -->
+                                      <button class="btn  my-4 btn-block" type="submit" style="background-color: #00C851;">Log In</button>
+                               
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                               </form>
+<!-- Default form register -->  
                         </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+                    </div>
+        </div><br><br>
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+            <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
+        <!-- Use as a Vanilla JS plugin -->
+        <script src="{{ asset('build/js/intlTelInput.min.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="{{ asset('js/utils.js') }}"></script>
+        <script src="{{ asset('js/intlTelInput.js') }}"></script>
+        <script src="{{ asset('js/style.js') }}"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        
+         
+            
+        
+    
+    </body>
+</html>

@@ -39,10 +39,10 @@
                                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a> </li>
+                                    <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
-                                     <a href="register.html" class="">Create Account</a>
+                                     <a href="{{URL('register')}}" class="">Create Account</a>
                                 </div>
                             </div>
                         </nav>
