@@ -34,8 +34,8 @@
                         <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#screenshot">Screenshot</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-                        <li class="nav-item"><a href="login.html" class="nav-link">Login</a> </li>
-                        <li class="nav-item active"><a class="nav-link" href="register.html">Create Account</a></li>
+                        <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
+                        <li class="nav-item active"><a class="nav-link" href="{{URL('/register')}}">Create Account</a></li>
                         </ul>
                       </div>
                   </div>
