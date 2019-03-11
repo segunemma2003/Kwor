@@ -17,7 +17,7 @@ Route::get('/pusher', function () {
     return view('pusher');
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/verify/{verify}','UserController@verify')->name('verify');
 Auth::routes();

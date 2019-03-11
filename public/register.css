@@ -1,0 +1,49 @@
+nav.reg-nav{
+    background-color: #00C851;
+}
+.iti-flag {background-image: url("img/core-img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti-flag {background-image: url("img/core-img/flags@2x.png");}
+}
+label{
+    color: #00C851;
+}
+input[type=text]:focus {
+    border: 3px solid #00C851;
+}
+
+input[type=tel]:focus {
+    border: 3px solid #00C851;
+}
+
+input[type=email]:focus {
+    border: 3px solid #00C851;
+}
+
+input[type=password]:focus {
+    border: 3px solid #00C851;
+}
+
+select{
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid darkgray;
+    background-color: #fff;
+}
+
+select:focus{
+   border: 3px solid #00C851;
+}
+
+input[type=tel]{
+    max-width:100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid darkgray;
+}
+.intl-tel-input { width: 100%; };
