@@ -44,4 +44,9 @@ return [
         ],
     ],
 
+    'twilio' =>[
+        'TWILIO_AUTH_TOKEN' =>env('TWILIO_AUTH_TOKEN','aa95bf074845c58cfeca15ea8852335a'),
+        'TWILIO_ACCOUNT_SID'=>env('TWILIO_ACCOUNT_SID','AC8f3379ee9a00e5a8d90349a441ec3c0b')
+    ],
+
 ];

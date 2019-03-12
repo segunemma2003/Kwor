@@ -8,6 +8,9 @@ use QrCode;
 use App\Account;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
+use Twilio\Jwt\ClientToken;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 use Twilio;
 class UserController extends Controller
 {
@@ -82,15 +85,18 @@ class UserController extends Controller
                 $account->private_key=uniqid();
                 $account->account_number=$user->phone;
                 
-                $message=[
-                    "sender_id"=>'AC8f3379ee9a00e5a8d90349a441ec3c0b',
-                    'sender_secret'=>"aa95bf074845c58cfeca15ea8852335a",
-                    'reciver_mobile'=>$user->phone,
-                    'otp'=>$user->verified_link,
-                    'sender'=>'+2349036444724'
-                ];
+                $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
+                $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
+                $client=new Client(['auth'=>[$accountId,$authToken]]);
+                
                 if($account->save()){
-                    Twilio::message($message,$op='otp only',false,true,false);
+                    $client->post('https://api.twilio.com/2010-04-01/Accounts'.$accountId.'/Messages.json',
+                ['form_params'=>[
+                    "Body"=>"CODE: ".$user->verified_link,
+                    'To'=>$user->phone,
+                    'From'=>'+2349036444724'
+                ]]);
+                    // Twilio::message($message,$op='otp only',false,true,false);
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
                     
