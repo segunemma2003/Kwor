@@ -94,7 +94,7 @@ class UserController extends Controller
                 $mess=Nexmo::message()->send([
                     'to'=>$user->phone,
                     'from'=>'KWOR',
-                    'text'=>$user->verified_link
+                    'text'=>" your verification code {$user->verified_link}"
                 ]);
                 if($account->save()  && $mess){
                 
