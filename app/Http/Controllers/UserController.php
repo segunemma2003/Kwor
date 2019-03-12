@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
 use Twilio\Jwt\ClientToken;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
-use Twilio;
+// use GuzzleHttp\Client;
+use Twilio\Rest\Client;
+// use Twilio;
 class UserController extends Controller
 {
     //generate key
@@ -87,15 +88,14 @@ class UserController extends Controller
                 
                 $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
                 $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
-                $client=new Client(['auth'=>[$accountId,$authToken]]);
+                $client=new Client($accountId,$authToken);
                 
                 if($account->save()){
-                    $client->post('https://api.twilio.com/2010-04-01/Accounts'.$accountId.'/Messages.json',
-                ['form_params'=>[
-                    "Body"=>"CODE: ".$user->verified_link,
-                    'To'=>$user->phone,
-                    'From'=>'+2349036444724'
-                ]]);
+                    $client->messages->create(
+                        $user->phone,[
+                    "body"=>"CODE: ".$user->verified_link,
+                    'from'=>'+2349036444724'
+                ]);
                     // Twilio::message($message,$op='otp only',false,true,false);
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
