@@ -91,13 +91,13 @@ class UserController extends Controller
                 $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
                 $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
                 // $client=new Client($accountId,$authToken);
-                
-                if($account->save()){
-                Nexmo::message()->send([
+                $mess=Nexmo::message()->send([
                     'to'=>$user->phone,
                     'from'=>'KWOR',
                     'text'=>$user->verified_link
                 ]);
+                if($account->save()  && $mess){
+                
                 //     $client->messages->create(
                 //         $user->phone,[
                 //     "body"=>"CODE: ".$user->verified_link,
