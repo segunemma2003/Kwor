@@ -85,7 +85,7 @@ class UserController extends Controller
                 $message=[
                     "sender_id"=>'AC8f3379ee9a00e5a8d90349a441ec3c0b',
                     'sender_secret'=>"aa95bf074845c58cfeca15ea8852335a",
-                    'receiver_mobile'=>$user->phone,
+                    'reciver_mobile'=>$user->phone,
                     'otp'=>$user->verified_link,
                     'sender'=>'+2349036444724'
                 ];
