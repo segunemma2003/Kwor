@@ -91,11 +91,11 @@ class UserController extends Controller
                 $client=new Client($accountId,$authToken);
                 
                 if($account->save()){
-                    $client->messages->create(
-                        $user->phone,[
-                    "body"=>"CODE: ".$user->verified_link,
-                    'from'=>'08068100719'
-                ]);
+                //     $client->messages->create(
+                //         $user->phone,[
+                //     "body"=>"CODE: ".$user->verified_link,
+                //     'from'=>'08068100719'
+                // ]);
                     // Twilio::message($message,$op='otp only',false,true,false);
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
