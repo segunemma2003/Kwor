@@ -21,14 +21,33 @@ class UserController extends Controller
     }
     public  function verify($verify)
     {
-        if(User::whereVerify_link($verify)->exists()){
-            $user=User::whereVerify_link($verify)->first();
+        if(User::whereVerified_link($verify)->exists()){
+            $user=User::whereVerified_link($verify)->first();
             $user->verified=1;
             if($user->save()){
                 Session::flash('message','You have successfully been verified');
                 return redirect('/login');
             }
         }
+    }
+    public function verifyApi($verify)
+    {
+        if(User::whereVerified_link($verify)->exists()){
+            $user=User::whereVerified_link($verify)->first();
+            $user->verified=1;
+            if($user->save()){
+                return response()->json([
+                    "status"=>201,
+                    "message"=>"you have been verified"
+                ]);
+            }else{
+                return response()->json([
+                    "status"=>401,
+                    "message"=>"you are not verified"
+                ]);
+            }
+        }
+        
     }
     //check if number exist
     public function genKeyExists($number){
