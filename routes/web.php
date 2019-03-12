@@ -19,7 +19,7 @@ Route::get('/pusher', function () {
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/verify/{verify}','UserController@verify')->name('verify');
+Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

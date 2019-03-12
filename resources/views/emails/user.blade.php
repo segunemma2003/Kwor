@@ -25,7 +25,7 @@
             </tr>
         </table>
         <div>
-            Verify your account by clicking <a href='{{ URL("/verify/{$user->verified_link}")}}'>Verify</a>
+            Verify your account by clicking <a href='{{ URL("/verify/{$user->verified_link}/{$user->id}")}}'>Verify</a>
         </div>
     </div>
 </body>

@@ -13,6 +13,7 @@ use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
 use Twilio\Rest\Client;
 // use Twilio;
+use Session;
 class UserController extends Controller
 {
     //generate key
@@ -24,10 +25,10 @@ class UserController extends Controller
             return $number;
         }
     }
-    public  function verify($verify)
+    public  function verify($verify,$id)
     {
-        if(User::whereVerified_link($verify)->exists()){
-            $user=User::whereVerified_link($verify)->first();
+        if(User::whereVerified_link($verify)->whereId($id)->exists()){
+            $user=User::whereVerified_link($verify)->whereId($id)->first();
             $user->verified=1;
             if($user->save()){
                 Session::flash('message','You have successfully been verified');
@@ -35,10 +36,10 @@ class UserController extends Controller
             }
         }
     }
-    public function verifyApi($verify)
+    public function verifyApi($verify,$id)
     {
-        if(User::whereVerified_link($verify)->exists()){
-            $user=User::whereVerified_link($verify)->first();
+        if(User::whereVerified_link($verify)->whereEmail($id)->exists()){
+            $user=User::whereVerified_link($verify)->wherePhone($id)->first();
             $user->verified=1;
             if($user->save()){
                 return response()->json([
