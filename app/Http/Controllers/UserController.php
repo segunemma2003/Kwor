@@ -88,8 +88,8 @@ class UserController extends Controller
                 $account->private_key=uniqid();
                 $account->account_number=$user->phone;
                 
-                $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
-                $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
+                // $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
+                // $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
                 // $client=new Client($accountId,$authToken);
                 $mess=Nexmo::message()->send([
                     'to'=>$user->phone,
