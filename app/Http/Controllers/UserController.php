@@ -94,7 +94,7 @@ class UserController extends Controller
                     $client->messages->create(
                         $user->phone,[
                     "body"=>"CODE: ".$user->verified_link,
-                    'from'=>'+2348068100719'
+                    'from'=>'08068100719'
                 ]);
                     // Twilio::message($message,$op='otp only',false,true,false);
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
