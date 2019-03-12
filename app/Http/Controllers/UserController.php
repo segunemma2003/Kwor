@@ -134,11 +134,10 @@ class UserController extends Controller
                     return response()->json([
                     "status"=>200,
                     "message"=>"You have successfully login",
-                    "account_details"=>[
-                            "account_number"=>$user->phone,
-                            "private_key"=>$user->account->private_key,
-                            "balance"=>$user->account->balance
-                    ]
+                    "account_number"=>$user->phone,
+                    "private_key"=>$user->account->private_key,
+                    "balance"=>$user->account->balance
+                    
                 ]);
                 }
             }else{
