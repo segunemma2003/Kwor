@@ -90,7 +90,7 @@ class UserController extends Controller
                 
                 $accountId=config('services.twilio')['TWILIO_ACCOUNT_SID'];
                 $authToken=config('services.twilio')['TWILIO_AUTH_TOKEN'];
-                $client=new Client($accountId,$authToken);
+                // $client=new Client($accountId,$authToken);
                 
                 if($account->save()){
                 Nexmo::message()->send([
