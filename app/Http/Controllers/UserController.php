@@ -8,6 +8,7 @@ use QrCode;
 use App\Account;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
+use Twilio;
 class UserController extends Controller
 {
     //generate key
@@ -81,7 +82,15 @@ class UserController extends Controller
                 $account->private_key=uniqid();
                 $account->account_number=$user->phone;
                 
+                $message=[
+                    "sender_id"=>'AC8f3379ee9a00e5a8d90349a441ec3c0b',
+                    'sender_secret'=>"aa95bf074845c58cfeca15ea8852335a",
+                    'receiver_mobile'=>$user->phone,
+                    'otp'=>$user->verified_link,
+                    'sender'=>'+2349036444724'
+                ];
                 if($account->save()){
+                    Twilio::message($message,$op='otp only',false,true,false);
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
                     

@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Lakshmaji\Twilio\TwilioServiceProvider::class,
+        //Aloha\Twilio\Support\Laravel\ServiceProvider::class,
 
     ],
 
@@ -226,6 +228,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        //'Twilio'=>Aloha\Twilio\Support\Laravel\Facade::class,
+        'Twilio'=>Lakshmaji\Twilio\Facade\Twilio::class,
 
     ],
 
