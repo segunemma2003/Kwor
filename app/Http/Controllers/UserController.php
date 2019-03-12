@@ -36,10 +36,10 @@ class UserController extends Controller
             }
         }
     }
-    public function verifyApi($verify,$id)
+    public function verifyApi(Request $request)
     {
-        if(User::whereVerified_link($verify)->whereEmail($id)->exists()){
-            $user=User::whereVerified_link($verify)->wherePhone($id)->first();
+        if(User::whereVerified_link($request->code)->wherePhone($request->phone)->exists()){
+            $user=User::whereVerified_link($request->code)->wherePhone($request->phone)->first();
             $user->verified=1;
             if($user->save()){
                 return response()->json([
