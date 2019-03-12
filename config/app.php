@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Lakshmaji\Twilio\TwilioServiceProvider::class,
         //Aloha\Twilio\Support\Laravel\ServiceProvider::class,
-
+        Nexmo\Laravel\NexmoServiceProvider::class,
     ],
 
     /*
@@ -230,7 +230,7 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         //'Twilio'=>Aloha\Twilio\Support\Laravel\Facade::class,
         // 'Twilio'=>Lakshmaji\Twilio\Facade\Twilio::class,
-
+        'Nexmo'=> Nexmo\Laravel\Facade\Nexmo::class,
     ],
 
 ];

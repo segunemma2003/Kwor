@@ -14,6 +14,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use Twilio\Rest\Client;
 // use Twilio;
 use Session;
+use Nexmo;
 class UserController extends Controller
 {
     //generate key
@@ -92,6 +93,11 @@ class UserController extends Controller
                 $client=new Client($accountId,$authToken);
                 
                 if($account->save()){
+                Nexmo::message()->send([
+                    'to'=>$user->phone,
+                    'from'=>'KWOR',
+                    'text'=>$user->verified_link
+                ]);
                 //     $client->messages->create(
                 //         $user->phone,[
                 //     "body"=>"CODE: ".$user->verified_link,
