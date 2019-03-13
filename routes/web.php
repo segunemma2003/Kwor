@@ -17,7 +17,6 @@ Route::get('/pusher', function () {
     return view('pusher');
 });
 Route::get('/', function () {
-    \Alert::message('hey',"testing");
     return view('index');
 });
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');

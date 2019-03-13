@@ -39,8 +39,8 @@ class UserController extends Controller
     }
     public function verifyApi(Request $request)
     {
-        if(User::whereVerified_link($request->code)->wherePhone($request->phone)->exists()){
-            $user=User::whereVerified_link($request->code)->wherePhone($request->phone)->first();
+        if(User::whereVerified_link($request->code)->exists()){
+            $user=User::whereVerified_link($request->code)->first();
             $user->verified=1;
             if($user->save()){
                 return response()->json([
