@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <img src="{{asset('images/qrcodes/{Auth::user()->phone}.png')}}"/>
                 </div>
             </div>
         </div>
