@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <img src="{{asset('images/qrcodes/{Auth::user()->phone}.png')}}"/>
+                    <img src="{{asset('images/qrcodes/'.Auth::user()->phone}.png)}}"/>
                 </div>
             </div>
         </div>

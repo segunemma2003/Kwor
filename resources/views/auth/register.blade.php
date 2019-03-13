@@ -30,7 +30,7 @@
                   </button>
                   <div class=" collapse navbar-collapse" id="navbarTogglerDemo01">
                         <ul class="navbar-nav ml-auto mt-lg-0">
-                        li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
