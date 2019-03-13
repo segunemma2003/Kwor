@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         //'Twilio'=>Aloha\Twilio\Support\Laravel\Facade::class,
         // 'Twilio'=>Lakshmaji\Twilio\Facade\Twilio::class,
         'Nexmo'=> Nexmo\Laravel\Facade\Nexmo::class,
+        'Alert'=>UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

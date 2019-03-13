@@ -52,33 +52,48 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <!-- Default form register -->
-                            <form class="text-center  p-5">
-
+                            <form class="text-center  p-5" action="{{ route('register') }}" method="post">
+                                @csrf
                                 <p class="h4 mb-4"></p>
 
                                 <div class="form-row mb-4">
                                     <div class="col" style="text-align: left;">
                                         <!-- First name -->
                                         <label>FIRST NAME*</label><br>
-                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+                                        <input type="text" id="defaultRegisterFormFirstName" name="firstName" class="form-control" placeholder="First name">
+                                        @if ($errors->has('firstName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('firstName') }}</strong>
+                                    </span>
+                                @endif
                                     </div>
                                     <div class="col" style="text-align: left;">
                                         <!-- Last name -->
                                         <label>LAST NAME*</label><br>
-                                        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+                                        <input type="text" id="defaultRegisterFormLastName" name="lastName" class="form-control" placeholder="Last name">
+                                        @if ($errors->has('lastName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
+                                    </span>
+                                @endif
                                     </div>
                                 </div>
                                 
                                 <!-- E-mail -->
                                 <div style="text-align: left;">
                                 <label>E-MAIL ADDRESS*</label>
-                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="name@example.com">
-                                </div>
+                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="name@example.com" name="email">
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif    
+                            </div>
                                 
                                 <!--country-->
                                 <div style="text-align: left;">
                                 <label>COUNTRY*</label>
-                                <select class=" browser-default mb-3">
+                                <select class=" browser-default mb-3" name="country">
                                     <option value="ISO 3166-2:NG">Nigeria</option>
                                     <option value="ISO 3166-2:AF">Afghanistan</option>
                                     <option value="ISO 3166-2:AX">Åland Islands</option>
@@ -335,21 +350,31 @@
                                 <div style="text-align: left;">
                                  <!-- Password -->
                                 <label>PASSWORD*</label>
-                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                                 <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                                    Your password must be at least 8 characters and contain uppercase, lowercase letters and numbers.
                                     </small>
+                                    @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                                  
                                 <div style="text-align: left;">
                                  <!-- Password -->
                                 <label>CONFIRM PASSWORD*</label>
-                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                <input name="password_confirmation" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                                 </div><br>
                                 
                                 <div style="text-align: left;">
                                     <label>PHONE NUMBER*</label><br>
-                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control">
+                                   <input type="tel" id="phone" name="phone" value="+234" "defaultRegisterPhonePassword" class="form-control">
+                                   @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
                                 </div><br>
                                 
                                   <!-- Terms of service -->

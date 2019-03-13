@@ -6,6 +6,11 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserEmail;
+use QrCode;
+use App\Account;
+use Alert;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -49,9 +54,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstName' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone'=>['required'],
+            
         ]);
     }
 
@@ -63,10 +71,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user=User::create([
+            'name' => $data['firstName']." ".$data["lastName"],
+            'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'verified_link'=>mt_rand(10000,99999),
         ]);
+        
+        $account=new Account;
+        $account->user_id=$user->id;
+        $account->private_key=uniqid();
+        $account->account_number=$user->phone;
+        if($account->save()){
+        // $mess=Nexmo::message()->send([
+        //     'to'=>$user->phone,
+        //     'from'=>'KWOR',
+        //     'text'=>" your verification code {$user->verified_link}."
+        // ]);
+        QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
+        Mail::to($user->email)->send(new UserEmail($user));
+        Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
+        }else{
+            Alert::error('Registration Failed','Opps Something went wrong');
+        }
+        return $user;
     }
 }

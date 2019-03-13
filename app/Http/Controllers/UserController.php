@@ -8,10 +8,10 @@ use QrCode;
 use App\Account;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
-use Twilio\Jwt\ClientToken;
-use GuzzleHttp\Exception\GuzzleException;
+// use Twilio\Jwt\ClientToken;
+// use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
-use Twilio\Rest\Client;
+// use Twilio\Rest\Client;
 // use Twilio;
 use Session;
 use Nexmo;
@@ -94,7 +94,7 @@ class UserController extends Controller
                 $mess=Nexmo::message()->send([
                     'to'=>$user->phone,
                     'from'=>'KWOR',
-                    'text'=>" your verification code {$user->verified_link}"
+                    'text'=>"your verification code {$user->verified_link}"
                 ]);
                 // var_dump($mess);
                 if($account->save()){

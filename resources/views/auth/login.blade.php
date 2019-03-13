@@ -52,22 +52,32 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <!-- Default form register -->
-                            <form class="text-center  p-5">
+                            <form class="text-center  p-5" action="{{ route('login') }}">
+                                @csrf
 
                                 <p class="h4 mb-4"></p>
                                 
                                 
                                 <div style="text-align: left;">
                                     <label>PHONE NUMBER*</label><br>
-                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control">
+                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="phone">
+                                   @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
                                 </div><br>
                                 
                                  <div style="text-align: left;">
                                  <!-- Password -->
                                 <label>PASSWORD*</label>
-                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password">
                                 </div><br>
-                                      
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                                      <!-- Sign up button -->
                                       <button class="btn  my-4 btn-block" type="submit" style="background-color: #00C851;">Log In</button>
                                
