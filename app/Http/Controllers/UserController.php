@@ -96,7 +96,7 @@ class UserController extends Controller
                     'from'=>'KWOR',
                     'text'=>" your verification code {$user->verified_link}"
                 ]);
-                var_dump($mess);
+                // var_dump($mess);
                 if($account->save()){
                 
                 //     $client->messages->create(
