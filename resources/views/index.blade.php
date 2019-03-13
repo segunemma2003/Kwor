@@ -18,7 +18,7 @@
 </head>
 
 <body>
-@include('sweet::alert')
+
     <div id="preloader">
         <div class="kwuo-load"></div>
     </div>
@@ -460,6 +460,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    @include('sweet::alert')
+
     <script>
        $(function(){
 	$(".typed").typed({
