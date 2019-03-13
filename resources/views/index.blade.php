@@ -51,7 +51,7 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="register.html" class="">Create Account</a>
+                        <a href="{{URL('/register')}}" class="">Create Account</a>
                     </div>
                 </div>
             </div>
