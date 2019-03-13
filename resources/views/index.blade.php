@@ -466,8 +466,9 @@
     <!-- <script src="js/sweetalert.min.js"></script> -->
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
-    @include('sweet::alert')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
+    @include('sweet::alert')
+    
 <!-- <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
 
     <script>
