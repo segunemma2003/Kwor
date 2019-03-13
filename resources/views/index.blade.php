@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
     <link href="{{ asset('css/sweetalert.css')}}"/>
-    <script src="{{  asset('js/sweetalert.js')}}"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     
 </head>
