@@ -89,7 +89,7 @@ class RegisterController extends Controller
         //     'from'=>'KWOR',
         //     'text'=>" your verification code {$user->verified_link}."
         // ]);
-        QrCode::size(1500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
+        QrCode::size(1000)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
         Mail::to($user->email)->send(new UserEmail($user));
         Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
         }else{
