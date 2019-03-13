@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{\QrCode::size(400)->generate(Auth::user()->phone)}}
+                    <?php
+                    $images=Auth::user()->phone.".png";
+                    ?>
+                    <img src="{{asset('images/qrcodes/'.$images)}}"/>
                 </div>
             </div>
         </div>
