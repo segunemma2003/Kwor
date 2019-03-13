@@ -12,10 +12,13 @@
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+
 </head>
 
 <body>
+@include('sweet::alert')
     <div id="preloader">
         <div class="kwuo-load"></div>
     </div>

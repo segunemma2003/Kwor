@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('register.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
    </head>
     <body>
         
@@ -409,6 +410,7 @@
         <script src="{{ asset('js/utils.js') }}"></script>
         <script src="{{ asset('js/intlTelInput.js') }}"></script>
         <script src="{{ asset('js/style.js') }}"></script>
+        
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         
          
