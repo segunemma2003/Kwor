@@ -464,10 +464,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
     <!-- <script src="js/sweetalert.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script> -->
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     @include('sweet::alert')
-<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
+<!-- <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
 
     <script>
        $(function(){
