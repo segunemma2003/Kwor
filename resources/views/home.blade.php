@@ -16,7 +16,7 @@
                     <?php
                     $images=Auth::user()->phone.".png";
                     ?>
-                    <img src="{{asset('images/qrcodes/'.$images)}}" width="700px" height="700px"/>
+                    <img src="{{asset('images/qrcodes/'.$images)}}" width="500px" height="500px"/>
                 </div>
             </div>
         </div>
