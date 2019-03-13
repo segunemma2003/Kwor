@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <img src="{{asset('images/qrcodes/'.Auth::user()->phone}.png)}}"/>
+                    {{\QrCode::size(400)->generate(Auth::user()->phone)}}
                 </div>
             </div>
         </div>
