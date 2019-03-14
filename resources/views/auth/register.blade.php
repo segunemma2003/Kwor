@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('register.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
-   </head>
+    <link href="{{ asset('css/sweetalert.css')}}"/>
+</head>
     <body>
         
         
@@ -413,7 +414,8 @@
         
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         
-         
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
+    @include('sweet::alert')
             
         
     

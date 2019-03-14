@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kwuo-Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+    <!-- orion icons-->
+    <link rel="stylesheet" href="css/orionicons.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg px-4 py-2 shadow"><a href="#" class="sidebar-toggler text-white-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left text-white"></i></a><a href="../index.html" class="navbar-brand font-weight-bold text-uppercase text-white">kwuo</a>
+        <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+          <li class="nav-item">
+              <div class="text">
+                      <h6 class="mb-0 text-white">Total kwuo Units</h6><span class="text-white">145,14 GB</span>
+                    </div>
+          </li>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Coded</strong><small>Web Developer</small></a>
+              <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
+              <div class="dropdown-divider"></div><a href="../login.html" class="dropdown-item">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+      <div id="sidebar" class="sidebar py-3">
+        <div class="text-black-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" style="color: green;">my Kwuo account</div>
+        <ul class="sidebar-menu list-unstyled">
+              <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="fa fa-gift mr-3 text-gray"></i><span>Dashboard</span></a></li>
+                <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted active"><i class="fa fa-coins mr-3 text-gray"></i><span>Send Unit</span></a>
+                <div id="pages" class="collapse">
+                  <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                    <li class="sidebar-list-item"><a href="send-unit.html" class="sidebar-link text-muted pl-lg-5 active">Send Unit</a></li>
+                    <li class="sidebar-list-item"><a href="recieve-unit.html" class="sidebar-link text-muted pl-lg-5">Recieve Unit</a></li>
+                    <li class="sidebar-list-item"><a href="buy-unit.html" class="sidebar-link text-muted pl-lg-5">Buy Unit</a></li>
+                  </ul>
+                </div>
+              </li>
+                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="fa fa-user-circle mr-3 text-gray"></i><span>Merchant Account</span></a>
+                <div id="pages" class="collapse">
+                  <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                    <li class="sidebar-list-item"><a href="create-merch-acct.html" class="sidebar-link text-muted pl-lg-5 ">Create merchant account</a></li>
+                    <li class="sidebar-list-item"><a href="view-merch-acct.html" class="sidebar-link text-muted pl-lg-5">View account</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-list-item"><a href="transactions.html" class="sidebar-link text-muted"><i class="fa fa-history mr-3 text-gray"></i><span>Transactions</span></a></li>
+        </ul>
+      </div>
+      <div class="page-holder w-100 d-flex flex-wrap">
+        <div class="container-fluid px-xl-5">
+          <section class="py-5">
+            <div class="row">
+              <div class="col-lg-9 mb-9">
+                <div class="card">
+                  <div class="card-header coins">
+                    <h3 class="h6 text-uppercase mb-0">Send Unit</h3>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="form-group">
+                        <label class="form-control-label text-uppercase">Account Number*</label>
+                        <input type="number" placeholder="Account Number" class="form-control">
+                      </div>
+                      <div class="form-group">       
+                        <label class="form-control-label text-uppercase">Amount*</label>
+                        <input type="number" placeholder="Amount" class="form-control">
+                      </div>
+                      <div class="form-group">       
+                        <button type="submit" class="btn ">Send</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="footer shadow align-self-end py-3 px-xl-5 w-100" style="background-color: #004c00;" >
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-left text-green">
+                <p class="mb-0">Made with <i class="fas fa-heart" style="color: red;"></i> by IgHub</p>
+              </div>
+             
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/front.js"></script>
+  </body>
+</html>
