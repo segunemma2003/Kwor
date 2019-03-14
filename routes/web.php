@@ -26,7 +26,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //user
-Route::get('/userss',function(){
+Route::get('/users',function(){
     return view('kwor-admin.index');
 });
 Route::get('/user/buy',function(){
