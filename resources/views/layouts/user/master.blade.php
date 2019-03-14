@@ -22,6 +22,7 @@
   </head>
     <body>
     @include('layouts.user.header')
+    @include('layouts.user.side')
     @yield('content')
     @include('layouts.user.footer')
     <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
