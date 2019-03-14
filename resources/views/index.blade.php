@@ -17,11 +17,12 @@
     <link href="{{ asset('css/sweetalert.css')}}"/>
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
     
 </head>
 
 <body>
-
+@include('sweet::alert')
     <div id="preloader">
         <div class="kwuo-load"></div>
     </div>
@@ -466,9 +467,8 @@
     <!-- <script src="js/sweetalert.min.js"></script> -->
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
-    @include('sweet::alert')
+
+  
     
 <!-- <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
 
