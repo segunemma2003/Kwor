@@ -38,3 +38,6 @@ Route::get('/user/merc/create',function(){
 Route::get('/user/receiver',function(){
     return view('kwor-admin.receiver');
 });
+Route::get('/user/requestunit',function(){
+    return view('kwor-admin.sendunit');
+});
