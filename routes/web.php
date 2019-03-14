@@ -32,3 +32,6 @@ Route::get('/userss',function(){
 Route::get('/user/buy',function(){
     return view('kwor-admin.buy_unit');
 });
+Route::get('/user/merc/create',function(){
+    return view('kwor-admin.create_merch');
+});
