@@ -20,10 +20,15 @@ Route::get('/pusher', function () {
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/userss',function(){
-    return view('kwor-admin.index');
-});
+
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//user
+Route::get('/userss',function(){
+    return view('kwor-admin.index');
+});
+Route::get('/user/buy',function(){
+    return view('kwor-admin.buy_unit');
+});
