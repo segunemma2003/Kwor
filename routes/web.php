@@ -13,7 +13,7 @@ use App\Events\TransactionEvent;
 
 Route::get('/pusher', function () {
     $message='hey';
-    \Alert::message('You are welcome to my site ');
+    \Alert::message('message','You are welcome to my site ');
     event(new TransactionEvent($message));
     return view('pusher');
 });
