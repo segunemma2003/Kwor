@@ -41,3 +41,6 @@ Route::get('/user/receiver',function(){
 Route::get('/user/requestunit',function(){
     return view('kwor-admin.sendunit');
 });
+Route::get('/user/transact',function(){
+    return view('kwor-admin.transact');
+});

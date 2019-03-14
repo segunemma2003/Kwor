@@ -16,6 +16,7 @@
         "pusher/pusher-php-server": "~3.0",
         "simplesoftwareio/simple-qrcode": "^2.0",
         "twilio/sdk": "^5.29",
+        "unicodeveloper/laravel-paystack": "^1.0",
         "uxweb/sweet-alert": "~1.1"
     },
     "require-dev": {
