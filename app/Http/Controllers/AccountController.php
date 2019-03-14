@@ -23,18 +23,18 @@ class AccountController extends Controller
     public function genKeyExists($number){
         return Transaction::whereTransaction_code($number)->exists();
     }
-        public function  LoadAccount(Request $request)
+    public function  LoadAccount(Request $request)
         {
           $account=Account::whereAccount_number($request->account_number)->first();
           $account->balance=$request->amount +$account->balance;
           if($account->save()){
               $transaction=new Transaction;
               $transaction->receiver_id=$account->id;
-              $transaction->sender_id=0;
+              $transaction->sender_id=$account->id;
               $transaction->amount=$request->amount;
               $transaction->reason_payment=$request->gateway;
               $transaction->status=1;
-              $transaction->transaction_code=$this->generateKey();
+              $transaction->transaction_code=$request->transaction_code;
               if($transaction->save())
               {
                   return response()->json([

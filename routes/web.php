@@ -35,3 +35,6 @@ Route::get('/user/buy',function(){
 Route::get('/user/merc/create',function(){
     return view('kwor-admin.create_merch');
 });
+Route::get('/user/receiver',function(){
+    return view('kwor-admin.receiver');
+});
