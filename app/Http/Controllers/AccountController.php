@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Account;
 use Illuminate\Http\Request;
 use App\Transaction;
+use Paystack;
 class AccountController extends Controller
 {
     /**
@@ -51,5 +52,14 @@ class AccountController extends Controller
                   "message"=>"Opps an error just occured"
               ]);
           }
-        }    
+        } 
+        public function redirectToGateWay()   
+        {
+            return Paystack::getAuthorizationUrl()->redirectNow();
+        }
+        public function handleGatewayCallback()
+        {
+            $paymentDetails=Paystack::getPaymentData();
+            dd($paymentDetails);
+        }
 }
