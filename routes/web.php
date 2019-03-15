@@ -44,3 +44,6 @@ Route::get('/user/requestunit',function(){
 Route::get('/user/transact',function(){
     return view('kwor-admin.transact');
 });
+Route::get('/user/merc/transact',function(){
+    return view('kwor-admin.view-merchant');
+});
