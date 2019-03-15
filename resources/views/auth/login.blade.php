@@ -52,8 +52,10 @@
                             <a href="{{URL('/register')}}" style="color:  #00C851;">Create Account</a>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <!-- Default form register -->
-                            @if (session('status'))
+                          
+                            <form class="text-center  p-5" action="{{ route('login') }}">
+                              <!-- Default form register -->
+                              @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
@@ -62,9 +64,8 @@
                         <div class="alert alert-warning">
                             {{ session('warning') }}
                         </div>
-@endif
-                            <form class="text-center  p-5" action="{{ route('login') }}">
-                                @csrf
+@endif    
+                            @csrf
 
                                 <p class="h4 mb-4"></p>
                                 
