@@ -25,7 +25,7 @@
     @include('layouts.user.side')
     @yield('content')
     @include('layouts.user.footer')
-    
+    <script src="{{asset('kwor-admin/js/script.js')}}"></script>
     <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
     <script src="{{asset('kwor-admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -35,6 +35,5 @@
     <script src="{{asset('kwor-admin/js/charts-home.js') }}"></script>
     <script src="{{asset('kwor-admin/js/front.js')}}"></script>
     <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
-    
     </body>
 </html>
