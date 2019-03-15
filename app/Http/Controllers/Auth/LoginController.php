@@ -46,15 +46,22 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectPath());
     }
-    // protected function credentials(Request $request)
-    // {
-    //     $field = $this->field($request);
+    protected function credentials(Request $request)
+    {
+        // $field = $this->field($request);
 
-    //     return [
-    //         $field => $request->get($this->email()),
-    //         'password' => $request->get('password'),
-    //     ];
-    // }
+        // return [
+        //     $field => $request->get($this->email()),
+        //     'password' => $request->get('password'),
+        // ];
+        $field = filter_var($request->get($this->phone()), FILTER_VALIDATE_EMAIL)
+        ? $this->phone()
+        : 'phone';
+    return [
+        $field => $request->get($this->phone()),
+        'password' => $request->password,
+    ];
+    }
     // public function field(Request $request)
     // {
     //     $email = $this->phone();
