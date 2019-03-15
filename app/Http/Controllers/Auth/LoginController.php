@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
     public function findPhone()
     {
-        $phone=request()->input('phone');
+        $phone=request()->input('email');
         $fieldType=filter_var($phone,FILTER_VALIDATE_EMAIL) ? 'email' :'phone';
     request()->merge([$fieldType=>$phone]);
     return $fieldType;
