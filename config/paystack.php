@@ -15,24 +15,24 @@ return [
      * Public Key From Paystack Dashboard
      *
      */
-    'publicKey' => getenv('PAYSTACK_PUBLIC_KEY','pk_test_e3f3b8aba94f3c4be213aff318c7a26ec40a9462'),
+    'publicKey' => env('PAYSTACK_PUBLIC_KEY','pk_test_e3f3b8aba94f3c4be213aff318c7a26ec40a9462'),
 
     /**
      * Secret Key From Paystack Dashboard
      *
      */
-    'secretKey' => getenv('PAYSTACK_SECRET_KEY','sk_test_fe49dfa34b79b52a8807a642a46821fb71932e64'),
+    'secretKey' => env('PAYSTACK_SECRET_KEY','sk_test_fe49dfa34b79b52a8807a642a46821fb71932e64'),
 
     /**
      * Paystack Payment URL
      *
      */
-    'paymentUrl' => getenv('PAYSTACK_PAYMENT_URL','https://api.paystack.co/'),
+    'paymentUrl' => env('PAYSTACK_PAYMENT_URL','https://api.paystack.co/'),
 
     /**
      * Optional email address of the merchant
      *
      */
-    'merchantEmail' => getenv('MERCHANT_EMAIL'),
+    'merchantEmail' => env('MERCHANT_EMAIL'),
 
 ];
