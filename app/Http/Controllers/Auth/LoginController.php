@@ -48,19 +48,14 @@ class LoginController extends Controller
     }
     protected function credentials(Request $request)
     {
-        // $field = $this->field($request);
-
-        // return [
-        //     $field => $request->get($this->email()),
-        //     'password' => $request->get('password'),
-        // ];
         $field = filter_var($request->get($this->phone()), FILTER_VALIDATE_EMAIL)
-        ? $this->phone()
-        : 'phone';
-    return [
-        $field => $request->get($this->phone()),
-        'password' => $request->password,
-    ];
+            ? $this->phone()
+            : 'phone';
+ 
+        return [
+            $field => $request->get($this->phone()),
+            'password' => $request->password,
+        ];
     }
     // public function field(Request $request)
     // {
@@ -68,16 +63,16 @@ class LoginController extends Controller
 
     //     return filter_var($request->get($email), FILTER_VALIDATE_EMAIL) ? $email : 'email';
     // }
-    protected function validateLogin(Request $request)
-    {
-        $field = $this->field($request);
+    // protected function validateLogin(Request $request)
+    // {
+    //     $field = $this->field($request);
 
-        $messages = ["{$this->phone()}.exists" => 'The account you are trying to login is not registered or it has been disabled.'];
+    //     $messages = ["{$this->phone()}.exists" => 'The account you are trying to login is not registered or it has been disabled.'];
 
-        $this->validate($request , [
-            $this->phone() => "required|exists:users,{$field}",
-            'password' => 'required',
-        ], $messages);
-    }
+    //     $this->validate($request , [
+    //         $this->phone() => "required|exists:users,{$field}",
+    //         'password' => 'required',
+    //     ], $messages);
+    // }
 
 }
