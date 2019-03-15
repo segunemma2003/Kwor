@@ -80,10 +80,10 @@
                                 
                                 <div style="text-align: left;">
                                     <label>PHONE NUMBER*</label><br>
-                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="email">
-                                   @if ($errors->has('email'))
+                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="phone">
+                                   @if ($errors->has('phone'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                                 </div><br>
