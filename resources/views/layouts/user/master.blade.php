@@ -25,23 +25,7 @@
     @include('layouts.user.side')
     @yield('content')
     @include('layouts.user.footer')
-    <script>
-      alert("hi");
-   function Naira(){
-	var unit= document.getElementById('unit').value;
-
-
-    document.getElementById('ans').innerHTML= 1 * unit;
-    return true;
-}
-function add(){
-  var units=document.getElementById("unit").value;
-  var new=document.getElementById('total');
-  new.value=units*1*100;
-  console.log(new.value);
-}	
-
-</script>
+    
     <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
     <script src="{{asset('kwor-admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
