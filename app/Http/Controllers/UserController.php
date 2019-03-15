@@ -7,17 +7,17 @@ use App\User;
 use QrCode;
 use App\Account;
 use Auth;
-use Alert;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
+use Session;
+use Nexmo;
+use Alert;
 // use Twilio\Jwt\ClientToken;
 // use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
 // use Twilio\Rest\Client;
 // use Twilio;
-use Session;
-use Nexmo;
-use Alert;
+
 class UserController extends Controller
 {
     //generate key
