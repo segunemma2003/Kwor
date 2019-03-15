@@ -16,6 +16,7 @@ use App\Mail\UserEmail;
 // use Twilio;
 use Session;
 use Nexmo;
+use Alert;
 class UserController extends Controller
 {
     //generate key
