@@ -32,9 +32,12 @@ class UserController extends Controller
             $user=User::whereVerified_link($verify)->whereId($id)->first();
             $user->verified=1;
             if($user->save()){
-                Session::flash('message','You have successfully been verified');
+                Alert::success('message','You have successfully been verified');
                 return redirect('/login');
             }
+        }else{
+            Alert::error('error','You have not been verified');
+            return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
         }
     }
     public function verifyApi(Request $request)

@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
+use Illuminate\Http\Request;
 use QrCode;
 use App\Account;
 use Alert;
+use Nexmo;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -91,10 +93,21 @@ class RegisterController extends Controller
         // ]);
         QrCode::size(1000)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
         Mail::to($user->email)->send(new UserEmail($user));
+        $mess=Nexmo::message()->send([
+            'to'=>$user->phone,
+            'from'=>'KWOR',
+            'text'=>"Check your mail to verify your account"
+        ]);
         Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
         }else{
             Alert::error('Registration Failed','Opps Something went wrong');
         }
         return $user;
+    }
+    protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+        Alert::error('status', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
+        return redirect('/login')->with('status', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
     }
 }

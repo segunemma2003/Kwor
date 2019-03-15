@@ -53,6 +53,16 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <!-- Default form register -->
+                            @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+@endif
                             <form class="text-center  p-5" action="{{ route('login') }}">
                                 @csrf
 
