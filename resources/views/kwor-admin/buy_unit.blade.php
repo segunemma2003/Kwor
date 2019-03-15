@@ -24,11 +24,12 @@
                           <td><input type="text" id="unit" class="form-control" onblur="add()" placeholder="" style="width: 50%;"></td>
                           <td  id="ans">unit * &#8358;1</td>
                           <td>
-                            <form>
+                            <form method="post" action="{{route('pay')}}">
                               <input type="hidden" name="email" value="{{Auth::user()->email}}">
                               <input type="hidden" name="amount" id="total">
-                              
-
+                              <input type="hidden" name="reference" value="{{Paystack::genTranxRef()}}">
+                              <input type="hidden" name="key" value="{{config('paystack.secretkey')}}">
+                              @csrf
                             <button class="btn" onclick="Naira()">Buy</button>
                           </form>
                              

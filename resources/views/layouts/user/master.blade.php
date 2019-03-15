@@ -45,7 +45,7 @@
 function add(){
   var units=document.getElementById("unit").value;
   var new=document.getElementById('total');
-  new.value=units*1;
+  new.value=units*1*100;
   console.log(new.value);
 }	
 
