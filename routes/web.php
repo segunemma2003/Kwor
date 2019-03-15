@@ -25,28 +25,31 @@ Route::get('/user/login',function(){
     return view('auth.login');
 });
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
+Route::get('user/logout',function(){
+    return Auth::logout();
+});
 Auth::routes();
-
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/users',function(){
+        return view('kwor-admin.index');
+    });
+    Route::get('/user/buy',function(){
+        return view('kwor-admin.buy_unit');
+    });
+    Route::get('/user/merc/create',function(){
+        return view('kwor-admin.create_merch');
+    });
+    Route::get('/user/receiver',function(){
+        return view('kwor-admin.receiver');
+    });
+    Route::get('/user/requestunit',function(){
+        return view('kwor-admin.sendunit');
+    });
+    Route::get('/user/transact',function(){
+        return view('kwor-admin.transact');
+    });
+    Route::get('/user/merc/transact',function(){
+        return view('kwor-admin.view-merchant');
+    });
+});
 Route::get('/home', 'HomeController@index')->name('home');
-//user
-Route::get('/users',function(){
-    return view('kwor-admin.index');
-});
-Route::get('/user/buy',function(){
-    return view('kwor-admin.buy_unit');
-});
-Route::get('/user/merc/create',function(){
-    return view('kwor-admin.create_merch');
-});
-Route::get('/user/receiver',function(){
-    return view('kwor-admin.receiver');
-});
-Route::get('/user/requestunit',function(){
-    return view('kwor-admin.sendunit');
-});
-Route::get('/user/transact',function(){
-    return view('kwor-admin.transact');
-});
-Route::get('/user/merc/transact',function(){
-    return view('kwor-admin.view-merchant');
-});

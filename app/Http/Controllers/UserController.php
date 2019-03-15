@@ -30,6 +30,7 @@ class UserController extends Controller
     }
     public function logins(Request $request)
     {
+        dd($request->phone);
         if(User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password))->exists())
         {
             $user=User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password))->first();
