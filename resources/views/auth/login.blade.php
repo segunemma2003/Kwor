@@ -65,6 +65,14 @@
                             {{ session('warning') }}
                         </div>
 @endif    
+@if ($errors->all())
+@foreach($errors->all() as $error)
+                        <div class="alert alert-warning">
+                            {{ $error }}
+                        </div>
+                    @endif
+@endif    
+
                             @csrf
 
                                 <p class="h4 mb-4"></p>
