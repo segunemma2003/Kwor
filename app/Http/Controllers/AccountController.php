@@ -77,31 +77,30 @@ class AccountController extends Controller
                 $account=Account::whereUser_id($id)->first();
                 $account->balance=$account->balance+$amt;
                 if($account->save()){
-                $transaction=new Transaction;
-                $transaction->sender_id=$account->id;
-                $transaction->receiver_id=$account->id;
-                $transaction->amount=$amount;
-                $transaction->reason_payment='paystack personal payment';
-                $transaction->status=1;
-                $transaction->transaction_code=$reference;
-                if($transaction->save()){
-                    Alert::success('Success','Account has been updated');
-                    redirect()->back()->with('status','Account has been updated');
+                    $transaction=new Transaction;
+                    $transaction->sender_id=$account->id;
+                    $transaction->receiver_id=$account->id;
+                    $transaction->amount=$amount;
+                    $transaction->reason_payment='paystack personal payment';
+                    $transaction->status=1;
+                    $transaction->transaction_code=$reference;
+                    if($transaction->save()){
+                        Alert::success('Success','Account has been updated');
+                        redirect()->back()->with('status','Account has been updated');
+                    }else{
+                        Alert::error('Error','Opps error occured transaction');
+                        redirect()->back()->with('Error','Opps error occured transaction');
+                    }
                 }else{
-                    Alert::error('Error','Opps error occured transaction');
-                    redirect()->back()->with('Error','Opps error occured transaction');
-                }
-            }else{
-                Alert::error('Error','Opps error occured account');
+                    Alert::error('Error','Opps error occured account');
                     redirect()->back()->with('Error','Opps error occured transaction');
             }
-                
-
-                
-
-            }else{
+            
+        }else{
                 Alert::error('Error','Error from paystack');
                     redirect()->back()->with('Error','Opps error occured transaction');
             }
+            return redirect()->back();
+
         }
 }
