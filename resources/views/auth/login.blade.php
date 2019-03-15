@@ -70,7 +70,7 @@
                         <div class="alert alert-warning">
                             {{ $error }}
                         </div>
-                    @endif
+                    @endforeach
 @endif    
 
                             @csrf
