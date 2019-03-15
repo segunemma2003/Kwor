@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Account;
+use App\User;
 use Illuminate\Http\Request;
 use App\Transaction;
 use Paystack;
