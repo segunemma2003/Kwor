@@ -15,7 +15,7 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('balance', 5, 2)->default(0);
+            $table->decimal('balance', 15, 2)->default(0);
             $table->integer('user_id')->unsigned();
             $table->string('private_key');
             $table->string('account_type')->default('personal');
