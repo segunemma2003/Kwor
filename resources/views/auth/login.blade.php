@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                           
-                            <form class="text-center  p-5" method="post" action="{{ route('login') }}">
+                            <form class="text-center  p-5" method="post" action="{{ route('logins') }}">
                               <!-- Default form register -->
                               @if (session('status'))
                         <div class="alert alert-success">

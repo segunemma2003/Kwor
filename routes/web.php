@@ -20,7 +20,7 @@ Route::get('/pusher', function () {
 Route::get('/', function () {
     return view('index');
 });
-
+Route::post('/user/login','UserController@logins')->name('logins');
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
 Auth::routes();
 

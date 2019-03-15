@@ -46,34 +46,5 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectPath());
     }
-    protected function credentials(Request $request)
-    {
-        dd($request->get($this->phone()));
-        $field = filter_var($request->phone(), FILTER_VALIDATE_EMAIL)
-            ? $this->phone()
-            : 'phone';
-
-        return [
-            $field => $request->phone(),
-            'password' => $request->password,
-        ];
-    }
-    // public function field(Request $request)
-    // {
-    //     $email = $this->phone();
-
-    //     return filter_var($request->get($email), FILTER_VALIDATE_EMAIL) ? $email : 'email';
-    // }
-    // protected function validateLogin(Request $request)
-    // {
-    //     $field = $this->field($request);
-
-    //     $messages = ["{$this->phone()}.exists" => 'The account you are trying to login is not registered or it has been disabled.'];
-
-    //     $this->validate($request , [
-    //         $this->phone() => "required|exists:users,{$field}",
-    //         'password' => 'required',
-    //     ], $messages);
-    // }
 
 }

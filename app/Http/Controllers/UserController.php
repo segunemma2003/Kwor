@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use QrCode;
 use App\Account;
+use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
 // use Twilio\Jwt\ClientToken;
@@ -24,6 +25,17 @@ class UserController extends Controller
             return $this->generateKey();
         }else{
             return $number;
+        }
+    }
+    public function logins(Request $request)
+    {
+        if(User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password)))
+        {
+            $user=User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password))->first();
+            Auth::login($user);
+        }else{
+            Alert::error('ERROR','You inputed wrong incredentials');
+            return redirect('/login')->with('status','wrong incredentials');
         }
     }
     public  function verify($verify,$id)
