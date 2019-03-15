@@ -80,7 +80,7 @@ class AccountController extends Controller
                 $transaction=new Transaction;
                 $transaction->sender_id=$account->id;
                 $transaction->receiver_id=$account->id;
-                $transaction->amount=$account->balance;
+                $transaction->amount=$amount;
                 $transaction->reason_payment='paystack personal payment';
                 $transaction->status=1;
                 $transaction->transaction_code=$reference;
