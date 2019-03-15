@@ -26,7 +26,8 @@ Route::get('/user/login',function(){
 });
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
 Route::get('user/logout',function(){
-    return Auth::logout();
+    Auth::logout();
+    return redirect('/login');
 });
 Auth::routes();
 Route::group(['middleware'=>'auth'],function(){

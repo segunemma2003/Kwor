@@ -47,4 +47,13 @@ class LoginController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
+    public function credentials(Request $request)
+    {
+        $field=$this->field($request);
+        return [
+            $field=>$request->get($this->phone()),
+            'password'=>$request->get('password'),
+        ];
+    }
+
 }
