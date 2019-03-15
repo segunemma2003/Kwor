@@ -51,7 +51,7 @@ class LoginController extends Controller
         $field = filter_var($request->get($this->phone()), FILTER_VALIDATE_EMAIL)
             ? $this->phone()
             : 'phone';
- 
+ var_dump($field);
         return [
             $field => $request->get($this->phone()),
             'password' => $request->password,
