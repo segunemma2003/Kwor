@@ -35,6 +35,7 @@
     <script src="{{asset('kwor-admin/js/front.js')}}"></script>
     <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
     <script>
+      alert("hi");
    function Naira(){
 	var unit= document.getElementById('unit').value;
 
