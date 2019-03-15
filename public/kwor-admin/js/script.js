@@ -9,5 +9,5 @@ function add(){
         var units=document.getElementById("unit").value;
         var news = document.getElementById('total');
         news.value=units*1*100;
-        console.log(new.value);
+        console.log(news.value);
 }	
