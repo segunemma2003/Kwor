@@ -59,7 +59,7 @@ class LoginController extends Controller
     {
         $email = $this->phone();
 
-        return filter_var($request->get($email), FILTER_VALIDATE_EMAIL) ? $email : 'phone';
+        return filter_var($request->get($email), FILTER_VALIDATE_EMAIL) ? $email : 'email';
     }
     protected function validateLogin(Request $request)
     {
