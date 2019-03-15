@@ -7,6 +7,7 @@ use App\User;
 use QrCode;
 use App\Account;
 use Auth;
+use Alert;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
 // use Twilio\Jwt\ClientToken;
