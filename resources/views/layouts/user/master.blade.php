@@ -21,11 +21,12 @@
     <link rel="stylesheet" href="{{asset('kwor-admin/css/custom.css') }}">
   </head>
     <body>
+    <script src="{{asset('kwor-admin/js/script.js')}}"></script>
     @include('layouts.user.header')
     @include('layouts.user.side')
     @yield('content')
     @include('layouts.user.footer')
-    <script src="{{asset('kwor-admin/js/script.js')}}"></script>
+    
     <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
     <script src="{{asset('kwor-admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
