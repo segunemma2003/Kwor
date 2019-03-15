@@ -48,10 +48,11 @@ class LoginController extends Controller
     }
     protected function credentials(Request $request)
     {
+        var_dump($request->get($this->phone()));
         $field = filter_var($request->get($this->phone()), FILTER_VALIDATE_EMAIL)
             ? $this->phone()
             : 'phone';
- var_dump($field);
+
         return [
             $field => $request->get($this->phone()),
             'password' => $request->password,
