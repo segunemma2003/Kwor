@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Alert;
 class LoginController extends Controller
 {
     /*
@@ -40,6 +41,7 @@ class LoginController extends Controller
     {
         if (!$user->verified) {
             auth()->logout();
+            Alert::warning('warning','You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam' );
         }
         return redirect()->intended($this->redirectPath());
