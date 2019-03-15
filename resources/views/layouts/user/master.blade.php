@@ -25,15 +25,6 @@
     @include('layouts.user.side')
     @yield('content')
     @include('layouts.user.footer')
-    <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
-    <script src="{{asset('kwor-admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('kwor-admin/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
-    <script src="{{asset('kwor-admin/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="{{asset('kwor-admin/js/charts-home.js') }}"></script>
-    <script src="{{asset('kwor-admin/js/front.js')}}"></script>
-    <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
     <script>
       alert("hi");
    function Naira(){
@@ -52,5 +43,15 @@ function add(){
 
 
       </script>
+    <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
+    <script src="{{asset('kwor-admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('kwor-admin/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
+    <script src="{{asset('kwor-admin/vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="{{asset('kwor-admin/js/charts-home.js') }}"></script>
+    <script src="{{asset('kwor-admin/js/front.js')}}"></script>
+    <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
+    
     </body>
 </html>
