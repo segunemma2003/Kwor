@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                           
-                            <form class="text-center  p-5" method="post" action="{{ route('logins') }}">
+                            <form class="text-center  p-5" method="post" action="{{ route('login') }}">
                               <!-- Default form register -->
                               @if (session('status'))
                         <div class="alert alert-success">
@@ -80,8 +80,12 @@
                                 
                                 <div style="text-align: left;">
                                     <label>PHONE NUMBER*</label><br>
-                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="email">
-                                   
+                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="phone">
+                                   @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
                                 </div><br>
                                 
                                  <div style="text-align: left;">
