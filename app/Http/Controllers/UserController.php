@@ -32,7 +32,7 @@ class UserController extends Controller
         if(User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password)))
         {
             $user=User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password))->first();
-            dd($user);
+            dd(User::wherePhone($request->phone)->wherePassword(\Hash::make($request->password)));
             Auth::login($user);
         }else{
             Alert::error('ERROR','You inputed wrong incredentials');
