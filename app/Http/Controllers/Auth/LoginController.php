@@ -49,12 +49,12 @@ class LoginController extends Controller
     protected function credentials(Request $request)
     {
         dd($request->get($this->phone()));
-        $field = filter_var($request->get($this->phone()), FILTER_VALIDATE_EMAIL)
+        $field = filter_var($request->phone(), FILTER_VALIDATE_EMAIL)
             ? $this->phone()
             : 'phone';
 
         return [
-            $field => $request->get($this->phone()),
+            $field => $request->phone(),
             'password' => $request->password,
         ];
     }
