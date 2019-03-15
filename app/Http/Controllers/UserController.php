@@ -37,7 +37,7 @@ class UserController extends Controller
             Auth::login($user);
         }else{
             Alert::error('ERROR','You inputed wrong incredentials');
-            return redirect('/login')->with('status','wrong incredentials');
+            return redirect('/login')->with('warning','wrong incredentials');
         }
     }
     public  function verify($verify,$id)
