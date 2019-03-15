@@ -27,7 +27,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    protected $phone;
     /**
      * Create a new controller instance.
      *
@@ -35,7 +35,19 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->phone=$this->findPhone();
         $this->middleware('guest')->except('logout');
+    }
+    public function findPhone()
+    {
+        $phone=request()->input('phone');
+        $fieldType=filter_var($phone,FILTER_VALIDATE_EMAIL) ? 'email' :'phone';
+    request()->merge([$fieldType=>$login]);
+    return $fieldType;
+    }
+    public function phone()
+    {
+        return $this->phone;
     }
     public function authenticated(Request $request, $user)
     {
