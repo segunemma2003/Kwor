@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('index');
 });
 Route::post('/user/login','UserController@logins')->name('logins');
+Route::get('/user/login',function(){
+    return view('auth.login');
+});
 Route::get('/verify/{verify}/{id}','UserController@verify')->name('verify');
 Auth::routes();
 
