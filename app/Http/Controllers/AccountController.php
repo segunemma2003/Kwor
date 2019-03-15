@@ -60,6 +60,45 @@ class AccountController extends Controller
         public function handleGatewayCallback()
         {
             $paymentDetails=Paystack::getPaymentData();
-            dd($paymentDetails);
+            $status=$paymentDetails['status'];
+            $amount=$paymentDetails['data']['amount'];
+            $amt=$amount/100;
+            $id=$paymentDetails['data']['id'];
+            $reference=$paymentDetails['data']['reference'];
+            $customerEmail=$paymentDetails['data']['customer']['email'];
+            // dd($paymentDetails);
+            if($status=='true')
+            {
+                $user=User::whereEmail($customerEmail)->first();
+                $id=$user->id;
+                $account=Account::whereUser_id($id)->first();
+                $account->balance=$account->balance+$amt;
+                if($account->save()){
+                $transaction=new Transaction;
+                $transaction->sender_id=$account->id;
+                $transaction->receiver_id=$account->id;
+                $transaction->amount=$account->balance;
+                $transaction->reason_payment='paystack personal payment';
+                $transaction->status=1;
+                $transaction->transaction_code=$reference;
+                if($transaction->save()){
+                    Alert::success('Success','Account has been updated');
+                    redirect()->back()->with('status','Account has been updated');
+                }else{
+                    Alert::error('Error','Opps error occured transaction');
+                    redirect()->back()->with('Error','Opps error occured transaction');
+                }
+            }else{
+                Alert::error('Error','Opps error occured account');
+                    redirect()->back()->with('Error','Opps error occured transaction');
+            }
+                
+
+                
+
+            }else{
+                Alert::error('Error','Error from paystack');
+                    redirect()->back()->with('Error','Opps error occured transaction');
+            }
         }
 }
