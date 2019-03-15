@@ -25,7 +25,7 @@
                           <td  id="ans">unit * &#8358;1</td>
                           <td>
                             <form>
-                              <input type="hidden" name="email" value="{{Auth::user()->email}}">
+                              <input type="hidden" name="email" value="">
                               <input type="number" name="amount" id="total">
 
                             <button class="btn" onclick="Naira()">Buy</button>
