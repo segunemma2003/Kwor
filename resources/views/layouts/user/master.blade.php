@@ -34,5 +34,22 @@
     <script src="{{asset('kwor-admin/js/charts-home.js') }}"></script>
     <script src="{{asset('kwor-admin/js/front.js')}}"></script>
     <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
+    <script type="text/javascript">
+   function Naira(){
+	var unit= document.getElementById('unit').value;
+
+
+    document.getElementById('ans').innerHTML= 1 * unit;
+    return true;
+}
+function add(){
+  var units=document.getElementById("unit").value;
+  var new=document.getElementById('total');
+  new.value=units*1;
+  console.log(new.value);
+}	
+
+
+      </script>
     </body>
 </html>

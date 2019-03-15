@@ -25,8 +25,9 @@
                           <td  id="ans">unit * &#8358;1</td>
                           <td>
                             <form>
-                              <input type="hidden" name="email" value="">
-                              <input type="number" name="amount" id="total">
+                              <input type="hidden" name="email" value="{{Auth::user()->email}}">
+                              <input type="hidden" name="amount" id="total">
+                              
 
                             <button class="btn" onclick="Naira()">Buy</button>
                           </form>
@@ -41,21 +42,5 @@
             </div>
           </section>
         </div>
-        <script type="text/javascript">
-   function Naira(){
-	var unit= document.getElementById('unit').value;
-
-
-    document.getElementById('ans').innerHTML= 1 * unit;
-    return true;
-}
-function add(){
-  var units=document.getElementById("unit").value;
-  var new=document.getElementById('total');
-  new.value=units*1;
-  console.log(new.value);
-}	
-
-
-      </script>
+        
 @endsection
