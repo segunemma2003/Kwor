@@ -51,7 +51,7 @@ class LoginController extends Controller
         $field = $this->field($request);
 
         return [
-            $field => $request->get($this->phone()),
+            $field => $request->get($this->email()),
             'password' => $request->get('password'),
         ];
     }
