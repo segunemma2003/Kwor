@@ -89,13 +89,13 @@ class AccountController extends Controller
                 redirect('/user/buy')->with('status','Account has been updated');
                     }else{
                         Alert::error('Error','Opps error occured transaction');
-                        redirect('/user/buy')->with('Error','Opps error occured transaction');
+                       return redirect('/user/buy')->with('Error','Opps error occured transaction');
                     }
             
                
                 }
                 Alert::error('Error','Error from paystack');
-                redirect('/user/buy')->with('Error','Opps error occured transaction');
+                return redirect('/user/buy')->with('Error','Opps error occured transaction');
 
         }
 }
