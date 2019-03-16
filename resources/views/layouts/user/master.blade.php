@@ -19,8 +19,14 @@
     <link rel="stylesheet" href="{{asset('kwor-admin/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('kwor-admin/css/custom.css') }}">
+    <link href="{{ asset('css/sweetalert.css')}}"/>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
+   
   </head>
     <body>
+    @include('sweet::alert')
     <script src="{{asset('kwor-admin/js/script.js')}}"></script>
     @include('layouts.user.header')
     @include('layouts.user.side')
