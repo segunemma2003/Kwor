@@ -93,9 +93,9 @@ class AccountController extends Controller
                     }
             
                
-                }
+                }else{
                 Alert::error('Error','Error from paystack');
                 return redirect('/user/buy')->with('Error','Opps error occured transaction');
-
+                }
         }
 }
