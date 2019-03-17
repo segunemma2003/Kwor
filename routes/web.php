@@ -43,9 +43,13 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/user/receiver',function(){
         return view('kwor-admin.receiver');
     });
+    Route::post('/user/receiver','TransactionController@acceptRequest');
     Route::get('/user/requestunit',function(){
-        return view('kwor-admin.sendunit');
+        $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
+        $transactions=\App\Transaction::whereReceiver_id($account->id)->get();
+        return view('kwor-admin.sendunit',compact('transactions'));
     });
+    Route::post('/user/requestunit','TransactionController@webRequest');
     Route::get('/user/transact',function(){
         return view('kwor-admin.transact');
     });

@@ -8,7 +8,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Notifications\TransactionAlert;
 use App\Events\TransactionEvent;
-
+use Auth;
+use Alert;
 class TransactionController extends Controller
 {
     /**
@@ -26,6 +27,43 @@ class TransactionController extends Controller
     }
     public function genKeyExists($number){
         return Transaction::whereTransaction_code($number)->exists();
+    }
+    public function webRequest(Request $request)
+    {
+        $this->validate($request,[
+            "account_number"=>'required',
+            'amount'=>'required',
+            'purpose'=>'required',
+        ]);
+        //request_id
+        $user_id=Auth::user()->id;
+        $account=Account::whereUser_id($user_id)->first();
+        $sender_id=$account->id;
+        //receiver_id
+        $Racc=Account::whereAccount_number($request->account_number)->first();
+        $rid=$Racc->id;
+        $transaction=new Transaction;
+        $transaction->sender_id=$sender_id;
+        $transaction->receiver_id=$rid;
+        $transaction->amount=$request->amount;
+        $transaction->reason_payment=$request->purpose;
+        $transaction->transaction_code=$this->generateKey();
+        if($transaction->save())
+        {
+            $tt=Auth::user()->name;
+            $message="{$tt} is requesting for {$request->amount}units";
+            event(new TransactionEvent($message));
+            Alert::success('success','You have successfully sent a request');
+            return redirect()->back()->with('status','You have successfully sent a request');
+        }else{
+            Alert::error('error','Opps an error occurred');
+            return redirect()->back()->with('error','Opps an error occurred');
+        }
+
+    }
+    public function acceptRequest(Request $request)
+    {
+        return;
     }
     public function request(Request $request)
     {

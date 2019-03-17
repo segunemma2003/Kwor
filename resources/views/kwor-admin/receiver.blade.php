@@ -22,8 +22,11 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($transactions as $transact)
+                        {{$loop->index+1}}
+                        @endforeach
                         <tr>
-                          <th scope="row">1</th>
+                          <th scope="row"></th>
                           <td>Mark</td>
                           <td>Otto</td>
                           <td>@mdo</td>
