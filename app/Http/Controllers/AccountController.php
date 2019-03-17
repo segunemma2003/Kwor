@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Transaction;
 use Paystack;
 use Alert;
+use Nexmo;
 use Auth;
 class AccountController extends Controller
 {
@@ -40,10 +41,12 @@ class AccountController extends Controller
               $transaction->status=1;
               $transaction->transaction_code=$request->transaction_code;
               if($transaction->save())
+              
               {
                   return response()->json([
                         "status"=>201,
-                        "message"=>"Units added"
+                        "message"=>"Units added",
+                        "balance"=>$account->balance
                   ]);
               }
 
