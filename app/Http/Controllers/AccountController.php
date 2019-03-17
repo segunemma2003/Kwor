@@ -89,7 +89,7 @@ class AccountController extends Controller
                 $transaction->transaction_code=$reference;
                   if($transaction->save()){
                  Alert::success('Success','Account has been updated');
-                redirect('/user/buy')->with('status','Account has been updated');
+                 return redirect('/user/buy')->with('status','Account has been updated');
                     }else{
                         Alert::error('Error','Opps error occured transaction');
                        return redirect('/user/buy')->with('Error','Opps error occured transaction');
