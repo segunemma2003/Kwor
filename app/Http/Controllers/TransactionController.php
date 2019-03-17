@@ -58,7 +58,7 @@ class TransactionController extends Controller
             $mess=Nexmo::message()->send([
                 'to'=>$user->phone,
                 'from'=>'KWOR',
-                'text'=>"{$tt} is requesting for 400kwuo unit. visit your dashboard to reply"
+                'text'=>"{$tt} is requesting for {$request->amount} unit(s). visit your dashboard to reply"
             ]);
             Alert::success('success','You have successfully sent a request');
             return redirect()->back()->with('status','You have successfully sent a request');
