@@ -10,6 +10,7 @@ use App\Notifications\TransactionAlert;
 use App\Events\TransactionEvent;
 use Auth;
 use Alert;
+use Nexmo;
 class TransactionController extends Controller
 {
     /**
@@ -41,6 +42,7 @@ class TransactionController extends Controller
         $sender_id=$account->id;
         //receiver_id
         $Racc=Account::whereAccount_number($request->account_number)->first();
+        $user=User::whereId($Racc->user_id)->first();
         $rid=$Racc->id;
         $transaction=new Transaction;
         $transaction->sender_id=$sender_id;
@@ -53,6 +55,11 @@ class TransactionController extends Controller
             $tt=Auth::user()->name;
             $message="{$tt} is requesting for {$request->amount}units";
             event(new TransactionEvent($message));
+            $mess=Nexmo::message()->send([
+                'to'=>$user->phone,
+                'from'=>'KWOR',
+                'text'=>"{$tt} is requesting for 400kwuo unit. visit your dashboard to reply"
+            ]);
             Alert::success('success','You have successfully sent a request');
             return redirect()->back()->with('status','You have successfully sent a request');
         }else{

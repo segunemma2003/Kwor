@@ -112,7 +112,7 @@ class UserController extends Controller
                 // $client=new Client($accountId,$authToken);
                 $mess=Nexmo::message()->send([
                     'to'=>$user->phone,
-                    'from'=>'KWOR',
+                    'from'=>'KWUO',
                     'text'=>"your verification code {$user->verified_link}"
                 ]);
                 // var_dump($mess);
