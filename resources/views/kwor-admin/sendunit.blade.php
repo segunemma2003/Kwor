@@ -13,7 +13,7 @@
                     <form>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Account Number*</label>
-                        <input type="number" placeholder="Account Number" class="form-control" name="account_number" value="{{old('account_number')}}">
+                        <input type="" placeholder="Account Number" class="form-control" name="account_number" value="{{old('account_number')}}">
                       </div>
                       <div class="form-group">       
                         <label class="form-control-label text-uppercase">Amount*</label>
