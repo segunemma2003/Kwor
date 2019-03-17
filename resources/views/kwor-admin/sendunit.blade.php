@@ -11,6 +11,7 @@
                   </div>
                   <div class="card-body">
                     <form method="post">
+                      @csrf
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Account Number*</label>
                         <input type="" placeholder="Account Number" class="form-control" name="account_number" value="{{old('account_number')}}">
