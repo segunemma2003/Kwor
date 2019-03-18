@@ -36,10 +36,10 @@
                           <td>{{$transact->amount}}</td>
                           <td>{{$transact->reason_payment}}</td>
                           <td>
-                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn">Accept</button> 
+                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn btn-success">Accept</button> 
                             </td>
                             <td>
-                              <button type="submit" class="btn">Reject</button>  
+                              <button type="submit" class="btn btn-danger">Reject</button>  
                             </td>
                         </tr>
                         @endforeach
