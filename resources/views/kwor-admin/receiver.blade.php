@@ -67,8 +67,11 @@
                   </div>
                   <div class="modal-body">
                     <form method="post">
-                    @csrf
-                    <input type="hidden" name="transaction_code" id="newcode">
+                      @csrf
+                      <input type="hidden" name="transaction_code" id="newcode">
+                      <input type="hidden" name="response" value="1">
+                      <input type="text" name="transfer_code" placeholder="input private key">
+                    <input type="submit">
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -89,7 +92,13 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                  <input type="hidden" name="transaction_code" id="newcode">
+                  <form method="post">
+                  @csrf
+                    <input type="hidden" name="response" value="2">
+                    <input type="text" name="reject" placeholder="reason for reject">
+                    <input type="hidden" name="transaction_code" id="newcode">
+                  <input type="submit">
+                  </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -100,7 +109,7 @@
             </div>
           </section>
         </div>
-        @push('script')
+        @push('scripts')
         function push(){
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;

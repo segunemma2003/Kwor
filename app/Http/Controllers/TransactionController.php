@@ -70,7 +70,83 @@ class TransactionController extends Controller
     }
     public function acceptRequest(Request $request)
     {
-        return;
+        $transact=Transaction::whereTransaction_code($request->transaction_code)->first();
+        $tt=Account::whereId($transact->receiver_id)->first();
+        if($request->response==1 && ($tt->balance >= $transact->amount))
+        {
+        
+        $transact->status=$request->response;
+        $transact->save();
+        $account=Account::whereId($transact->sender_id)->first();
+        $account->balance=$account->balance +$transact->amount;
+        $account->save();
+        $user=User::whereId($account->user_id)->first();
+        //receiver
+        $accounts=Account::whereId($transact->receiver_id)->first();
+        $accounts->balance=$accounts->balance - $transact->amount;
+        $accounts->save();
+        $userS=User::whereId($accounts->user_id)->first();
+        $mess=Nexmo::message()->send([
+            'to'=>$user->phone,
+            'from'=>'KWUO',
+            'text'=>"{$userS->name} accepted your request. Your new account balance is {$account->balance}"
+        ]);
+        $mes=Nexmo::message()->send([
+            'to'=>$userS->phone,
+            'from'=>'KWUO',
+            'text'=>"you just transferred {$transact->amount} unit(s) to {$user->name}. Your new account balance is {$accounts->balance}"
+        ]);
+        Alert::sucess('Success','You have successfully transferred the KWUO units');
+        return redirect()->back();
+        }elseif($request->response==1 && ($tt->balance >= $transact->amount)){
+            $transact->status=$request->response;
+            $transact->reason_reject="insufficient balance";
+            $transact->save();
+            
+            //hjdjh
+            $account=Account::whereId($transact->sender_id)->first();
+        // $account->balance=$account->balance +$transact->amount;
+        // $account->save();
+        $user=User::whereId($account->user_id)->first();
+        //receiver
+        $accounts=Account::whereId($transact->receiver_id)->first();
+        // $accounts->balance=$accounts->balance - $transact->amount;
+        // $accounts->save();
+        $userS=User::whereId($accounts->user_id)->first();
+        // hsb
+            $mess=Nexmo::message()->send([
+                'to'=>$user->phone,
+                'from'=>'KWUO',
+                'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+            ]);
+        Alert::error('error', 'Insufficient Kwuo Unit(s)');
+        return rediect()->back(); 
+        }else{
+            $transact->status=$request->response;
+            $transact->reason_reject=$request->reject;
+            $transact->save();
+            
+            //hjdjh
+            $account=Account::whereId($transact->sender_id)->first();
+        // $account->balance=$account->balance +$transact->amount;
+        // $account->save();
+        $user=User::whereId($account->user_id)->first();
+        //receiver
+        $accounts=Account::whereId($transact->receiver_id)->first();
+        // $accounts->balance=$accounts->balance - $transact->amount;
+        // $accounts->save();
+        $userS=User::whereId($accounts->user_id)->first();
+        // hsb
+            $mess=Nexmo::message()->send([
+                'to'=>$user->phone,
+                'from'=>'KWUO',
+                'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+            ]);
+        Alert::error('success', 'You rejected the request');
+        return redirect()->back();
+
+        }
+
     }
     public function request(Request $request)
     {
