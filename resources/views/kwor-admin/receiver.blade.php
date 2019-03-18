@@ -108,7 +108,7 @@
           </section>
         </div>
         @push('scripts')
-        function push(){
+        function Load(){
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;
           es=code;
