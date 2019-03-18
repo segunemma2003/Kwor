@@ -30,6 +30,60 @@ class AccountController extends Controller
     }
     public function Transfer(Request $request)
     {
+        $this->validate($request,[
+            "account_number"=>'required',
+            'amount'=>'required',
+            'purpose'=>'required',
+            'transfer_code'=>'required'
+        ]);
+                //sender_id
+                $user_id=Auth::user()->id;
+                $account=Account::whereUser_id($user_id)->first();
+                $sender_id=$account->id;
+                //receiver_id
+                $Racc=Account::whereAccount_number($request->account_number)->first();
+                $user=User::whereId($Racc->user_id)->first();
+                $rid=$Racc->id;
+            if($account->private_key==$request->transfer_code)
+            {
+                if($account->balance >= $request->amount)
+                {
+                    $account->balance=$account->balance-$request->amount;
+                    $account->save();
+                    $Racc->balance=$Racc->balance+$request->balance;
+                    $Racc->save();
+                    //transaction
+                    $transaction=new Transaction;
+                    $transaction->sender_id=$sender_id;
+                    $transaction->receiver_id=$rid;
+                    $transaction->amount=$request->amount;
+                    $transaction->reason_payment=$request->purpose;
+                    $transaction->status=1;
+                    $transaction->transaction_code=$this->generateKey();
+                    $transaction->save();
+                    $tt=Auth::user()->name;
+                    $mess=Nexmo::message()->send([
+                        'to'=>$user->phone,
+                        'from'=>'KWOR',
+                        'text'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
+                    ]);
+                    $mes=Nexmo::message()->send([
+                        'to'=>Auth::user()->phone,
+                        'from'=>'KWOR',
+                        'text'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
+                    ]);
+                    Alert::success('Success',"you just transferred {$request->amount} unit(s) to {$user->name}");
+                    return redirect()->back();
+                }else{
+                    Alert::error('error','insufficient unit');
+                    return redirect()->back();
+                }
+            }else{
+                Alert::error('error','Wrong private key');
+                return redirect()->back();
+            }
+
+                //
         return;
     }
     public function  LoadAccount(Request $request)
