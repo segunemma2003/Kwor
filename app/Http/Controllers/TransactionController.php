@@ -78,14 +78,18 @@ class TransactionController extends Controller
         $transact->status=$request->response;
         $transact->save();
         $account=Account::whereId($transact->sender_id)->first();
+        $accounts=Account::whereId($transact->receiver_id)->first();
+        $user=User::whereId($account->user_id)->first();
+        $userS=User::whereId($accounts->user_id)->first();
+        if($accounts->private_key==$request->transfer_code){
         $account->balance=$account->balance +$transact->amount;
         $account->save();
-        $user=User::whereId($account->user_id)->first();
+        
         //receiver
-        $accounts=Account::whereId($transact->receiver_id)->first();
+        
         $accounts->balance=$accounts->balance - $transact->amount;
         $accounts->save();
-        $userS=User::whereId($accounts->user_id)->first();
+        
         $mess=Nexmo::message()->send([
             'to'=>$user->phone,
             'from'=>'KWUO',
@@ -98,6 +102,15 @@ class TransactionController extends Controller
         ]);
         Alert::sucess('Success','You have successfully transferred the KWUO units');
         return redirect()->back();
+        }else{
+            $mess=Nexmo::message()->send([
+                'to'=>$user->phone,
+                'from'=>'KWUO',
+                'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+            ]);
+        Alert::error('error', 'Wrong Transfer code');
+        return rediect()->back();
+        }
         }elseif($request->response==1 && ($tt->balance >= $transact->amount)){
             $transact->status=$request->response;
             $transact->reason_reject="insufficient balance";
