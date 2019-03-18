@@ -38,10 +38,11 @@
                           <td>{{$transact->reason_payment}}</td>
 
                           <td>
-                             <button type = "button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Accept</button> 
+                          <input type="hidden" id="code" name="code" value="{{$transact->transaction_code}}">
+                             <button type = "button" onClick="Load()" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Accept</button> 
                             </td>
                             <td>
-                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#examplesModal">Reject</button>  
+                              <button type="button" onClick="Load()" class="btn btn-danger" data-toggle="modal" data-target="#examplesModal">Reject</button>  
                             </td>
                         </tr>
                         @endforeach
@@ -65,7 +66,10 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <form method="post">
+                    @csrf
+                    <input type="hidden" name="transaction_code" id="newcode">
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -85,7 +89,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                  <input type="hidden" name="transaction_code" id="newcode">
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -96,4 +100,12 @@
             </div>
           </section>
         </div>
+        @push('script')
+        function push(){
+          var code=document.getElementById('code').value;
+          var es=document.getElementById('newcode').value;
+          es=code;
+          console.log(es);
+        }
+        @endpush
 @endsection
