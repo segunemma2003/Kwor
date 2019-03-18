@@ -26,7 +26,7 @@
                       <div class="alert alert-primary">
                       No pending request
                       </div>
-                      endif
+                      @endif
                         @foreach($transactions as $transact)
                         {{$loop->index+1}}
                         @endforeach
