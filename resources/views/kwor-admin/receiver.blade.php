@@ -26,10 +26,12 @@
                       <div class="alert alert-primary">
                       No pending request
                       </div>
-                      @endif
+                      @else
                         @foreach($transactions as $transact)
                         {{$loop->index+1}}
                         @endforeach
+                      
+                      @endif
                         <tr>
                           <th scope="row"></th>
                           <td>Mark</td>
