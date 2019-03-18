@@ -107,12 +107,12 @@
             </div>
           </section>
         </div>
-        @push('scripts')
+       <script>
         function Load(){
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;
           es=code;
           console.log(es);
         }
-        @endpush
+        </script>
 @endsection
