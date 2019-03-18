@@ -6,8 +6,9 @@
                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted active"><i class="fa fa-coins mr-3 text-gray"></i><span>Account</span></a>
                 <div id="pages" class="collapse">
                   <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                    <li class="sidebar-list-item"><a href="{{URL('/user/requestunit')}}" class="sidebar-link text-muted pl-lg-5">Send Unit</a></li>
-                    <li class="sidebar-list-item"><a href="{{URL('/user/receiver')}}" class="sidebar-link text-muted pl-lg-5">Request Unit</a></li>
+                  <li class="sidebar-list-item"><a href="{{URL('/user/sendunit')}}" class="sidebar-link text-muted pl-lg-5">Transfer Unit</a></li>
+                    <li class="sidebar-list-item"><a href="{{URL('/user/requestunit')}}" class="sidebar-link text-muted pl-lg-5">Request for Unit</a></li>
+                    <li class="sidebar-list-item"><a href="{{URL('/user/receiver')}}" class="sidebar-link text-muted pl-lg-5">Verify units</a></li>
                     <li class="sidebar-list-item"><a href="{{URL('/user/buy')}}" class="sidebar-link text-muted pl-lg-5 active">Buy Unit</a></li>
                   </ul>
                 </div>
