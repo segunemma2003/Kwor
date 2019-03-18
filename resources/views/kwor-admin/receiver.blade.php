@@ -22,7 +22,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                    
+                      @if($transactions->isEmpty())
+                      <div class="alert alert-primary">
+                      No pending request
+                      </div>
+                      @endif
+                        @foreach($transactions as $transact)
+                        {{$loop->index+1}}
+                        @endforeach
                         <tr>
                           <th scope="row"></th>
                           <td>Mark</td>

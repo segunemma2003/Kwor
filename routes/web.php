@@ -40,11 +40,11 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/user/merc/create',function(){
         return view('kwor-admin.create_merch');
     });
-    Route::get('/user/receiver',function(){
-        return view('kwor-admin.receiver');
+    Route::get('/user/requestunit',function(){
+        return view('kwor-admin.requestunit');
     });
     Route::post('/user/receiver','TransactionController@acceptRequest');
-    Route::get('/user/requestunit',function(){
+    Route::get('/user/receiver',function(){
         $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
         $transactions=\App\Transaction::whereReceiver_id($account->id)->get();
         return view('kwor-admin.receiver',compact('transactions'));
