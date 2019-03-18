@@ -38,10 +38,10 @@
                           <td>{{$transact->reason_payment}}</td>
 
                           <td>
-                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn btn-success">Accept</button> 
+                             <button type = "button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Accept</button> 
                             </td>
                             <td>
-                              <button type="submit" class="btn btn-danger">Reject</button>  
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#examplesModal">Reject</button>  
                             </td>
                         </tr>
                         @endforeach
@@ -54,22 +54,42 @@
                 </div>
               </div>
             </div>
-            <!-- modal -->
-            <div class="modal" tabindex="-1" role="dialog">
+            <!-- modal for accept-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    ...
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal for reject -->
+            <div class="modal fade" id="examplesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
                 </div>
               </div>
