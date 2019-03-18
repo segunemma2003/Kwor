@@ -93,12 +93,12 @@ class RegisterController extends Controller
         // ]);
         QrCode::size(1000)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
         Mail::to($user->email)->send(new UserEmail($user));
-        $mess=Nexmo::message()->send([
-            'to'=>$user->phone,
-            'from'=>'KWOR',
-            'text'=>"Check your mail to verify your account"
-        ]);
-        Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
+        // $mess=Nexmo::message()->send([
+        //     'to'=>$user->phone,
+        //     'from'=>'KWOR',
+        //     'text'=>"Check your mail to verify your account"
+        // ]);
+        // Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
         }else{
             Alert::error('Registration Failed','Opps Something went wrong');
         }
