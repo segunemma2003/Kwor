@@ -28,6 +28,10 @@ class AccountController extends Controller
     public function genKeyExists($number){
         return Transaction::whereTransaction_code($number)->exists();
     }
+    public function Transfer(Request $request)
+    {
+        return;
+    }
     public function  LoadAccount(Request $request)
         {
           $account=Account::whereAccount_number($request->account_number)->first();

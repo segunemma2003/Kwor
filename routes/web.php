@@ -53,6 +53,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/user/sendunit',function(){
         return view('kwor-admin.sendunit');
     });
+    Route::post('/user/sendunit','AccountController@Transfer');
     Route::get('/user/transact',function(){
         return view('kwor-admin.transact');
     });
