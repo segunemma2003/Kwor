@@ -32,9 +32,11 @@
                         <tr>
                           <td scope="row">{{$loop->index+1}}
                        </td>
+                        <td></td>
                           <td>{{$transact->transaction_code}}</td>
                           <td>{{$transact->amount}}</td>
                           <td>{{$transact->reason_payment}}</td>
+
                           <td>
                              <button type = "button" value = "Click Me" onclick = "getValue();" class="btn btn-success">Accept</button> 
                             </td>
