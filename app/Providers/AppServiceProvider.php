@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('layouts.user.*', function ($view) {
             $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
-            $view->with('transactCount', Transaction::whereReceiver_id($account->id)->where('status', '>',0)->count());
+            $view->with('transactCount', Transaction::whereReceiver_id($account->id)->where('status', '==',0)->count());
         });
     }
 }
