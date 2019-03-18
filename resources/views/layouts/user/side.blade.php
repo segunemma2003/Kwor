@@ -8,7 +8,7 @@
                   <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                   <li class="sidebar-list-item"><a href="{{URL('/user/sendunit')}}" class="sidebar-link text-muted pl-lg-5">Transfer Unit</a></li>
                     <li class="sidebar-list-item"><a href="{{URL('/user/requestunit')}}" class="sidebar-link text-muted pl-lg-5">Request for Unit</a></li>
-                    <li class="sidebar-list-item"><a href="{{URL('/user/receiver')}}" class="sidebar-link text-muted pl-lg-5">Verify units <span class="badge badge-secondary"> 0 </span></a></li>
+                    <li class="sidebar-list-item"><a href="{{URL('/user/receiver')}}" class="sidebar-link text-muted pl-lg-5">Verify units <span class="badge badge-secondary"> {{$transactCount}} </span></a></li>
                     <li class="sidebar-list-item"><a href="{{URL('/user/buy')}}" class="sidebar-link text-muted pl-lg-5 active">Buy Unit</a></li>
                   </ul>
                 </div>

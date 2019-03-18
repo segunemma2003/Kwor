@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Transaction;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('layouts.user.*', function ($view) {
+            $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
+            $view->with('transactCount', Transaction::whereReceiver_id($account->id)->where('status', '>',0)->count());
+        });
     }
 }
