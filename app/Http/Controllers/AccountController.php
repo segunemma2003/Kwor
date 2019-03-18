@@ -48,6 +48,7 @@ class AccountController extends Controller
             {
                 if($account->balance >= $request->amount)
                 {
+                    dd($Racc);
                     $account->balance=$account->balance-$request->amount;
                     $account->save();
                     $Racc->balance=$Racc->balance+$request->balance;
