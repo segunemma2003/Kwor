@@ -28,46 +28,24 @@
                       </div>
                       @else
                         @foreach($transactions as $transact)
-                        {{$loop->index+1}}
+                        
+                        <tr>
+                          <td scope="row">{{$loop->index+1}}
+                       </td>
+                          <td>{{$transact->transaction_code}}</td>
+                          <td>{{$transact->amount}}</td>
+                          <td>{{$transact->reason_payment}}</td>
+                          <td>
+                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn">Accept</button> 
+                            </td>
+                            <td>
+                              <button type="submit" class="btn">Reject</button>  
+                            </td>
+                        </tr>
                         @endforeach
                       
                       @endif
-                        <tr>
-                          <th scope="row"></th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>
-                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn">Accept</button> 
-                            </td>
-                            <td>
-                              <button type="submit" class="btn">Reject</button>  
-                            </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>
-                            <button type = "button" value = "Click Me" onclick = "getValue();" class="btn">Accept</button> 
-                            </td>
-                            <td>
-                              <button type="submit" class="btn">Reject</button>  
-                            </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td>
-                             <button type = "button" value = "Click Me" onclick = "getValue();" class="btn">Accept</button> 
-                            </td>
-                            <td>
-                              <button type="submit" class="btn">Reject</button>  
-                            </td>
-                        </tr>
+                        
                       </tbody>
                     </table>
                   </div>
