@@ -15,7 +15,7 @@
                         <tr>
                           <th>No</th>
                           <th>Transaction_code</th>
-                          <th>Request_no</th>
+                          <th>Amount</th>
                           <th>Purpose</th>
                            <th>Action</th>
                            <th>Action</th>
