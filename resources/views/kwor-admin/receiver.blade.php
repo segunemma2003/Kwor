@@ -32,7 +32,7 @@
                         <tr>
                           <td scope="row">{{$loop->index+1}}
                        </td>
-                        <td></td>
+            
                           <td>{{$transact->transaction_code}}</td>
                           <td>{{$transact->amount}}</td>
                           <td>{{$transact->reason_payment}}</td>
