@@ -68,10 +68,10 @@
                   <div class="modal-body">
                     <form method="post">
                       @csrf
-                      <input  name="transaction_code" id="newcodes" onfocus="Load()">
+                      <input  name="transaction_code" id="newcodes">
                       <input type="hidden" name="response" value="1">
                       <input type="text" name="transfer_code" placeholder="input private key">
-                    <input type="submit" onclick="Load()">
+                    <input type="submit" >
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -111,9 +111,9 @@
         function Load(){
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode');
-          es.value=code;
+          
           var ess=document.getElementById('newcode');
-          ess.value=code;
+          ess.value=code,es.value=code;
           console.log(ess.value);
         // return es;
         }
