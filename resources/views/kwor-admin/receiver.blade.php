@@ -68,7 +68,7 @@
                   <div class="modal-body">
                     <form method="post">
                       @csrf
-                      <input type="hidden" name="transaction_code" id="newcodes">
+                      <input  name="transaction_code" id="newcodes">
                       <input type="hidden" name="response" value="1">
                       <input type="text" name="transfer_code" placeholder="input private key">
                     <input type="submit" onclick="Load()">
@@ -93,7 +93,7 @@
                   <div class="modal-body">
                   <form method="post">
                   @csrf
-                    <input type="hidden" name="response" value="2">
+                    <input name="response" value="2">
                     <input type="text" name="reject" placeholder="reason for reject">
                     <input type="hidden" name="transaction_code" id="newcode">
                   <input type="submit" onclick="Load()">
