@@ -88,12 +88,12 @@ class AccountController extends Controller
     }
     public function TransferApi(Request $request)
     {
-        $this->validate($request,[
-            "account_number"=>'required',
-            'amount'=>'required',
-            'purpose'=>'required',
-            'transfer_code'=>'required'
-        ]);
+        // $this->validate($request,[
+        //     "account_number"=>'required',
+        //     'amount'=>'required',
+        //     'purpose'=>'required',
+        //     'transfer_code'=>'required'
+        // ]);
                 //sender_id
                 $tE=User::whereEmail($request->email)->first();
                 $user_id=$tE->id;

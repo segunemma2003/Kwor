@@ -20,5 +20,5 @@ Route::post('/user/registration', 'UserController@register');
 Route::post('/user/login','UserController@login');
 Route::post('/user/request','TransactionController@request');
 Route::post('/user/response','TransactionController@response');
-Route::post('user/fund','AccountController@LoadAccount');
+Route::post('user/fund','AccountController@TransferApi');
 Route::post('/user/verify/','UserController@verifyApi');
