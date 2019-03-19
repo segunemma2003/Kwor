@@ -10,9 +10,7 @@ use App\Events\TransactionEvent;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/ussd/callback',function(){
-    return 'working';
-});
+Route::post('/ussd/callback','UssdController@index');
 Route::get('/pusher', function () {
     $message='hey';
     \Alert::message('message','You are welcome to my site ');
