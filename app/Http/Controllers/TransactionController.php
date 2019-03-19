@@ -53,7 +53,7 @@ class TransactionController extends Controller
         if($transaction->save())
         {
             $tt=Auth::user()->name;
-            $message="{$tt} is requesting for {$request->amount}units for {$request->purpose}";
+            $message="{$tt} is requesting for {$request->amount}units {$request->purpose}";
             event(new TransactionEvent($message));
             $mess=Nexmo::message()->send([
                 'to'=>$user->phone,
