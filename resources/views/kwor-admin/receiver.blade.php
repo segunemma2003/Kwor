@@ -68,7 +68,7 @@
                   <div class="modal-body">
                     <form method="post">
                       @csrf
-                      <input  name="transaction_code" id="newcodes">
+                      <input  name="transaction_code" id="newcodes" onfocus="Load()">
                       <input type="hidden" name="response" value="1">
                       <input type="text" name="transfer_code" placeholder="input private key">
                     <input type="submit" onclick="Load()">
@@ -117,5 +117,6 @@
           console.log(ess.value);
         // return es;
         }
+        
         </script>
 @endsection
