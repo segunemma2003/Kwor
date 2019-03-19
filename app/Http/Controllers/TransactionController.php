@@ -70,7 +70,7 @@ class TransactionController extends Controller
     }
     public function acceptRequest(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $transact=Transaction::whereTransaction_code($request->transaction_code)->first();
 
         $tt=Account::whereId($transact->receiver_id)->first();
