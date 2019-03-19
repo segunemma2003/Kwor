@@ -93,9 +93,9 @@
                   <div class="modal-body">
                   <form method="post">
                   @csrf
-                    <input name="response" value="2">
+                    <input type="hidden" name="response" value="2">
                     <input type="text" name="reject" placeholder="reason for reject">
-                    <input type="hidden" name="transaction_code" id="newcode">
+                    <input type="" name="transaction_code" id="newcode">
                   <input type="submit" onclick="Load()">
                   </form>
                   </div>
