@@ -39,7 +39,7 @@
 
                           <td>
                           <input type="hidden" id="code" name="code" value="{{$transact->transaction_code}}">
-                             <button type = "button" onClick="Load()" href="{{URL('/user/receiver/{$transact->transaction_code}')}}"class="btn btn-success" data-stoggle="modal" data-target="#exampleModal">Accept</button> 
+                             <button type = "button" onClick="Load()"class="btn btn-success" data-stoggle="modal" data-target="#exampleModal">Accept</button> 
                             </td>
                             <td>
                               <button type="button" onClick="Load()" class="btn btn-danger" data-toggle="modal" data-target="#examplesModal">Reject</button>  
@@ -112,7 +112,7 @@
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;
           es=code;
-        return true;
+        return es;
         }
         </script>
 @endsection
