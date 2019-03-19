@@ -65,12 +65,12 @@ class AccountController extends Controller
                     $tt=Auth::user()->name;
                     $mess=Nexmo::message()->send([
                         'to'=>$user->phone,
-                        'from'=>'KWOR',
+                        'from'=>'KWUO',
                         'text'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
                     ]);
                     $mes=Nexmo::message()->send([
                         'to'=>Auth::user()->phone,
-                        'from'=>'KWOR',
+                        'from'=>'KWUO',
                         'text'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
                     ]);
                     Alert::success('Success',"you just transferred {$request->amount} unit(s) to {$user->name}");
@@ -124,12 +124,12 @@ class AccountController extends Controller
                     $tt=$tE->name;
                     $mess=Nexmo::message()->send([
                         'to'=>$user->phone,
-                        'from'=>'KWOR',
+                        'from'=>'KWUO',
                         'text'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
                     ]);
                     $mes=Nexmo::message()->send([
                         'to'=>$tE->phone,
-                        'from'=>'KWOR',
+                        'from'=>'KWUO',
                         'text'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
                     ]);
                     // Alert::success('Success',"you just transferred {$request->amount} unit(s) to {$user->name}");
