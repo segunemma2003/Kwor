@@ -111,7 +111,7 @@ class TransactionController extends Controller
                         'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
                     ]);
                 Alert::error('error', 'Wrong Transfer code');
-                return rediect()->back();
+                return redirect()->back();
                 }   
         }elseif($request->response==1 && ($tt->balance >= $transact->amount)){
             $transact->status=$request->response;
