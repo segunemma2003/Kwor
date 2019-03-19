@@ -71,7 +71,7 @@
                       <input type="hidden" name="transaction_code" id="newcode">
                       <input type="hidden" name="response" value="1">
                       <input type="text" name="transfer_code" placeholder="input private key">
-                    <input type="submit">
+                    <input type="submit" onclick="Load()">
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -96,7 +96,7 @@
                     <input type="hidden" name="response" value="2">
                     <input type="text" name="reject" placeholder="reason for reject">
                     <input type="hidden" name="transaction_code" id="newcode">
-                  <input type="submit">
+                  <input type="submit" onclick="Load()">
                   </form>
                   </div>
                   <div class="modal-footer">
@@ -112,7 +112,7 @@
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;
           es=code;
-        return es;
+        return true;
         }
         </script>
 @endsection
