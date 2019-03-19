@@ -43,7 +43,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/user/requestunit',function(){
         return view('kwor-admin.requestunit');
     });
-    Route::post('/user/requestuni/{id}','TransactionController@webRequest');
+    Route::post('/user/requestunit','TransactionController@webRequest');
     Route::post('/user/receiver','TransactionController@acceptRequest');
     Route::get('/user/receiver',function(){
         $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
