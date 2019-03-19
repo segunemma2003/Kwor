@@ -112,7 +112,7 @@
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode').value;
           es=code;
-          console.log(es);
+        return es;
         }
         </script>
 @endsection
