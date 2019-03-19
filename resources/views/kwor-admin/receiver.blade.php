@@ -110,11 +110,11 @@
        <script>
         function Load(){
           var code=document.getElementById('code').value;
-          var es=document.getElementById('newcode').value;
-          es=code;
-          var ess=document.getElementById('newcode').value;
-          ess=code;
-          return ess;
+          var es=document.getElementById('newcode');
+          es.value=code;
+          var ess=document.getElementById('newcode');
+          ess.value=code;
+          console.log(ess.value);
         // return es;
         }
         </script>
