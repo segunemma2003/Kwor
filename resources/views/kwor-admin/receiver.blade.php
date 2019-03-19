@@ -111,9 +111,9 @@
         function Load(){
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode');
-          
-          var ess=document.getElementById('newcode');
-          ess.value=code,es.value=code;
+          es.value=code;
+          var ess=document.getElementById('newcodes');
+          ess.value=code;
           console.log(ess.value);
         // return es;
         }
