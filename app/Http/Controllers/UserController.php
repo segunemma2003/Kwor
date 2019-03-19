@@ -162,7 +162,8 @@ class UserController extends Controller
                     "message"=>"You have successfully login",
                     "account_number"=>$user->phone,
                     "private_key"=>$user->account->private_key,
-                    "balance"=>$user->account->balance
+                    "balance"=>$user->account->balance,
+                    'email'=>$user->email
                     
                 ]);
                 }
