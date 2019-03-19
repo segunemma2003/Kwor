@@ -85,7 +85,74 @@ class AccountController extends Controller
             }
 
                 //
-        return;
+    }
+    public function TransferApi(Request $request)
+    {
+        $this->validate($request,[
+            "account_number"=>'required',
+            'amount'=>'required',
+            'purpose'=>'required',
+            'transfer_code'=>'required'
+        ]);
+                //sender_id
+                $tE=User::whereEmail($request->email)->first();
+                $user_id=$tE->id;
+                $account=Account::whereUser_id($user_id)->first();
+                $sender_id=$account->id;
+                //receiver_id
+                $Racc=Account::whereAccount_number($request->account_number)->first();
+                $user=User::whereId($Racc->user_id)->first();
+                $rid=$Racc->id;
+            if($account->private_key==$request->transfer_code)
+            {
+                if($account->balance >= $request->amount)
+                {
+                    // dd($Racc);
+                    $account->balance=$account->balance-$request->amount;
+                    $account->save();
+                    $Racc->balance=$Racc->balance+$request->amount;
+                    $Racc->save();
+                    //transaction
+                    $transaction=new Transaction;
+                    $transaction->sender_id=$sender_id;
+                    $transaction->receiver_id=$rid;
+                    $transaction->amount=$request->amount;
+                    $transaction->reason_payment=$request->purpose;
+                    $transaction->status=1;
+                    $transaction->transaction_code=$this->generateKey();
+                    $transaction->save();
+                    $tt=$tE->name;
+                    $mess=Nexmo::message()->send([
+                        'to'=>$user->phone,
+                        'from'=>'KWOR',
+                        'text'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
+                    ]);
+                    $mes=Nexmo::message()->send([
+                        'to'=>$tE->phone,
+                        'from'=>'KWOR',
+                        'text'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
+                    ]);
+                    // Alert::success('Success',"you just transferred {$request->amount} unit(s) to {$user->name}");
+                    return response()->json([
+                        "status"=>200,
+                        "message"=>"transfer successful"
+                    ]);
+                }else{
+                    // Alert::error('error','insufficient unit');
+                    return response()->json([
+                        "status"=>305,
+                        "message"=>"insufficient  balance"
+                    ]);
+                }
+            }else{
+                // Alert::error('error','Wrong private key');
+                return redirect()->json([
+                    "status"=>405,
+                    "message"=>'Wrong private key'
+                ]);
+            }
+
+                //
     }
     public function  LoadAccount(Request $request)
         {
