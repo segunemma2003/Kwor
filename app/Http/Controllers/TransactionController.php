@@ -68,10 +68,10 @@ class TransactionController extends Controller
         }
 
     }
-    public function acceptRequest(Request $request,$i)
+    public function acceptRequest(Request $request)
     {
-        dd($i);
-        $transact=Transaction::whereTransaction_code($i)->first();
+        dd($request->all());
+        $transact=Transaction::whereTransaction_code($request->transaction_code)->first();
 
         $tt=Account::whereId($transact->receiver_id)->first();
         if($request->response==1 && ($tt->balance >= $transact->amount))
