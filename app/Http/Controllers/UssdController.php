@@ -8,10 +8,10 @@ class UssdController extends Controller
 {
     public function index(Request $request)
     {
-        $sessionId   = $_POST["sessionId"];
-        $serviceCode = $_POST["serviceCode"];
-        $phoneNumber = $_POST["phoneNumber"];
-        $text        = $_POST["text"];
+        $sessionId   = $request->sessionId;
+        $serviceCode = $request->serviceCode;
+        $phoneNumber = $request->phoneNumber;
+        $text        = $request->text;
 
         if ($text == "") {
             // This is the first request. Note how we start the response with CON
