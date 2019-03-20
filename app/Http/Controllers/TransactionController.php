@@ -18,6 +18,7 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function generateKey(){
         $number =uniqid();
         if($this->genKeyExists($number)){

@@ -55,9 +55,7 @@ Route::group(['middleware'=>'auth'],function(){
         return view('kwor-admin.sendunit');
     });
     Route::post('/user/sendunit','AccountController@Transfer');
-    Route::get('/user/transact',function(){
-        return view('kwor-admin.transact');
-    });
+    Route::get('/user/transact','TransactionController@index');
     Route::get('/user/merc/transact',function(){
         return view('kwor-admin.view-merchant');
     });
