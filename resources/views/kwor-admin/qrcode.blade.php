@@ -11,7 +11,7 @@
                   </div>
                   <div class="card-body">
                     {{QrCode::backgroundColor(255, 255, 0)->color(255, 0, 127)
-                   ->size(500)->generate('Welcome to kerneldev.com!'); }}
+                   ->size(500)->generate('Welcome to kerneldev.com!') }}
                   </div>
                 </div>
               </div>
