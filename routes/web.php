@@ -33,7 +33,9 @@ Route::get('user/logout',function(){
 Auth::routes();
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/users',function(){
-        return view('kwor-admin.index');
+        $account=\App\Account::whereUser_id(Auth::user()->id)->first();
+        $transaction=\App\Transaction::Sender_id($account->id)->first();
+        return view('kwor-admin.index',compact('account','transaction'));
     });
     Route::get('/user/buy',function(){
         return view('kwor-admin.buy_unit');

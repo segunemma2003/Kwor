@@ -9,7 +9,8 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Total kwuo Units</h6><span class="text-white">145,14 GB</span>
+                      <h6 class="mb-0">Total kwuo Units</h6><span class="text-white">{{$account->balance}} kwuo unit(s)
+                      </span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fa fa-coins"></i></div>
@@ -20,7 +21,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Data consumed</h6><span class="text-white">145,14 GB</span>
+                      <h6 class="mb-0">Total kwor unit spent</h6><span class="text-white">{{$transaction->sum('amount')}}</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-server"></i></div>
