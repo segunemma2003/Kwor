@@ -11,7 +11,7 @@
                     </h3>
                   </div>
                   <div class="card-body">
-                    {{$qr}}
+                    {!! $qr !!}
                   </div>
                 </div>
               </div>
