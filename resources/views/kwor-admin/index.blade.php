@@ -32,7 +32,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Number  of Transactions</h6><span class="text-white">count($transaction)</span>
+                      <h6 class="mb-0">Number  of Transactions</h6><span class="text-white">{{count($transaction)}}</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-dolly-flatbed"></i></div>
