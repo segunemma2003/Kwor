@@ -52,7 +52,7 @@
             </div> -->
           </section>
           <section>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               <div class="col-lg-7 mb-4 mb-lg-0">
                 <div class="card">
                   <div class="card-header coins">
@@ -230,7 +230,7 @@
                   </div>
                 </div><br>
               </div>
-            </div>
+            </div> -->
           </section>
         </div>
     @endsection
