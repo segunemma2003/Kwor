@@ -233,7 +233,7 @@ class AccountController extends Controller
             $user=User::whereId(Auth::user()->id)->first();
             $account=Account::whereUser_id($user->id)->first();
             $qr=QrCode::backgroundColor(100,255,100)->color(255, 255, 255)
-                   ->size(350)->generate($account->account_number); 
+                   ->size(350)->generate($account->account_number,$user->name); 
             return view('kwor-admin.qrcode',compact('qr'));
         }
 }
