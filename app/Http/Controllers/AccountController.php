@@ -9,6 +9,7 @@ use Paystack;
 use Alert;
 use Nexmo;
 use Auth;
+use QrCode;
 class AccountController extends Controller
 {
     /**
