@@ -286,10 +286,16 @@ class TransactionController extends Controller
         public function index()
         {
             $account=Account::whereUser_id(\Auth::user()->id)->first();
+            $date = \Carbon\Carbon::today()->subDays(7);
             $transactions=Transaction::whereSender_id($account->id)
             ->OrWhere('receiver_id',$account->id)
             ->orderBy('id','desc')
             ->get();
-            return view('kwor-admin.transact',compact('transactions'));
+            $transact=Transaction::whereReceiver_id($account->id)->where('created_at', '>=', $date)
+            ->get();
+            $stransact=Transaction::whereSender_id($account->id)
+            ->where('created_at', '>=', $date)->get();
+            $allta=Transaction::whereSender_id($account->id)->get();
+            return view('kwor-admin.transact',compact('allta','transactions','stransact','transact'));
         }
     }

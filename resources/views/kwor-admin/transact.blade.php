@@ -9,7 +9,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Local payments in the past 7days</h6><br><span class="text-white">&#8358;145,14 GB</span>
+                      <h6 class="mb-0">Total payments in the past 7days</h6><br><span class="text-white">{{$stransact->sum('amount')}} kwuo unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-clock"></i></div>
@@ -20,7 +20,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Local payments in the past 7days</h6><br><span class="text-white">&#8358;145,14 GB</span>
+                      <h6 class="mb-0">Total received Kwuo unit(s) in the past 7days</h6><br><span class="text-white">{{$transact->sum('amount')}} Kwuo unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-clock"></i></div>
@@ -31,7 +31,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Local total payments till date</h6><br><span class="text-white">&#8358;400</span>
+                      <h6 class="mb-0">Total  payments made till date</h6><br><span class="text-white">{{$allta->sum('amount')}}</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-calendar"></i></div>
@@ -42,7 +42,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
                     <div class="text">
-                      <h6 class="mb-0">Foreign total payments till date</h6><br><span class="text-white">$123</span>
+                      <h6 class="mb-0">Total received kwuo unit(s) made till date</h6><br><span class="text-white">{{$allre->sum('amount')}}</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-red"><i class="fas fa-calendar"></i></div>
