@@ -65,9 +65,9 @@
                           <th>Amount(Kwuo unit(s))</th>
                           <th>Description</th>
                           <th>account Name</th>
+                           <th>Account owner</th>
                            <th>Status</th>
                            <th>Date</th>
-                           <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -82,6 +82,7 @@
                           <td>{{$transac->amount}}</td>
                           <td>{{$transac->reason_payment}}</td>
                           <td>{{$transac->accountR->account_name}}</td>
+                          <td>{{$transac->accountR->user->name}}</td>
                           <td><?php
                           if($transac->status==0){
                             echo "pending";
