@@ -17,7 +17,7 @@ Route::get('/pusher', function () {
     event(new TransactionEvent($message));
     return view('pusher');
 });
-Route::get('/user/qrcode',"AccountController@index");
+Route::get('/user/qrcode',"AccountController@index")->middleware('auth');
 Route::get('/', function () {
     return view('index');
 });
