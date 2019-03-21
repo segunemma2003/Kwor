@@ -296,6 +296,7 @@ class TransactionController extends Controller
             $stransact=Transaction::whereSender_id($account->id)
             ->where('created_at', '>=', $date)->get();
             $allta=Transaction::whereSender_id($account->id)->get();
-            return view('kwor-admin.transact',compact('allta','transactions','stransact','transact'));
+            $allre=Transaction::whereReceiver_id($account->id)->get();
+            return view('kwor-admin.transact',compact('allre','allta','transactions','stransact','transact'));
         }
     }
