@@ -25,7 +25,7 @@
 @include('sweet::alert')
     <div id="preloader">
         <div class="kwuo-load"></div>
-    </div>
+</div>
 
     <!-- ***** Header Area Start ***** -->
     <header class="header_area animated">
@@ -36,20 +36,20 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#home">kwuö</a>
+                            <a class="navbar-brand" href="#home"><img src="{{asset('kwor-admin/img/core-img/Josh%20logos.svg')}}" style="width: 150px;"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#features">Benefits</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
                                     <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
                                 </ul>
-                                <div class="sing-up-button d-lg-none">
-                                     <a href="{{URL('register')}}" class="">Create Account</a>
+                                <div class=" d-lg-none">
+                                      <a href="{{URL('/register')}}"><button type="button" class="btn btn-success">Sign Up</button></a>
                                 </div>
                             </div>
                         </nav>
@@ -57,8 +57,8 @@
                 </div>
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
-                    <div class="sing-up-button d-none d-lg-block">
-                        <a href="{{URL('/register')}}" class="">Create Account</a>
+                    <div class=" d-none d-lg-block">
+                         <a href="{{URL('/register')}}"><button type="button" class="btn btn-success">Sign Up</button></a>
                     </div>
                 </div>
             </div>
@@ -73,32 +73,29 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                      <div class="wellcome-heading">
-                        	<h2>Kwuo <span class="typed" style="color: black;"></span></h2>
+                        	<h2>payments are <span class="typed" style="color: black;"></span></h2>
                         <h3>K</h3>
-                        <p style="font-size: 25px;">kwuö is a lifestyle payment service that offers <br> you a cheaper and seamless way to send, request, <br> and recieve money, pay merchants and bills from <br>the convenience of your mobile phone.</p>
-                    </div>
-                    <div class="get-start-area" style="margin-top: -40px;">
-                        <!-- Form Start -->
-                        <a href="#contact"><button type="button" class="btn btn-success">Get Started</button></a>
+                        <p style="font-size: 25px;">kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
+                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Welcome thumb -->
         <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-            <img src="{{ asset('img/bg-img/welcome-img.png') }}" alt="">
+            <img src="{{asset('kwor-admin/img/bg-img/welcome-img.png')}}" alt="">
         </div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
 
     <!-- ***** Special Area Start ***** -->
-    <section class="special-area bg-white section_padding_100" id="about">
+    <section class="special-area  section_padding_100" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <!-- Section Heading Area -->
                     <div class="section-heading text-center">
-                        <h2>Why Is It Special</h2>
+                        <h2 style="color: #005502;">Simple, Secured and Reliable Payments</h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -109,30 +106,30 @@
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="single-icon">
-                            <i class="ti-mobile" aria-hidden="true"></i>
+                             <img src="{{ asset('kwor-admin/my-icons-collection/svg/user-experience.svg') }}" height="50px"; width="50px";>
                         </div>
-                        <h4>Easy to use</h4>
-                        <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                        <h4 style="color: #005502;" >Easy to use</h4>
+                        <p>We made it so simple to use that almost anyone can use this no matter their age</p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                         <div class="single-icon">
-                            <i class="ti-ruler-pencil" aria-hidden="true"></i>
+                            <img src="{{ asset('kwor-admin/my-icons-collection/svg/multitask.svg') }}" height="50px"; width="50px";>
                         </div>
-                        <h4>Powerful Design</h4>
-                        <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                        <h4 style="color: #005502;">Multi-purpose</h4>
+                        <p>Use kwụọ to pay your bills. Send money to people in your life. All in one place</p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                            <i class="ti-settings" aria-hidden="true"></i>
+                             <img src="{{ asset('kwor-admin/my-icons-collection/svg/credit-card.svg')}}" height="50px"; width="50px";>
                         </div>
-                        <h4>Customizability</h4>
-                        <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                        <h4 style="color: #005502;">Secured</h4>
+                        <p>Feel free. All your transactions goes through a strict security compliance system.</p>
                     </div>
                 </div>
             </div>
@@ -143,17 +140,19 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="special_description_img">
-                            <img src="{{ asset('img/bg-img/special.png') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/bg-img/Our%20best%20proposition.svg')}}" alt="" class="animated pulse infinite" style="animation-duration: 1.9s;">
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
                         <div class="special_description_content">
-                            <h2>Our Best Propositions for You!</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <h3 style="color: #005502;">Our best propositions for you!</h3>
+                            <p>kwụọ is the super power to receive more money. Provide your customers with a unique payment experience that is painless and frictionless without the headache associated with other means. 
+                                Let anyone pay you without leaving their comfort zone. Whether it's your family or friends or customers.
+                            </p>
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
                                     <!-- Google Store Btn -->
-                                    <a href="#">
+                                    <a href="#" style="border-radius: 0px;">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                         width="24" height="24"
                                         viewBox="0 0 48 48"
@@ -163,7 +162,7 @@
                                 </div>
                                 <div class="app-download-btn wow fadeInDown" data-wow-delay="0.4s">
                                     <!-- Apple Store Btn -->
-                                    <a href="#">
+                                    <a href="#" style="border-radius: 0px;">
                                         <i class="fa fa-apple"></i>
                                         <p class="mb-0"><span>available on</span> Apple Store</p>
                                     </a>
@@ -178,13 +177,13 @@
     <!-- ***** Special Area End ***** -->
 
     <!-- ***** Awesome Features Start ***** -->
-    <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+    <section class="awesome-feature-area  section_padding_0_50 clearfix" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <!-- Heading Text -->
                     <div class="section-heading text-center">
-                        <h2>Awesome Features</h2>
+                        <h2 style="color: #005502;">Why kwụọ? </h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -192,51 +191,45 @@
 
             <div class="row">
                 <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-5">
                     <div class="single-feature">
-                        <i class="ti-user" aria-hidden="true"></i>
-                        <h5>Awesome Experience</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <img src="{{asset('kwor-admin/my-icons-collection/svg/013-settings.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Easy setup</h5>
+                        <p>Getting started is quite easy. Simply download our app from your phone app store and sign up to start using kwụọ.</p>
+                    </div>
+                      <div class="single-feature">
+                        <img src="{{asset('kwor-admin/my-icons-collection/svg/001-money-1.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Multi payment channels</h5>
+                        <p>Send money with any payment channel that suits you. Pay with your debit card, bank account, USSD or QR code.</p>
+                    </div>
+                     <div class="single-feature">
+                         <img src="{{asset('kwor-admin/my-icons-collection/svg/002-money.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Pay for anything</h5>
+                        <p>People use Kwuo to pay for their internet, airtime, electricity, food, transportation, rents and other utility bills.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-pulse" aria-hidden="true"></i>
-                        <h5>Fast and Simple</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
+                <div class="col-12 col-sm-6 col-lg-2 text-center">
+                    <div class="single-shot" style="margin-top: 70px;">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-1.jpg')}}" alt="">
+                        </div><br><br>
                 </div>
                 <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-5">
                     <div class="single-feature">
-                        <i class="ti-dashboard" aria-hidden="true"></i>
-                        <h5>Instant Bank Transfer</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <img src="{{asset('kwor-admin/my-icons-collection/svg/007-money-3.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Pay anyone</h5>
+                        <p>You don't need account numbers to send money to anyone. Just use their phone number and they can receive money from you.</p>
                     </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-palette" aria-hidden="true"></i>
-                        <h5>Card Payments</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <div class="single-feature">
+                       <img src="{{asset('kwor-admin/my-icons-collection/svg/money.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Instant bank transfer</h5>
+                        <p>Want to stress yourself a bit carrying cash or swim in bank charges? Push a button and your money lands in your bank account.</p>
                     </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
-                        <i class="ti-crown" aria-hidden="true"></i>
-                        <h5>Naira Numbers</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-headphone" aria-hidden="true"></i>
-                        <h5>24/7 Online Support</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <img src="{{asset('kwor-admin/my-icons-collection/svg/qr-code.svg')}}" height="50px"; width="50px";>
+                        <h5 style="color: #005502;">Responsive support</h5>
+                        <p>If you miss anything, chill. Just get in touch with us and our ever responsive world class team would be glad to assist you.</p>
                     </div>
                 </div>
             </div>
@@ -248,55 +241,49 @@
     <!-- ***** Cool Facts Area Start ***** -->
     <section class="cool_facts_area clearfix">
         <div class="container">
-             <div class="section-heading text-center">
-                        <h2>Who can benefit from kwuö?</h2>
-                        <div class="line-shape"></div>
-                    </div>
             <div class="row">
                 <!-- Single Cool Fact-->
-                <div class="col-12 col-md-4 col-lg-4">
-                   <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="single-icon">
-                            <i class="ti-user" aria-hidden="true"></i>
-                        </div>
-                        <h4>Users</h4>
-                        <p>Anyone (18+) can register on kwuö to enjoy various payment options, sell items and enjoy free and secure online payments.</p>
+                <div class="col-12 col-md-6 col-lg-6">
+                   <div class=" wow fadeInUp" data-wow-delay="0.2s" style="text-align: justify;">
+                        <div class="single-special wow fadeInUp" data-wow-delay="0.2s" style="border: 0px;">
+                            <h2>kwụọ for anyone</h2>
+                        <h6>Anyone who wants to pay anyone or for anything or receive money from anyone can use kwụọ to do it easily. Unlike your bank apps, there's no hidden charges or frictions in each transactions.</h6>
                     </div>
                 </div>
-                <!-- Single Cool Fact-->
-                <div class="col-12 col-md-4 col-lg-4">
-                   <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="single-icon">
-                            <i class="ti-credit-card" aria-hidden="true"></i>
-                        </div>
-                        <h4>Agents</h4>
-                        <p>Sign up as an agent to sell naira numbers and earn up to 50% commission on our USSD products. Here is a chance to earn extra income.</p>
-                    </div>
                 </div>
                 <!-- Single Cool Fact-->
-                <div class="col-12 col-md-4 col-lg-4">
-                   <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="single-icon">
-                            <i class="ti-support" aria-hidden="true"></i>
+                <div class="col-12 col-md-6 col-lg-6 text-center">
+                    <div class="special_description_img">
+                            <img src="{{asset('kwor-admin/img/bg-img/Single%20user.svg')}}" alt="" style="height: 200px; width: 400px; animation-duration: 1.9s" class="animated pulse infinite">
                         </div>
-                        <h4>Businesses</h4>
-                        <p>kwuö enables any merchant to have a USSD code for transactions free for life. No need to worry about Internet connectivity.</p>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-6 col-lg-6">
+                   <div class="special_description_img">
+                            <img src="{{asset('kwor-admin/img/bg-img/Business%20vector.svg')}}" alt="" style="height: 200px; width: 400px; animation-duration: 1.8s;" class="animated pulse infinite">
+                        </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-6 col-lg-6">
+                        <div class="single-special wow fadeInUp" data-wow-delay="0.2s" style="border: 0px;">
+                        <h2>kwụọ for business owners</h2>
+                        <h6>Sell more. Stop losing money. Gift your customers a unique payment experience to pay your more. We've made it our duty to make it simple to use so that your business can succeed.</h6>
                     </div>
                 </div>
                 
             </div>
-        </div>
+            </div>
     </section>
     <!-- ***** Cool Facts Area End ***** -->
 
     <!-- ***** App Screenshots Area Start ***** -->
-    <section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+    <section class="app-screenshots-area section_padding_0_100 clearfix" id="screenshot" style="background-color: #fff8e1;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <!-- Heading Text  -->
                     <div class="section-heading">
-                        <h2>App Screenshots</h2>
+                        <h2 style="color: #005502;" >App Screenshots</h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -308,22 +295,22 @@
                     <!-- App Screenshots Slides  -->
                     <div class="app_screenshots_slides owl-carousel">
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-1.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-1.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-2.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-2.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-3.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-3.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-4.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-4.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-5.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-5.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="{{ asset('img/scr-img/app-3.jpg') }}" alt="">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-3.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -340,88 +327,54 @@
                 <div class="col-md-8">
                     <div class="membership-description">
                         <h2>Subscribe for our Newsletter</h2>
-                        <p>Get the latest updates on kwuö.</p>
+                        <p>Get the latest updates on kwụọ.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
-                        <a href="#contact">Get Started</a>
+                       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Subscribe</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Subscribe for our Newsletter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Name:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Email:</label>
+                    <input type="email" class="form-control" id="recipient-email">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+          </div>
         </div>
     </section>
     <!-- ***** CTA Area End ***** -->
 
 
-    <!-- ***** Contact Us Area Start ***** -->
-    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Heading Text  -->
-                    <div class="section-heading">
-                        <h2>Get in touch with us!</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                    <div class="footer-text">
-                        <p>We'll send you epic weekly blogs, whitepapers and things to make your app startup thrive, all FREE!</p>
-                    </div>
-                    <div class="address-text">
-                        <p><span>Address:</span> 5th Floor 62 Asa Rd by Ehi Rd Aba, Abia State.</p>
-                    </div>
-                    <div class="phone-text">
-                        <p><span>Phone:</span> +234 309 079 49</p>
-                    </div>
-                    <div class="email-text">
-                        <p><span>Email:</span> info@ighub.com.ng</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <!-- Form Start-->
-                    <div class="contact_from">
-                        <form action="#" method="post">
-                            <!-- Message Input Area Start -->
-                            <div class="contact_input_area">
-                                <div class="row">
-                                    <!-- Single Input Area Start -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
-                                        </div>
-                                    </div>
-                                    <!-- Single Input Area Start -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your E-mail" required>
-                                        </div>
-                                    </div>
-                                    <!-- Single Input Area Start -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Your Message *" required></textarea>
-                                        </div>
-                                    </div>
-                                    <!-- Single Input Area Start -->
-                                    <div class="col-12">
-                                        <button type="submit" class="btn submit-btn">Send Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Message Input Area End -->
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Contact Us Area End ***** -->
+
 
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
         <div class="footer-text">
-            <h2>kwuö</h2>
+            <h2>kwụọ</h2>
         </div>
         <!-- social icon-->
         <div class="footer-social-icon">
@@ -442,7 +395,7 @@
         </div>
         <!-- Foooter Text-->
         <div class="copyright-text">
-            <p>Copyright ©2019 kwuö. Designed by <a href="https://colorlib.com" target="_blank">IgHub</a></p>
+            <p>Copyright ©2019 kwụọ. Made with <i class="ti-heart" aria-hidden="true" style="color: red;"></i> by IgHub</p>
         </div>
     </footer>
     <!-- ***** Footer end ***** -->
