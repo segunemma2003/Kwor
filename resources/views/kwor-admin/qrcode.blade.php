@@ -11,7 +11,7 @@
                     </h3>
                   </div>
                   <div class="card-body">
-                <div id="qr">
+                <div id="qr" class="col-md-offset-3 col-md-6">
                     {!! $qr !!}
                 </div>
                   <button onclick="printInfo()">Print Qrcode</button>
