@@ -288,7 +288,7 @@ class TransactionController extends Controller
             $account=Account::whereUser_id(\Auth::user()->id)->first();
             $transactions=Transaction::whereSender_id($account->id)
             ->OrWhere('receiver_id',$account->id)
-            ->orderBy('desc')
+            ->orderBy('id','desc')
             ->get();
             return view('kwor-admin.transact',compact('transactions'));
         }
