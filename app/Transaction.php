@@ -9,6 +9,6 @@ class Transaction extends Model
     protected $guarded=['id'];
 
     public function accountR(){
-        return $this->belongsTo(App\Account,'receiver_id');
+        return $this->belongsTo('App\Account','receiver_id');
     }
 }
