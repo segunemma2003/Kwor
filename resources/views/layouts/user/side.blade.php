@@ -3,7 +3,7 @@
         <div class="text-black-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" style="color: green;">my Kwuo account</div>
         <ul class="sidebar-menu list-unstyled">
               <li class="sidebar-list-item"><a href="{{URL('/users')}}" class="sidebar-link text-muted"><i class="fa fa-gift mr-3 text-gray"></i><span>Dashboard</span></a></li>
-                <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted active"><i class="fa fa-coins mr-3 text-gray"></i><span>Account</span></a>
+                <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="fa fa-coins mr-3 text-gray"></i><span>Account</span></a>
                 <div id="pages" class="collapse">
                   <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                   <li class="sidebar-list-item"><a href="{{URL('/user/sendunit')}}" class="sidebar-link text-muted pl-lg-5">Transfer Unit</a></li>
