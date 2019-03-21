@@ -91,7 +91,7 @@
                             echo "rejected";
                           }
                           ?></td>
-                          <td>{{$transac->created_at->diffHumans()}}</td>
+                          <td>{{$transac->created_at}}</td>
                         </tr>
                         @endforeach
                         @endif
