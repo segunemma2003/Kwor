@@ -55,7 +55,7 @@
               <div class="col-lg-9 mb-9">
                 <div class="card">
                   <div class="card-header coins">
-                    <h6 class="text-uppercase mb-0">Striped table with hover effect</h6>
+                    <h6 class="text-uppercase mb-0">Past Transactions</h6>
                   </div>
                   <div class="card-body">                           
                     <table class="table table-striped table-hover card-text table-responsive">
