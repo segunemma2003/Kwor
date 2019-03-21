@@ -58,11 +58,11 @@ class TransactionController extends Controller
             $tt=Auth::user()->name;
             $message="{$tt} is requesting for {$request->amount}units {$request->purpose}";
             event(new TransactionEvent($message));
-            $mess=Nexmo::message()->send([
-                'to'=>$user->phone,
-                'from'=>'KWUO',
-                'text'=>"{$tt} is requesting for {$request->amount} unit(s) for {$request->purpose}. visit your dashboard to reply"
-            ]);
+            // $mess=Nexmo::message()->send([
+            //     'to'=>$user->phone,
+            //     'from'=>'KWUO',
+            //     'text'=>"{$tt} is requesting for {$request->amount} unit(s) for {$request->purpose}. visit your dashboard to reply"
+            // ]);
             Alert::success('success','You have successfully sent a request');
             return redirect()->back()->with('status','You have successfully sent a request');
         }else{
@@ -99,24 +99,24 @@ class TransactionController extends Controller
                 $accounts->balance=$accounts->balance - $transact->amount;
                 $accounts->save();
         
-                $mess=Nexmo::message()->send([
-                    'to'=>$user->phone,
-                    'from'=>'KWUO',
-                    'text'=>"{$userS->name} accepted your request. Your new account balance is {$account->balance}"
-                ]);
-                $mes=Nexmo::message()->send([
-                    'to'=>$userS->phone,
-                    'from'=>'KWUO',
-                    'text'=>"you just transferred {$transact->amount} unit(s) to {$user->name}. Your new account balance is {$accounts->balance}"
-                ]);
+                // $mess=Nexmo::message()->send([
+                //     'to'=>$user->phone,
+                //     'from'=>'KWUO',
+                //     'text'=>"{$userS->name} accepted your request. Your new account balance is {$account->balance}"
+                // ]);
+                // $mes=Nexmo::message()->send([
+                //     'to'=>$userS->phone,
+                //     'from'=>'KWUO',
+                //     'text'=>"you just transferred {$transact->amount} unit(s) to {$user->name}. Your new account balance is {$accounts->balance}"
+                // ]);
                 Alert::sucess('Success','You have successfully transferred the KWUO units');
                 return redirect()->back();
                 }else{
-                    $mess=Nexmo::message()->send([
-                        'to'=>$user->phone,
-                        'from'=>'KWUO',
-                        'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
-                    ]);
+                    // $mess=Nexmo::message()->send([
+                    //     'to'=>$user->phone,
+                    //     'from'=>'KWUO',
+                    //     'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+                    // ]);
                 Alert::error('error', 'Wrong Transfer code');
                 return redirect()->back();
                 }   
@@ -136,11 +136,11 @@ class TransactionController extends Controller
         // $accounts->save();
         $userS=User::whereId($accounts->user_id)->first();
         // hsb
-            $mess=Nexmo::message()->send([
-                'to'=>$user->phone,
-                'from'=>'KWUO',
-                'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
-            ]);
+            // $mess=Nexmo::message()->send([
+            //     'to'=>$user->phone,
+            //     'from'=>'KWUO',
+            //     'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+            // ]);
         Alert::error('error', 'Insufficient Kwuo Unit(s)');
         return rediect()->back(); 
         }else{
@@ -159,11 +159,11 @@ class TransactionController extends Controller
         // $accounts->save();
         $userS=User::whereId($accounts->user_id)->first();
         // hsb
-            $mess=Nexmo::message()->send([
-                'to'=>$user->phone,
-                'from'=>'KWUO',
-                'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
-            ]);
+            // $mess=Nexmo::message()->send([
+            //     'to'=>$user->phone,
+            //     'from'=>'KWUO',
+            //     'text'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+            // ]);
         Alert::error('success', 'You rejected the request');
         return redirect()->back();
 

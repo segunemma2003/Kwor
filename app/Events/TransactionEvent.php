@@ -32,8 +32,8 @@ class TransactionEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        // return new PrivateChannel('channel-name');
-        return new Channel('my-channel');
+        return new PrivateChannel('my-channel'.$this->text->id);
+        // return new Channel('my-channel');
     }
     public function broadcastAs()
     {
