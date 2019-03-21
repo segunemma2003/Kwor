@@ -7,11 +7,11 @@
               <div class="col-lg-9 mb-9">
                 <div class="card">
                   <div class="card-header coins">
-                    <h3 class="h6 text-uppercase mb-0">Transfer Unit(s)</h3>
+                    <h3 class="h6 text-uppercase mb-0">QRCode
+                    </h3>
                   </div>
                   <div class="card-body">
-                    {{QrCode::backgroundColor(255, 255, 0)->color(255, 0, 127)
-                   ->size(500)->generate('Welcome to kerneldev.com!') }}
+                    {{$qr}}
                   </div>
                 </div>
               </div>

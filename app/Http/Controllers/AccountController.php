@@ -231,6 +231,8 @@ class AccountController extends Controller
         {
             $user=User::whereId(Auth::user()->id)->first();
             $account=Account::whereUser_id($user->id)->first();
-            return view('kwor-admin.qrcode',compact('account'));
+            $qr=QrCode::backgroundColor(255, 255, 0)->color(255, 0, 127)
+                   ->size(500)->generate('Welcome to kerneldev.com!'); 
+            return view('kwor-admin.qrcode',compact('qr'));
         }
 }
