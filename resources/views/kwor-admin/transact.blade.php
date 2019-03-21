@@ -31,7 +31,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Total  payments made till date</h6><br><span class="text-white">{{$allta->sum('amount')}}</span>
+                      <h6 class="mb-0">Total  payments made till date</h6><br><span class="text-white">{{$allta->sum('amount')}} Kwuo unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-calendar"></i></div>
@@ -42,7 +42,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
                     <div class="text">
-                      <h6 class="mb-0">Total received kwuo unit(s) made till date</h6><br><span class="text-white">{{$allre->sum('amount')}}</span>
+                      <h6 class="mb-0">Total received kwuo unit(s) made till date</h6><br><span class="text-white">{{$allre->sum('amount')}} Kwuo unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-red"><i class="fas fa-calendar"></i></div>
