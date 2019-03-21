@@ -227,4 +227,10 @@ class AccountController extends Controller
                 return redirect('/user/buy')->with('Error','Opps error occured transaction');
                 }
         }
+        public function index()
+        {
+            $user=User::whereId(Auth::user()->id)->first();
+            $account=Account::whereUser_id($user->id)->first();
+            return view('kwor-admin.qrcode',compact('account'));
+        }
 }
