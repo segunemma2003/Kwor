@@ -290,7 +290,7 @@ class TransactionController extends Controller
             $transactions=Transaction::whereSender_id($account->id)
             ->OrWhere('receiver_id',$account->id)
             ->orderBy('id','desc')
-            ->get();
+            ->paginate(10);
             $transact=Transaction::whereReceiver_id($account->id)->where('created_at', '>=', $date)
             ->get();
             $stransact=Transaction::whereSender_id($account->id)

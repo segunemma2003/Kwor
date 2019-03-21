@@ -62,24 +62,39 @@
                       <thead>
                         <tr>
                           <th>ref</th>
-                          <th>Amount</th>
+                          <th>Amount(Kwuo unit(s))</th>
                           <th>Description</th>
-                          <th>Customer Name</th>
+                          <th>account Name</th>
                            <th>Status</th>
                            <th>Date</th>
                            <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @if(!$transactions->count()>1)
+                        <div class="alert alert-primary">
+                        You have no transactions yet  
+                      </div>
+                        @else
+                        @foreach($transactions as $transac)
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
+                          <th scope="row">{{$loop->index+1}}</th>
+                          <td>{{$transac->amount}}</td>
+                          <td>{{$transac->reason_payment}}</td>
+                          <td>{{$transac->accountR->account_name}}</td>
+                          <td><?php
+                          if($transac->status==0){
+                            echo "pending";
+                          }elseif($transac->status==1){
+                            echo "accepted";
+                          }else{
+                            echo "rejected";
+                          }
+                          ?></td>
+                          <td>{{$transac->created_at->diffHumans()}}</td>
                         </tr>
+                        @endforeach
+                        @endif
                       </tbody>
                     </table>
                   </div>
