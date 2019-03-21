@@ -38,6 +38,8 @@ class TransactionController extends Controller
             'purpose'=>'required',
         ]);
         //request_id
+        if(Account::whereAccount_number($request->account_number)->exists())
+        {
         $user_id=Auth::user()->id;
         $account=Account::whereUser_id($user_id)->first();
         $sender_id=$account->id;
@@ -67,6 +69,10 @@ class TransactionController extends Controller
             Alert::error('error','Opps an error occurred');
             return redirect()->back()->with('error','Opps an error occurred');
         }
+    }else{
+        Alert::error('error','The account number you inputed is not valid');
+        return redirect()->back()->with('error','Opps an error occurred');
+    }
 
     }
     public function acceptRequest(Request $request)
@@ -166,6 +172,7 @@ class TransactionController extends Controller
     }
     public function request(Request $request)
     {
+        
         $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
