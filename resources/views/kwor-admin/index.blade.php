@@ -21,7 +21,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Total kwor unit spent</h6><span class="text-white">{{$transaction->sum('amount')}}</span>
+                      <h6 class="mb-0">Total kwor unit spent</h6><span class="text-white">{{$transaction->sum('amount')}} kwuo unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-server"></i></div>
@@ -32,13 +32,13 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Work orders</h6><span class="text-white">400</span>
+                      <h6 class="mb-0">Number  of Transactions</h6><span class="text-white">count($transaction)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-dolly-flatbed"></i></div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+              <!-- <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
                 <div class="coins shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
@@ -49,7 +49,7 @@
                   <div class="icon text-white bg-red"><i class="fas fa-receipt"></i></div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </section>
           <section>
             <div class="row mb-4">
