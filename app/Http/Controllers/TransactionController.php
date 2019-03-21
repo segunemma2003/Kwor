@@ -283,4 +283,13 @@ class TransactionController extends Controller
              }
                 
         }
+        public function index()
+        {
+            $account=Account::whereUser_id(\Auth::user()->id)->first();
+            $transactions=Transaction::whereSender_id($account->id)
+            ->orWhereSender_id($account->id)
+            ->orderBy('desc')
+            ->get();
+            return view('kwor-admin.transact',compact('transactions'));
+        }
     }
