@@ -12,6 +12,7 @@
                   </div>
                   <div class="card-body">
                 <div id="qr" class="col-md-offset-3 col-md-6">
+                    <h1>{{$user->name}}</h1>
                     {!! $qr !!}
                 </div>
                   <button onclick="printInfo()">Print Qrcode</button>
