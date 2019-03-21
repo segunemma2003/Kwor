@@ -235,6 +235,6 @@ class AccountController extends Controller
             $data=$user->name.' '.$account->account_number;
             $qr=QrCode::backgroundColor(100,255,100)->color(255, 255, 255)
                    ->size(350)->generate($data); 
-            return view('kwor-admin.qrcode',compact('qr'));
+            return view('kwor-admin.qrcode',compact('qr','user'));
         }
 }
