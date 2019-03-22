@@ -273,7 +273,7 @@ class TransactionController extends Controller
                         $transact->status=2;
                     if($transact->save()){
                         $message="{$userR->name} could not credt account";
-                    event(new TransactionEvent($message));
+                    // event(new TransactionEvent($message));
                         return response()->json([
                             "status"=>401,
                             "message"=>"{$userS->name} has no enough unts to transfer"
