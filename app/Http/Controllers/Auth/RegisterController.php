@@ -92,7 +92,7 @@ class RegisterController extends Controller
         //     'from'=>'KWOR',
         //     'text'=>" your verification code {$user->verified_link}."
         // ]);
-        // $mess=Twilio::message($user->phone, 'your verification code {$user->verified_link}.');
+        $mess=Twilio::message($user->phone, 'your verification code {$user->verified_link}.');
         QrCode::size(1000)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
         Mail::to($user->email)->send(new UserEmail($user));
         // $mess=Nexmo::message()->send([

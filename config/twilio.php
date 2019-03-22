@@ -41,7 +41,7 @@ return [
                 |
                 */
 
-                'from' => env('TWILIO_FROM', 'KWUO'),
+                'from' => env('TWILIO_FROM', '+12018907913'),
             ],
         ],
     ],
