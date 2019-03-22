@@ -23,9 +23,10 @@
 
 <body>
 @include('sweet::alert')
+<body style="background-color: #fff8e1; font-family: 'Raleway', sans-serif;" >
     <div id="preloader">
         <div class="kwuo-load"></div>
-</div>
+    </div>
 
     <!-- ***** Header Area Start ***** -->
     <header class="header_area animated">
@@ -36,20 +37,20 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#home"><img src="{{asset('kwor-admin/img/core-img/Josh%20logos.svg')}}" style="width: 150px;"></a>
+                            <a class="navbar-brand shadow"  href="/#home"><img src="{{ asset('kwor-admin/img/core-img/Josh%20logos.svg') }}" style="width: 150px; height:40px;" ></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#features">Benefits</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-                                    <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
+                                    <li class="nav-item"><a class="nav-link" href="/#home" style="color: black;">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#about" style="color: black;">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#features" style="color: black;">Benefits</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#screenshot" style="color: black;">Screenshot</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/#contact" style="color: black;">Contact</a></li>
+                                    <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link" style="color: black;">Login</a> </li>
                                 </ul>
                                 <div class=" d-lg-none">
-                                      <a href="{{URL('/register')}}"><button type="button" class="btn btn-success">Sign Up</button></a>
+                                      <a href="{{URL('/register')}}"><button type="button" class="btn btn-success" style="color: black;">Sign Up</button></a>
                                 </div>
                             </div>
                         </nav>
@@ -58,7 +59,7 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class=" d-none d-lg-block">
-                         <a href="{{URL('/register')}}"><button type="button" class="btn btn-success">Sign Up</button></a>
+                         <a href="{{URL('/register')}}"><button type="button" class="btn btn-success" style="color: black;">Sign Up</button></a>
                     </div>
                 </div>
             </div>
@@ -73,8 +74,8 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                      <div class="wellcome-heading">
-                        	<h2>payments are <span class="typed" style="color: black;"></span></h2>
-                        <h3>K</h3>
+                        	<h2><span class="typed" style="color: black;"></span> with kwụọ</h2>
+                        <h3>Kwụọ</h3>
                         <p style="font-size: 25px;">kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
                          </p>
                     </div>
@@ -89,7 +90,7 @@
     <!-- ***** Wellcome Area End ***** -->
 
     <!-- ***** Special Area Start ***** -->
-    <section class="special-area  section_padding_100" id="about">
+    <section class="special-area  section_padding_100" id="about" style="background-color: #fff8e1;" >
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -106,7 +107,7 @@
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="single-icon">
-                             <img src="{{ asset('kwor-admin/my-icons-collection/svg/user-experience.svg') }}" height="50px"; width="50px";>
+                             <img src="{{asset('kwor-admin/my-icons-collection/svg/user-experience.svg')}}" height="50px"; width="50px";>
                         </div>
                         <h4 style="color: #005502;" >Easy to use</h4>
                         <p>We made it so simple to use that almost anyone can use this no matter their age</p>
@@ -116,7 +117,7 @@
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                         <div class="single-icon">
-                            <img src="{{ asset('kwor-admin/my-icons-collection/svg/multitask.svg') }}" height="50px"; width="50px";>
+                            <img src="{{asset('kwor-admin/my-icons-collection/svg/multitask.svg')}}" height="50px"; width="50px";>
                         </div>
                         <h4 style="color: #005502;">Multi-purpose</h4>
                         <p>Use kwụọ to pay your bills. Send money to people in your life. All in one place</p>
@@ -126,7 +127,7 @@
                 <div class="col-12 col-md-4">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                             <img src="{{ asset('kwor-admin/my-icons-collection/svg/credit-card.svg')}}" height="50px"; width="50px";>
+                             <img src="{{asset('kwor-admin/my-icons-collection/svg/credit-card.svg')}}" height="50px"; width="50px";>
                         </div>
                         <h4 style="color: #005502;">Secured</h4>
                         <p>Feel free. All your transactions goes through a strict security compliance system.</p>
@@ -145,7 +146,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
                         <div class="special_description_content">
-                            <h3 style="color: #005502;">Our best propositions for you!</h3>
+                            <h3 style="color: #005502;">Share in the joy of using a seamless payment system!</h3>
                             <p>kwụọ is the super power to receive more money. Provide your customers with a unique payment experience that is painless and frictionless without the headache associated with other means. 
                                 Let anyone pay you without leaving their comfort zone. Whether it's your family or friends or customers.
                             </p>
@@ -177,7 +178,7 @@
     <!-- ***** Special Area End ***** -->
 
     <!-- ***** Awesome Features Start ***** -->
-    <section class="awesome-feature-area  section_padding_0_50 clearfix" id="features">
+    <section class="awesome-feature-area  section_padding_0_50 clearfix" id="features" style="background-color: #fff8e1;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -210,8 +211,8 @@
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-2 text-center">
-                    <div class="single-shot" style="margin-top: 70px;">
-                            <img src="{{asset('kwor-admin/img/scr-img/app-1.jpg')}}" alt="">
+                    <div class="single-shot" style="margin-top:70px;">
+                            <img src="{{asset('kwor-admin/img/scr-img/app-3.jpg')}}" alt="">
                         </div><br><br>
                 </div>
                 <!-- Single Feature Start -->
@@ -398,22 +399,23 @@
             <p>Copyright ©2019 kwụọ. Made with <i class="ti-heart" aria-hidden="true" style="color: red;"></i> by IgHub</p>
         </div>
     </footer>
+
     <!-- ***** Footer end ***** -->
 
     <!-- Jquery-2.2.4 JS -->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="{{asset('kwor-admin/js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('kwor-admin/js/popper.min.js')}}"></script>
     <!-- Bootstrap-4 Beta JS -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('kwor-admin/js/bootstrap.min.js')}}"></script>
     <!-- All Plugins JS -->
-    <script src="js/plugins.js"></script>
+    <script src="{{asset('kwor-admin/js/plugins.js')}}"></script>
     <!-- Slick Slider Js-->
-    <script src="js/slick.min.js"></script>
+    <script src="{{asset('kwor-admin/js/slick.min.js')}}"></script>
     <!-- Footer Reveal JS -->
-    <script src="js/footer-reveal.min.js"></script>
+    <script src="{{asset('kwor-admin/js/footer-reveal.min.js')}}"></script>
     <!-- Active JS -->
-    <script src="js/active.js"></script>
+    <script src="{{asset('kwor-admin/js/active.js')}}"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
