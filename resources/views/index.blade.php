@@ -427,10 +427,10 @@
     
 <!-- <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
 
-    <script>
+<script>
        $(function(){
 	$(".typed").typed({
-		strings: ["can pay bills.", "can  buy airtime .", "can shop online.", "can make you an agent."],
+		strings: ["Make payments", "Shop online ", "Transfer funds", "Buy airtime"],
 		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
 		stringsElement: null,
 		// typing speed
