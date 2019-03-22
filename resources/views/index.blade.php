@@ -9,7 +9,7 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
     <!-- Core Stylesheet -->
-    <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link href="{{ asset('kwor-admin/style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
