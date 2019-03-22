@@ -180,6 +180,7 @@ return [
         Nexmo\Laravel\NexmoServiceProvider::class,
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        Aloha\Twilio\Support\Laravel\ServiceProvider::class,
     ],
 
     /*
@@ -237,6 +238,7 @@ return [
         'Alert'=>UxWeb\SweetAlert\SweetAlert::class,
         'Paystack'=>Unicodeveloper\Paystack\Facades\Paystack::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Twilio' => Aloha\Twilio\Support\Laravel\Facade::class,
     ],
 
 ];
