@@ -16,7 +16,7 @@ use Alert;
 // use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
 // use Twilio\Rest\Client;
-// use Twilio;
+use Twilio;
 
 class UserController extends Controller
 {

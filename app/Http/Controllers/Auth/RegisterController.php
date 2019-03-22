@@ -13,6 +13,7 @@ use QrCode;
 use App\Account;
 use Alert;
 use Nexmo;
+use Twilio;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -78,7 +79,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'verified_link'=>mt_rand(10000,99999),
+            'verified_link'=>mt_rand(100000,999999),
         ]);
         
         $account=new Account;
@@ -91,6 +92,7 @@ class RegisterController extends Controller
         //     'from'=>'KWOR',
         //     'text'=>" your verification code {$user->verified_link}."
         // ]);
+        $mess=Twilio::message($user->phone, 'your verification code {$user->verified_link}.');
         QrCode::size(1000)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
         Mail::to($user->email)->send(new UserEmail($user));
         // $mess=Nexmo::message()->send([
