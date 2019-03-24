@@ -13,9 +13,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('kwor-admin/css/intlTelInput.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ighub-admin/register.css') }}">
-   </head>
+    <link rel="stylesheet" href="{{ asset('kwor-admin/css/intlTelInput.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('kwor-admin/register.css') }}">
+    <link href="{{ asset('kwor-admin/css/sweetalert.css')}}"/>
+</head>
     <body>
         
         
@@ -34,7 +35,7 @@
                         <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-                        <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
+                        <li class="nav-item active"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
                         <li class="nav-item "><a class="nav-link" href="{{URL('/register')}}">Create Account</a></li>
                         </ul>
                       </div>
@@ -136,11 +137,11 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
         <!-- Use as a Vanilla JS plugin -->
-        <script src="{{ asset('kwor-admin/build/js/intlTelInput.min.js') }}"></script>
+        <script src="{{ asset('build/js/intlTelInput.min.js') }}"></script>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="{{ asset('kwor-admin/js/utils.js') }}"></script>
-        <script src="{{ asset('kwor-admin/js/intlTelInput.js') }}"></script>
-        <script src="{{ asset('kwor-admin/js/style.js') }}"></script>
+        <script src="{{ asset('js/utils.js') }}"></script>
+        <script src="{{ asset('js/intlTelInput.js') }}"></script>
+        <script src="{{ asset('js/style.js') }}"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
     @include('sweet::alert')
