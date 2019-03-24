@@ -1,5 +1,7 @@
 <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 shadow"><a href="#" class="sidebar-toggler text-white-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left" style="color: #fff;"></i></a><a href="../index.html" class="navbar-brand font-weight-bold text-uppercase text-white">kwuo</a>
+      <nav class="navbar navbar-expand-lg px-4 py-2 shadow"><a href="#" class="sidebar-toggler text-white-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left" style="color: #fff;"></i></a><a href="../index.html" class="navbar-brand font-weight-bold text-uppercase text-white">
+      <img src="{{ asset('kwor-admin/img/core-img/Josh%20logos.svg') }}" style="width: 150px; height:50px;"/>
+    </a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
               <div class="text">

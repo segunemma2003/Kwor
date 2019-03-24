@@ -20,7 +20,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('kwor-admin/css/custom.css') }}">
     <link href="{{ asset('css/sweetalert.css')}}"/>
-    
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
    
