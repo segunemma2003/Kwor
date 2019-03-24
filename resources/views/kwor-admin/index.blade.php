@@ -9,7 +9,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <!-- <div class="dot mr-3 bg-violet"></div> -->
                     <div class="text">
-                      <h6 class="mb-0">Total kwuo Units</h6><span class="text-black">{{$account->balance}} kwuo unit(s)
+                      <h6 class="mb-0">Total kwụọ Units</h6><span class="text-black">{{$account->balance}} kwụọ unit(s)
                       </span>
                     </div>
                   </div>
@@ -21,7 +21,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <!-- <div class="dot mr-3 bg-violet"></div> -->
                     <div class="text">
-                      <h6 class="mb-0">Total kwor unit spent</h6><span class="text-white">{{$transaction->sum('amount')}} kwuo unit(s)</span>
+                      <h6 class="mb-0">Total kwụọ unit spent</h6><span class="text-white">{{$transaction->sum('amount')}} kwụọ unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-green"><i class="fas fa-server"></i></div>
@@ -132,7 +132,7 @@
                <div class="card text-black bg-white mb-3" style="max-width: 18rem;">
                   <div class="card-header ">Invite friends </div>
                   <div class="card-body">
-                    <p class="card-text">Share our referral rewards with your close friends.</p> <img src="../my-icons-collection/svg/010-team.svg" style="height: 50px; width: 50px;"><br><br>
+                    <p class="card-text">Share our referral rewards with your close friends.</p> <img src="{{asset('kwor-admin/my-icons-collection/svg/010-team.svg')}}" style="height: 50px; width: 50px;"><br><br>
                      <button type="button" class="btn-success invite-btn">Invite Them</button>
                   </div>
                 </div><br>
