@@ -38,17 +38,6 @@
                   <div class="icon text-white bg-green"><i class="fa fa-dolly-flatbed"></i></div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-6 mb-4 mb-xl-0">
-                <div class="coins shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
-                  <div class="flex-grow-1 d-flex align-items-center">
-                    <div class="text">
-                      <h6 class="mb-0">No of transactions</h6><span class="text-black">40</span>
-                    </div>
-                  </div>
-                  <div class="icon text-white bg-green"><i class="fa fa-dolly-flatbed"></i></div>
-                </div>
-              </div>
-            </div>
           </section>
           <section>
             <div class="row mb-4">
