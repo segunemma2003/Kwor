@@ -13,10 +13,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('register.css') }}">
-    <link href="{{ asset('css/sweetalert.css')}}"/>
-</head>
+    <link rel="stylesheet" href="css/intlTelInput.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
+   </head>
     <body>
         
         
@@ -35,7 +34,7 @@
                         <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-                        <li class="nav-item active"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
+                        <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
                         <li class="nav-item "><a class="nav-link" href="{{URL('/register')}}">Create Account</a></li>
                         </ul>
                       </div>
