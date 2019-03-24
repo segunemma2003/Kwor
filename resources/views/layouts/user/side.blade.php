@@ -14,8 +14,8 @@
                   </ul>
                 </div>
               </li>
-                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="fa fa-user-circle mr-3 text-gray"></i><span>Merchant Account</span></a>
-                <div id="pages" class="collapse">
+                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#page" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="fa fa-user-circle mr-3 text-gray"></i><span>Merchant Account</span></a>
+                <div id="page" class="collapse">
                   <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                     <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5 ">Create merchant account</a></li>
                     <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">View account</a></li>
