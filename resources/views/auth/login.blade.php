@@ -136,11 +136,11 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
         <!-- Use as a Vanilla JS plugin -->
-        <script src="{{ asset('build/js/intlTelInput.min.js') }}"></script>
+        <script src="{{ asset('kwor-admin/build/js/intlTelInput.min.js') }}"></script>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="{{ asset('js/utils.js') }}"></script>
-        <script src="{{ asset('js/intlTelInput.js') }}"></script>
-        <script src="{{ asset('js/style.js') }}"></script>
+        <script src="{{ asset('kwor-admin/js/utils.js') }}"></script>
+        <script src="{{ asset('kwor-admin/js/intlTelInput.js') }}"></script>
+        <script src="{{ asset('kwor-admin/js/style.js') }}"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
     @include('sweet::alert')
