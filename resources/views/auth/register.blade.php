@@ -13,18 +13,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('register.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
-    <link href="{{ asset('css/sweetalert.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('kwor-admin/css/intlTelInput.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('kwor-admin/register.css') }}">
+    <link href="{{ asset('kwor-admin/css/sweetalert.css')}}"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
     <body>
         
         
-        <!--navbar-->
-             <nav class="reg-nav navbar fixed-top navbar-expand-lg navbar-dark">
+    <nav class="reg-nav navbar fixed-top navbar-expand-lg navbar-dark">
                  <div class="container">
-                 <a class="navbar-brand" href="{{ URL('/') }}'">kwuö</a>
+                 <a class="navbar-brand" href="{{URL('/')}}"><img src="{{ asset('kwor-admin/img/core-img/Josh%20logos.svg') }}" style="width: 150px; height:50px;"/></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                     aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
