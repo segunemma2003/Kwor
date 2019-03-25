@@ -199,7 +199,7 @@ class TransactionController extends Controller
         // User::find(2)->notify(new TransactionAlert);
         
             $message="{$sender_id->name} is requesting for {$request->amount}units";
-            event(new TransactionEvent($message));
+            // event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
                 "message"=>"request sent",
