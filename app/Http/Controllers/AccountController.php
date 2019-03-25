@@ -136,7 +136,8 @@ class AccountController extends Controller
                     // Alert::success('Success',"you just transferred {$request->amount} unit(s) to {$user->name}");
                     return response()->json([
                         "status"=>200,
-                        "message"=>"transfer successful"
+                        "message"=>"transfer successful",
+                        'balance'=>$account->balance
                     ]);
                 }else{
                     // Alert::error('error','insufficient unit');
