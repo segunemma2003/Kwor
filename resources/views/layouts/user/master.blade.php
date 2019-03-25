@@ -33,21 +33,21 @@
     @yield('content')
     @include('layouts.user.footer')
     <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
-  <script>
+    <script>
 
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+// Enable pusher logging - don't include this in production
+Pusher.logToConsole = true;
 
-    var pusher = new Pusher('ad8d2747cfe98e9c65e5', {
-      cluster: 'eu',
-      forceTLS: true
-    });
+var pusher = new Pusher('38713f33a793ae9c64f8', {
+  cluster: 'eu',
+  forceTLS: true
+});
 
-    var channel = pusher.subscribe('my-channel.1');
-    channel.bind('transaction-alert', function(data) {
-      alert(JSON.stringify(data));
-    });
-  </script>
+var channel = pusher.subscribe('my-channel.1');
+channel.bind('my-event', function(data) {
+  alert(JSON.stringify(data));
+});
+</script>
     
     <script src="{{asset('kwor-admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{asset('kwor-admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
