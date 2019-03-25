@@ -147,7 +147,7 @@ class AccountController extends Controller
                 }
             }else{
                 // Alert::error('error','Wrong private key');
-                return redirect()->json([
+                return response()->json([
                     "status"=>405,
                     "message"=>'Wrong private key'
                 ]);
