@@ -43,7 +43,7 @@ var pusher = new Pusher('38713f33a793ae9c64f8', {
   forceTLS: true
 });
 
-var channel = pusher.subscribe('my-channel.1');
+var channel = pusher.subscribe('my-channel.{id}');
 channel.bind('my-event', function(data) {
   alert(JSON.stringify(data));
 });
