@@ -3,6 +3,7 @@
 namespace App\Broadcasting;
 
 use App\User;
+use App\Transaction;
 
 class ConversationChannel
 {
@@ -22,8 +23,8 @@ class ConversationChannel
      * @param  \App\User  $user
      * @return array|bool
      */
-    public function join(User $user)
+    public function join(User $user,Transaction $transaction)
     {
-        return;
+        return $transaction->contains($user);
     }
 }
