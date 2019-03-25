@@ -9,7 +9,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <!-- <div class="dot mr-3 bg-violet"></div> -->
                     <div class="text">
-                      <h6 class="mb-0">Total kwụọ Units</h6><span class="text-black">{{$account->balance or 0}} kwụọ unit(s)
+                      <h6 class="mb-0">Total kwụọ Units</h6><span class="text-black">{{$account->balance}} kwụọ unit(s)
                       </span>
                     </div>
                   </div>
@@ -21,7 +21,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <!-- <div class="dot mr-3 bg-violet"></div> -->
                     <div class="text">
-                      <h6 class="mb-0">Total kwụọ unit spent</h6><span class="text-white">{{$transaction->sum('amount') or 0}} kwụọ unit(s)</span>
+                      <h6 class="mb-0">Total kwụọ unit spent</h6><span class="text-white">{{$transaction->sum('amount')}} kwụọ unit(s)</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-green"><i class="fas fa-server"></i></div>
@@ -32,7 +32,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <!-- <div class="dot mr-3 bg-blue"></div> -->
                     <div class="text">
-                      <h6 class="mb-0">Number  of Transactions</h6><span class="text-white">{{count($transaction) or 0}}</span>
+                      <h6 class="mb-0">Number  of Transactions</h6><span class="text-white">{{count($transaction)}}</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-green"><i class="fa fa-dolly-flatbed"></i></div>
