@@ -17,4 +17,4 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('chat', function($user){
     return Auth::check();
 });
-Broadcast::channel('my-channel.{id}',ConversationChannel::class);
+Broadcast::channel('transaction-alert',ConversationChannel::class);
