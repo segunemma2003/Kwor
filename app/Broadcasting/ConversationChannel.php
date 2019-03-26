@@ -25,6 +25,6 @@ class ConversationChannel
      */
     public function join(User $user,Transaction $transaction)
     {
-        return $transaction->contains($user);
+        return $transaction->account->user->contains($user);
     }
 }
