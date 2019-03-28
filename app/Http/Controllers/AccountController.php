@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Transaction;
 use Paystack;
 use Alert;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\AlertMail;
 use Nexmo;
 use Auth;

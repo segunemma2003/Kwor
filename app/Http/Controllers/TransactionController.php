@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Transaction;
 use App\Account;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Notifications\TransactionAlert;
 use App\Mail\AlertMail;
