@@ -19,7 +19,7 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Transaction_code</th>
+                          <!-- <th>Transaction_code</th> -->
                           <th>Amount</th>
                           <th>Purpose</th>
                            <th>Action</th>
@@ -38,7 +38,7 @@
                           <td scope="row">{{$loop->index+1}}
                        </td>
             
-                          <td>{{$transact->transaction_code}}</td>
+                          <!-- <td>{--$transact->transaction_code--}</td> -->
                           <td>{{$transact->amount}}</td>
                           <td>{{$transact->reason_payment}}</td>
 
