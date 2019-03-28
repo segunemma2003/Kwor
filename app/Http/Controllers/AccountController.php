@@ -67,11 +67,11 @@ class AccountController extends Controller
                     $transaction->save();
                     $tt=Auth::user()->name;
                     $message=[
-                        'message'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
+                        'message'=>"{$tt} transferred {$request->amount} unit(s) to you for {$request->purpose}. Your new account balance is {$Racc->balance}"
                     ];
                     Mail::to($user->email)->send(new AlertMail($message));
                     $messages=[
-                        'message'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
+                        'message'=>"you just transferred {$request->amount} unit(s) to {$user->name} for {$request->purpose}. Your new account balance is {$account->balance}"
                     ];
                     Mail::to(Auth::user()->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
