@@ -73,7 +73,7 @@ class AccountController extends Controller
                     $messages=[
                         'message'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
                     ];
-                    Mail::to($user->email)->send(new AlertMail($messages));
+                    Mail::to(Auth::user()->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,
                     //     'from'=>'KWUO',
@@ -140,7 +140,7 @@ class AccountController extends Controller
                     $messages=[
                         'message'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
                     ];
-                    Mail::to($user->email)->send(new AlertMail($messages));
+                    Mail::to($tE->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,
                     //     'from'=>'KWUO',
