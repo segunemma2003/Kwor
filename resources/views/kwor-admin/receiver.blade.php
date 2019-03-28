@@ -112,9 +112,9 @@
           console.log(x.value);
           var code=document.getElementById('code').value;
           var es=document.getElementById('newcode');
-          es.value=code;
+          es.value=x.value;
           var ess=document.getElementById('newcodes');
-          ess.value=code;
+          ess.value=x.value;
           // console.log(ess.value);
         // return es;
         }
