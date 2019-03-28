@@ -15,7 +15,7 @@
                       <thead>
                         <tr>
                           <th>Unit</th>
-                          <th>Amnt in Naira</th>
+                          <th>Amount in Naira</th>
                           <th>Buy</th>
                         </tr>
                       </thead>

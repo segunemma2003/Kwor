@@ -38,7 +38,7 @@
                           <td>{{$transact->reason_payment}}</td>
 
                           <td>
-                          <input type="hidden" id="code" name="code" value="{{$transact->transaction_code}}">
+                          <input type="hidden" id="code[]" name="code" value="{{$transact->transaction_code}}">
                              <a type="button" onClick="Load()"class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Accept</a> 
                             </td>
                             <td>
@@ -109,7 +109,7 @@
         </div>
        <script>
         function Load(){
-          var code=document.getElementById('code').value;
+          var code=document.getElementById('code[]').value;
           var es=document.getElementById('newcode');
           es.value=code;
           var ess=document.getElementById('newcodes');
