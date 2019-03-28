@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div>{{$user->message}}</div>
+    <div>{{dd($user)}}</div>
 </body>
 </html>
