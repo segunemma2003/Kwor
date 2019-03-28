@@ -8,6 +8,11 @@
                         <div class="card">
                   <div class="card-header coins">
                     <h6 class="text-uppercase mb-0">Accept Request</h6>
+                    <div>
+                      <b>Keys</b>
+                      <div style="width:10px; height:10px; background-color:green;"></div><h3>Accept</h3><br>
+                      <div style="width:10px; height:10px; background-color:red;"></div><h3>Reject</h3>
+                    </div>
                   </div>
                   <div class="card-body">                           
                     <table class="table table-striped table-hover card-text table-responsive">
