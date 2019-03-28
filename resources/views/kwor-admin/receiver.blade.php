@@ -115,7 +115,7 @@
           es.value=code;
           var ess=document.getElementById('newcodes');
           ess.value=code;
-          console.log(ess.value);
+          // console.log(ess.value);
         // return es;
         }
         
