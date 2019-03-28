@@ -38,11 +38,11 @@
                           <td>{{$transact->reason_payment}}</td>
 
                           <td>
-                          <input type="hidden" id="code[]" name="code" value="{{$transact->transaction_code}}">
+                          <input type="hidden" id="code" name="code" value="{{$transact->transaction_code}}">
                              <input type="button" onClick="Load(this)"class="btn btn-success" data-toggle="modal" value="{{$transact->transaction_code}}" data-target="#exampleModal">Accept</a> 
                             </td>
                             <td>
-                              <a type="button" onClick="Load(this)" class="btn btn-danger" value="{{$transact->transaction_code}}" data-toggle="modal" data-target="#examplesModal">Reject</a>  
+                              <input type="button" onClick="Load(this)" class="btn btn-danger" value="{{$transact->transaction_code}}" data-toggle="modal" data-target="#examplesModal">Reject</a>  
                             </td>
                         </tr>
                         @endforeach
@@ -110,7 +110,7 @@
        <script>
         function Load(x){
           console.log(x.value);
-          var code=document.getElementById('code[]').value;
+          var code=document.getElementById('code').value;
           var es=document.getElementById('newcode');
           es.value=code;
           var ess=document.getElementById('newcodes');
