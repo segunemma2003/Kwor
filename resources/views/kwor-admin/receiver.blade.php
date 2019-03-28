@@ -8,10 +8,10 @@
                         <div class="card">
                   <div class="card-header coins">
                     <h6 class="text-uppercase mb-0">Accept Request</h6>
-                    <div>
+                    <div style="width:50px; height:50px;">
                       <b>Keys</b>
-                      <div style="width:10px; height:10px; background-color:green;"></div><h3>Accept</h3><br>
-                      <div style="width:10px; height:10px; background-color:red;"></div><h3>Reject</h3>
+                      <div style="width:10px; height:10px; background-color:green;"></div><h6>Accept</h6><br>
+                      <div style="width:10px; height:10px; background-color:red;"></div><h6>Reject</h6>
                     </div>
                   </div>
                   <div class="card-body">                           
