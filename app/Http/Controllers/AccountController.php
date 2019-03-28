@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Transaction;
 use Paystack;
 use Alert;
+use App\Mail\AlertMail;
 use Nexmo;
 use Auth;
 use QrCode;
@@ -64,6 +65,14 @@ class AccountController extends Controller
                     $transaction->transaction_code=$this->generateKey();
                     $transaction->save();
                     $tt=Auth::user()->name;
+                    $message=[
+                        'message'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($message));
+                    $messages=[
+                        'message'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,
                     //     'from'=>'KWUO',
@@ -123,6 +132,14 @@ class AccountController extends Controller
                     $transaction->transaction_code=$this->generateKey();
                     $transaction->save();
                     $tt=$tE->name;
+                    $message=[
+                        'message'=>"{$tt} transferred {$request->amount} unit(s) to you. Your new account balance is {$Racc->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($message));
+                    $messages=[
+                        'message'=>"you just transferred {$request->amount} unit(s) to {$user->name}. Your new account balance is {$account->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,
                     //     'from'=>'KWUO',

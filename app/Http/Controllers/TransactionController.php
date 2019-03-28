@@ -7,6 +7,7 @@ use App\Account;
 use App\User;
 use Illuminate\Http\Request;
 use App\Notifications\TransactionAlert;
+use App\Mail\AlertMail;
 use App\Events\TransactionEvent;
 use Auth;
 use Alert;
@@ -59,6 +60,11 @@ class TransactionController extends Controller
             $message=["message"=>"{$tt} is requesting for {$request->amount}units {$request->purpose}",
         "data"=>$transaction];
             event(new TransactionEvent($message));
+            $messages=[
+                'message'=>"{$tt} is requesting for {$request->amount} unit(s) for {$request->purpose}. visit your dashboard to reply"
+            ];
+            Mail::to($user->email)->send(new AlertMail($messages));
+
             // $mess=Nexmo::message()->send([
             //     'to'=>$user->phone,
             //     'from'=>'KWUO',
@@ -99,6 +105,14 @@ class TransactionController extends Controller
         
                 $accounts->balance=$accounts->balance - $transact->amount;
                 $accounts->save();
+                $message=[
+                        'message'=>"{$userS->name} accepted your request. Your new account balance is {$account->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($message));
+                    $messages=[
+                        'message'=>"you just transferred {$transact->amount} unit(s) to {$user->name}. Your new account balance is {$accounts->balance}"
+                    ];
+                    Mail::to($userS->email)->send(new AlertMail($messages));
         
                 // $mess=Nexmo::message()->send([
                 //     'to'=>$user->phone,
@@ -113,6 +127,10 @@ class TransactionController extends Controller
                 Alert::sucess('Success','You have successfully transferred the KWUO units');
                 return redirect()->back();
                 }else{
+                    $messages=[
+                        'message'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+                    ];
+                    Mail::to($user->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,
                     //     'from'=>'KWUO',
@@ -136,6 +154,10 @@ class TransactionController extends Controller
         // $accounts->balance=$accounts->balance - $transact->amount;
         // $accounts->save();
         $userS=User::whereId($accounts->user_id)->first();
+        $messages=[
+            'message'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+        ];
+        Mail::to($user->email)->send(new AlertMail($messages));
         // hsb
             // $mess=Nexmo::message()->send([
             //     'to'=>$user->phone,
@@ -159,6 +181,10 @@ class TransactionController extends Controller
         // $accounts->balance=$accounts->balance - $transact->amount;
         // $accounts->save();
         $userS=User::whereId($accounts->user_id)->first();
+        $messages=[
+            'message'=>"{$userS->name} rejected your request. Your new account balance is {$account->balance}"
+        ];
+        Mail::to($user->email)->send(new AlertMail($messages));
         // hsb
             // $mess=Nexmo::message()->send([
             //     'to'=>$user->phone,
@@ -237,7 +263,7 @@ class TransactionController extends Controller
                  if($transact->save())
                  {
                     $message="{$userR->name} could not credit account";
-                    event(new TransactionEvent($message));
+                    // event(new TransactionEvent($message));
                      return response()->json([
                         "status"=>202,
                         "message"=>"request is successfully rejected"
@@ -256,7 +282,7 @@ class TransactionController extends Controller
                             $transact->status=1;
                             if($transact->save()){
                                 $message="{$userR->name} is has accepted and credited your account with {$transact->amount}units";
-                                event(new TransactionEvent($message));
+                                // event(new TransactionEvent($message));
                                 return response()->json([
                                 "status"=>201,
                                 "message"=>"{$userS->name} has successfully transferred {$transact->amount} to {$userR->name}"
@@ -273,11 +299,11 @@ class TransactionController extends Controller
                     }else{
                         $transact->status=2;
                     if($transact->save()){
-                        $message="{$userR->name} could not credt account";
+                        $message="{$userR->name} could not credit account";
                     // event(new TransactionEvent($message));
                         return response()->json([
                             "status"=>401,
-                            "message"=>"{$userS->name} has no enough unts to transfer"
+                            "message"=>"{$userS->name} has no enough units to transfer"
                         ]);
                     }
                 }
