@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div>{{dd($user)}}</div>
+    <div>{{$user['message']}}</div>
 </body>
 </html>
