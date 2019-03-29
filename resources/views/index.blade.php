@@ -248,7 +248,7 @@
             <div class="row">
                 <!-- Single Cool Fact-->
                 <div class="col-12 col-md-6 col-lg-6">
-                   <div class=" wow fadeInUp" data-wow-delay="0.2s" style="text-align: justify;">
+                   <div class=" wow fadeInUp" data-wow-delay="0.2s" style="text-align: left;">
                         <div class="single-special wow fadeInUp" data-wow-delay="0.2s" style="border: 0px;">
                             <h2>kwụọ for anyone</h2>
                         <h6>Anyone who wants to pay anyone or for anything or receive money from anyone can use kwụọ to do it easily. Unlike your bank apps, there's no hidden charges or frictions in each transactions.</h6>
