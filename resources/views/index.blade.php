@@ -415,7 +415,8 @@
     <script src="{{asset('kwor-admin/js/plugins.js')}}"></script>
     <!-- Slick Slider Js-->
     <script src="{{asset('kwor-admin/js/slick.min.js')}}"></script>
-    
+    <!-- Footer Reveal JS -->
+    <script src="{{asset('kwor-admin/js/footer-reveal.min.js')}}"></script>
     <!-- Active JS -->
     <script src="{{asset('kwor-admin/js/active.js')}}"></script>
     <!-- MDB core JavaScript -->
