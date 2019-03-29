@@ -26,10 +26,6 @@
 <body>
 @include('sweet::alert')
 <body style="background-color: #f0f0f0; font-family: 'Raleway', sans-serif;" >
-dfxghjguijjiojojjkvbhvj
-kihdoj
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.
 
     <div id="preloader">
         <div class="kwuo-load"></div>
@@ -83,7 +79,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum nat
                      <div class="wellcome-heading">
                         	<h2><span class="typed" style="color: black;"></span> with kwụọ</h2>
                         <h3>Kwụọ</h3>
-                        <p style="font-size: 25px;">kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
+                        <p style="font-size: 25px;"> dfxghjguijjiojojjkvbhvj
+kihdoj
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
                          </p>
                     </div>
                 </div>
