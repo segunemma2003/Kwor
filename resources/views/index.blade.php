@@ -53,7 +53,7 @@
                                     <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link" style="color: black;">Login</a> </li>
                                 </ul>
                                 <div class=" d-lg-none">
-                                      <a href="{{URL('/register')}}"><button type="button" class="btn btn-success" style="color: black;">Sign Up</button></a>
+                                      <a href="{{URL('/register')}}"><button type="button" class="btn btn-" style="color: black; background-color:white;">Sign Up</button></a>
                                 </div>
                             </div>
                         </nav>
