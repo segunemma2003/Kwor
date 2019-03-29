@@ -79,10 +79,7 @@
                      <div class="wellcome-heading">
                         	<h2><span class="typed" style="color: black;"></span> with kwụọ</h2>
                         <h3>Kwụọ</h3>
-                        <p style="font-size: 25px;"> dfxghjguijjiojojjkvbhvj
-kihdoj
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
+                        <p style="font-size: 25px;"> kwụọ is the new way to make payments<br> for things that matters to you. You can<br> use it to pay bills, pay for subscriptions,<br> send cash to family and friends and save money.
                          </p>
                     </div>
                 </div>
@@ -155,6 +152,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum nat
                             <h3 style="color: #005502;">Share in the joy of using a seamless payment system!</h3>
                             <p>kwụọ is the super power to receive more money. Provide your customers with a unique payment experience that is painless and frictionless without the headache associated with other means. 
                                 Let anyone pay you without leaving their comfort zone. Whether it's your family or friends or customers.
+                                dfxghjguijjiojojjkvbhvj
+kihdoj
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.
                             </p>
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
