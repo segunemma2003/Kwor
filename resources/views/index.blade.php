@@ -152,10 +152,6 @@
                             <h3 style="color: #005502;">Share in the joy of using a seamless payment system!</h3>
                             <p>kwụọ is the super power to receive more money. Provide your customers with a unique payment experience that is painless and frictionless without the headache associated with other means. 
                                 Let anyone pay you without leaving their comfort zone. Whether it's your family or friends or customers.
-                                dfxghjguijjiojojjkvbhvj
-kihdoj
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.
                             </p>
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
