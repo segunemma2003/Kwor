@@ -15,6 +15,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
     <link href="{{ asset('css/sweetalert.css')}}"/>
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
@@ -23,7 +25,7 @@
 
 <body>
 @include('sweet::alert')
-<body style="background-color: #fff8e1; font-family: 'Raleway', sans-serif;" >
+<body style="background-color: #f0f0f0; font-family: 'Raleway', sans-serif;" >
     <div id="preloader">
         <div class="kwuo-load"></div>
     </div>
@@ -90,7 +92,7 @@
     <!-- ***** Wellcome Area End ***** -->
 
     <!-- ***** Special Area Start ***** -->
-    <section class="special-area  section_padding_100" id="about" style="background-color: #fff8e1;" >
+    <section class="special-area  section_padding_100" id="about" style="background-color: #f0f0f0;" >
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -178,7 +180,7 @@
     <!-- ***** Special Area End ***** -->
 
     <!-- ***** Awesome Features Start ***** -->
-    <section class="awesome-feature-area  section_padding_0_50 clearfix" id="features" style="background-color: #fff8e1;">
+    <section class="awesome-feature-area  section_padding_0_50 clearfix" id="features" style="background-color: #f0f0f0;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -278,7 +280,7 @@
     <!-- ***** Cool Facts Area End ***** -->
 
     <!-- ***** App Screenshots Area Start ***** -->
-    <section class="app-screenshots-area section_padding_0_100 clearfix" id="screenshot" style="background-color: #fff8e1;">
+    <section class="app-screenshots-area section_padding_0_100 clearfix" id="screenshot" style="background-color: #f0f0f0; margin-top: -50px;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
