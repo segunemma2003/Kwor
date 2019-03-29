@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=0.86">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <title>kwuö</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
