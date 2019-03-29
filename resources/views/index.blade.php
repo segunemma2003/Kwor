@@ -85,7 +85,7 @@
         </div>
         <!-- Welcome thumb -->
         <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-            <img src="{{asset('kwor-admin/img/bg-img/welcome-img.png')}}" alt="">
+            <img src="{{asset('img/welcom.png')}}" alt="">
         </div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
@@ -213,7 +213,7 @@
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-2 text-center">
                     <div class="single-shot" style="margin-top:70px;">
-                            <img src="{{asset('kwor-admin/img/scr-img/app-3.jpg')}}" alt="">
+                            <img src="{{asset('img/pay.png')}}" alt="">
                         </div><br><br>
                 </div>
                 <!-- Single Feature Start -->
