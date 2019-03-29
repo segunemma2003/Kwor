@@ -62,7 +62,7 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class=" d-none d-lg-block">
-                         <a href="{{URL('/register')}}"><button type="button" class="btn btn-success" style="color: black;">Sign Up</button></a>
+                         <a href="{{URL('/register')}}"><button type="button" class="btn" style="color: black; background-color:white;">Sign Up</button></a>
                     </div>
                 </div>
             </div>
