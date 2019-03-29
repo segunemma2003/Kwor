@@ -48,8 +48,6 @@
                                     <li class="nav-item"><a class="nav-link" href="/#home" style="color: black;">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/#about" style="color: black;">About</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/#features" style="color: black;">Benefits</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#screenshot" style="color: black;">Screenshot</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/#contact" style="color: black;">Contact</a></li>
                                     <li class="nav-item"><a href="{{URL('/login')}}" class="nav-link" style="color: black;">Login</a> </li>
                                 </ul>
                                 <div class=" d-lg-none">
