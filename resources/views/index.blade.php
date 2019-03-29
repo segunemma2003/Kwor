@@ -26,6 +26,11 @@
 <body>
 @include('sweet::alert')
 <body style="background-color: #f0f0f0; font-family: 'Raleway', sans-serif;" >
+dfxghjguijjiojojjkvbhvj
+kihdoj
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam autem esse unde doloribus hic doloremque maiores, voluptate rerum tempora sapiente asperiores quisquam ducimus aliquam culpa porro? Eaque, et totam.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum natus dolorum nesciunt itaque amet accusantium laboriosam et quod, molestias recusandae aliquam odio numquam cupiditate ullam aliquid totam porro aspernatur.
+
     <div id="preloader">
         <div class="kwuo-load"></div>
     </div>
