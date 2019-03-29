@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>kwuö</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
@@ -413,6 +413,10 @@
     <script src="{{asset('kwor-admin/js/bootstrap.min.js')}}"></script>
     <!-- All Plugins JS -->
     <script src="{{asset('kwor-admin/js/plugins.js')}}"></script>
+    <!-- Slick Slider Js-->
+    
+    <!-- Footer Reveal JS -->
+    <script src="{{asset('kwor-admin/js/footer-reveal.min.js')}}"></script>
     <!-- Active JS -->
     <script src="{{asset('kwor-admin/js/active.js')}}"></script>
     <!-- MDB core JavaScript -->
