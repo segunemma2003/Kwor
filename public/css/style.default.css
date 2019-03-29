@@ -1,5 +1,6 @@
 body{
     font-family: 'Raleway', sans-serif;
+    background-color: #f0f0f0;
 }
 .shadow {
   -webkit-box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;
