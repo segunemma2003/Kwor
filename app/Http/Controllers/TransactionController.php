@@ -50,6 +50,7 @@ class TransactionController extends Controller
         $Racc=Account::whereAccount_number($request->account_number)->first();
        
         $user=User::whereId($Racc->user_id)->first();
+        dd($user);
         $rid=$Racc->id;
         $transaction=new Transaction;
         $transaction->sender_id=$sender_id;
