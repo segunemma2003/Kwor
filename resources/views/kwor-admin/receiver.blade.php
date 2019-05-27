@@ -75,7 +75,7 @@
                       @csrf
                       <input  type="hidden" name="transaction_code" id="newcodes">
                       <input type="hidden" name="response" value="1">
-                      <input type="text" name="transfer_code" placeholder="input private key">
+                      <input type="text" name="transfer_code" value="{{$account->private_key}}"placeholder="input private key">
                     <input type="submit" >
                     </form>
                   </div>
