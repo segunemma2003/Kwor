@@ -132,7 +132,7 @@ class TransactionController extends Controller
                 //     'from'=>'KWUO',
                 //     'text'=>"you just transferred {$transact->amount} unit(s) to {$user->name}. Your new account balance is {$accounts->balance}"
                 // ]);
-                Alert::sucess('Success','You have successfully transferred the KWUO units');
+                Alert::success('Success','You have successfully transferred the KWUO units');
                 return redirect()->back();
                 }else{
                     $messages=[
