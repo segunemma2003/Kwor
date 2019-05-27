@@ -53,7 +53,7 @@ Route::group(['middleware'=>'auth'],function(){
         $account=\App\Account::whereUser_id(\Auth::user()->id)->first();
         $transactions=\App\Transaction::whereReceiver_id($account->id)->whereStatus(0)
         ->get();
-        return view('kwor-admin.receiver',compact('transactions,accout'));
+        return view('kwor-admin.receiver',compact('transactions','account'));
     });
     Route::get('/user/sendunit',function(){
         $account=\App\Account::whereId(Auth::user()->id)->first();
