@@ -46,7 +46,9 @@ class TransactionController extends Controller
         $account=Account::whereUser_id($user_id)->first();
         $sender_id=$account->id;
         //receiver_id
+       if(Account::whereAccount_number($request->account_number)->first()){
         $Racc=Account::whereAccount_number($request->account_number)->first();
+       
         $user=User::whereId($Racc->user_id)->first();
         $rid=$Racc->id;
         $transaction=new Transaction;
@@ -81,6 +83,10 @@ class TransactionController extends Controller
         Alert::error('error','The account number you inputed is not valid');
         return redirect()->back()->with('error','Opps an error occurred');
     }
+}else{
+    Alert::error('error','The account number you inputed is not valid');
+        return redirect()->back()->with('error','Opps an error occurred');
+}
 
     }
     public function acceptRequest(Request $request)
