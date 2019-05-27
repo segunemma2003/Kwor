@@ -13,6 +13,7 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
+        Schema::defaultStringLength(191);
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->decimal('balance', 15, 2)->default(0);
