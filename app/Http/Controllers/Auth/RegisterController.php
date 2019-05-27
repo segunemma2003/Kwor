@@ -110,7 +110,7 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
         $this->guard()->logout();
-        Alert::error('status', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
+        // Alert::error('status', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
         return redirect('/login')->with('status', 'You need to confirm your account. We have sent you an activation code, if you can\'t find it in your inbox, check your spam');
     }
 }

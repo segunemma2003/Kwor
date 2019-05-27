@@ -14,13 +14,13 @@
             <tr>
                 <th>Name</th>
                 <th>Account Number</th>
-                <th>your withdrawal code/transfer code</th>
+               
                 <th>Code</th>
             </tr>
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->phone}}</td>
-                <td>{{$user->account->private_key}}</td>
+                
                 <td>{{$user->verified_link}}</td>
             </tr>
         </table>
