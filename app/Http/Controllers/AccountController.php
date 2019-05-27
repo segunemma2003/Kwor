@@ -44,7 +44,8 @@ class AccountController extends Controller
                 $account=Account::whereUser_id($user_id)->first();
                 $sender_id=$account->id;
                 //receiver_id
-                $Racc=Account::whereAccount_number($request->account_number)->first();
+            if(Account::whereAccount_number($request->account_number)->first()){
+            $Racc=Account::whereAccount_number($request->account_number)->first();
                 $user=User::whereId($Racc->user_id)->first();
                 $rid=$Racc->id;
             if($account->private_key==$request->transfer_code)
@@ -94,7 +95,10 @@ class AccountController extends Controller
                 Alert::error('error','Wrong private key');
                 return redirect()->back();
             }
-
+        }else{
+            Alert::error('error','Account number is wrong!!');
+                    return redirect()->back();
+        }
                 //
     }
     public function TransferApi(Request $request)
