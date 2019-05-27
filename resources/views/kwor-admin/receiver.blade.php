@@ -75,8 +75,8 @@
                       @csrf
                       <input  type="hidden" name="transaction_code" id="newcodes">
                       <input type="hidden" name="response" value="1">
-                      <input type="text" name="transfer_code" value="{{$account->private_key}}"placeholder="input private key">
-                    <input type="submit" >
+                      <input type="hidden" name="transfer_code" value="{{$account->private_key}}"placeholder="input private key">
+                    <input type="submit" value="accept">
                     </form>
                   </div>
                   <div class="modal-footer">
