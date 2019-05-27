@@ -23,7 +23,7 @@ class CreateAccountsTable extends Migration
             $table->string('account_name')->default('personal');
             $table->timestamps();
 
-            $table->foreign('user_id')->reference('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
