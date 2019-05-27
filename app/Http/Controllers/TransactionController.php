@@ -49,7 +49,7 @@ class TransactionController extends Controller
        if(Account::whereAccount_number($request->account_number)->first()){
         $Racc=Account::whereAccount_number($request->account_number)->first();
        
-        $user=User::whereId(3)->first();
+        $user=User::whereId($Racc->user_id)->first();
         // dd($Racc);
         $rid=$Racc->id;
         $transaction=new Transaction;

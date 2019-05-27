@@ -21,6 +21,8 @@ class CreateAccountsTable extends Migration
             $table->string('account_type')->default('personal');
             $table->string('account_name')->default('personal');
             $table->timestamps();
+
+            $table->foreign('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
