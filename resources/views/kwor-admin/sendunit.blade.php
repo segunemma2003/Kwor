@@ -25,8 +25,8 @@
                         <input type="text" placeholder="Purpose" class="form-control" name="purpose" value="{{old('purpose')}}">
                       </div>
                       <div class="form-group">       
-                        <label class="form-control-label text-uppercase">Transfer code*</label>
-                        <input type="text" placeholder="Purpose" class="form-control" name="transfer_code">
+                        <!-- <label class="form-control-label text-uppercase">Transfer code*</label> -->
+                        <input type="hidden" placeholder="Purpose" class="form-control" name="transfer_code" value="{{$account->private_key}}">
                       </div>
                       <div class="form-group">       
                         <button type="submit" class="btn ">Send</button>
