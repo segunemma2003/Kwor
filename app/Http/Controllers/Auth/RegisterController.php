@@ -102,7 +102,7 @@ class RegisterController extends Controller
         // ]);
         // Alert::success('Success','You successfully registered!!!,check your mail to verify your account');
         }else{
-            Alert::error('Registration Failed','Opps Something went wrong');
+            Alert::error('Registration Failed','Opps Something went wrong!!!');
         }
         return $user;
     }
