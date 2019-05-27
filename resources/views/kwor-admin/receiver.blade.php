@@ -44,10 +44,10 @@
 
                           <td>
                           <input type="hidden" id="code" name="{{$transact->transaction_code}}" value="{{$transact->transaction_code}}">
-                             <input type="button" onClick="Load(this)"class="btn btn-success" data-toggle="modal" value="{{$transact->transaction_code}}" data-target="#exampleModal"> 
+                             <input type="submit" onClick="Load(this)"class="btn btn-success" data-toggle="modal" value="{{$transact->transaction_code}}" data-target="#exampleModal"> 
                             </td>
                             <td>
-                              <input type="button" onClick="Load(this)" class="btn btn-danger" value="{{$transact->transaction_code}}" data-toggle="modal" data-target="#examplesModal">  
+                              <input type="submit" onClick="Load(this)" class="btn btn-danger" value="{{$transact->transaction_code}}" data-toggle="modal" data-target="#examplesModal">  
                             </td>
                         </tr>
                         @endforeach
