@@ -11,6 +11,12 @@ use App\Events\TransactionEvent;
 |
 */
 Route::post('/ussd/callback','UssdController@index');
+Route::get('/aprivacy',function(){
+    return view('privacy');
+});
+Route::get('/aterm',function(){
+    return view('term');
+});
 Route::get('/pusher', function () {
     $message='hey';
     \Alert::message('message','You are welcome to my site ');
