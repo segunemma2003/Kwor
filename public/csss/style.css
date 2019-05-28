@@ -1,0 +1,29 @@
+/* section.last{
+    background-image:url("../bg-img/users\ background.svg");
+    background-position:center center;
+    background-repeat:no-repeat;
+    width:100%;
+    height: auto;
+    
+} */
+section.powerful-features h3{
+    color: #005502;
+}
+
+section.powerful-features h4{
+    color: #005502;
+}
+
+section.powerful-features h5{
+    color: #005502;
+}
+
+section.bg-secondary h3{
+    color: #005502;
+}
+
+section.bg-secondary h5{
+    color: #005502;
+}
+
+
