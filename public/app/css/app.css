@@ -1,0 +1,274 @@
+body {
+  font-family: Muli, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.hero-section {
+  background-color: #144531;
+  background: url(../img/hero-background.png) no-repeat center center;
+  background-size: cover;
+  height: 658px;
+  margin-top: -20px;
+}
+
+.hero-section__content {
+  color: white;
+  padding-top: 250px !important;
+  padding-bottom: 250px !important;
+  text-align: center;
+}
+
+.hero-section__title {
+  font-weight: 800;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+               0 -5px 35px rgba(255,255,255,0.3);
+}
+
+.hero-section__subtitle {
+  font-size: 20px;
+}
+
+.navbar {
+  background-color: transparent;
+  border: none;
+  color: white;
+  transition: all 1s ease 0s;
+}
+
+.navbar.solid {
+  background-color: #fff;
+  box-shadow: 0 0 6px #fafafa;
+  height: 80px;
+  transition: all 1s ease 0s;
+}
+
+.heading {
+  color: #144531;
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.box-shadow {
+  box-shadow: 0 0 10px #ccc;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.brand-bg {
+  background-color: #32ac7b;
+}
+
+.page-item .page-link {
+  color: #32ac7b;
+}
+
+.page-item.active .page-link {
+  background-color: #32ac7b;
+  border-color: #32ac7b;
+  color: #fff;
+}
+
+.share-btn {
+  transition: all 0.5s;
+}
+
+.share-btn:hover {
+  border-radius: 100px;
+  box-shadow: 0 0 20px #ccc;
+  transform: scale(1.1);
+}
+
+.active-btn {
+  transform: rotate(60deg);
+}
+
+.brand-color {
+  color: #32ac7b;
+}
+
+.report-item-text {
+  font-size: 13px;
+}
+
+.report-item-img {
+  width: 100%;
+  height: auto;
+}
+
+.report-item:nth-child(odd) .report-item-inner {
+  background-color: #32ac7b;
+  color: #fafafa;
+}
+
+.report-item:nth-child(even) .report-item-inner {
+  background-color: #fafafa;
+  color: #32ac7b;
+}
+
+.report-item-inner {
+  height: 95%;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3%;
+  width: 85%;
+}
+
+.make-a-report-page body {
+  background-color: #32ac7b;
+  background-image: url(../img/report-page.png);
+  background-size: cover;
+  height: 100%;
+}
+
+.making-governance-work {
+  background-image: url(../img/making-governance-work-bg.png);
+  background-size: cover;
+  height: 100%;
+}
+
+.work-icon {
+  height: 60px;
+}
+
+#msform {
+	width: 520px;
+	margin: 110px auto;
+	text-align: center;
+	position: relative;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: relative;
+}
+
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+#msform input,
+#msform textarea,
+#msform select {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+#msform .action-button {
+	width: 100px;
+	background: #32ac7b;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #32ac7b;
+}
+
+#msform .error-alert {
+  display: none;
+  margin-top: 20%;
+}
+
+#share-links a {
+  font-size: 25px;
+}
+
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+/*** Media Queries ***/
+
+@media (min-width: 768px) {
+
+  .report-item-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .search-box {
+    width: 70%;
+  }
+  
+  .navbar {
+    height: 95px;
+  }
+  
+  .footer-left__content {
+    padding-left: 45%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    background: url(../img/hero-background-mobile.jpg) no-repeat center center;
+  }
+  
+  .collapse {
+    background-color: #fff;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .navbar {
+    background-color: #fff;
+  }
+  
+  .text-white {
+    color: #333 !important;
+  }
+  
+  .navbar.solid {
+    height: 95px;
+  }
+  
+  .hero-section__subtitle {
+    font-size: 14px;
+  }
+
+}

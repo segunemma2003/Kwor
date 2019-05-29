@@ -123,13 +123,18 @@
                 <div class="col-md-6">
                     <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#" target="_blank">
+                            <a class="nav-link active" href="https://instagram.com/kwuopay" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="https://facebook.com/kwuopay" target="_blank">
                                 <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/kwuopay" target="_blank">
+                                <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                     </ul>

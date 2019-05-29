@@ -254,7 +254,7 @@ class AccountController extends Controller
         public function index()
         {
             $user=User::whereId(Auth::user()->id)->first();
-            $account=Account::whereUser_id($user->id)->first();
+            $account=Account::whereUser_id($user->id)->whereAccount_type('personal')->first();
             $data=$user->name.' ,'.$account->account_number;
             $qr=QrCode::backgroundColor(100,255,100)->color(255, 255, 255)
                    ->size(350)->generate($data); 

@@ -1,60 +1,50 @@
-<!Doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>kwuö-register</title> 
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+
+    <title>kwụọ | Log in</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/brand/" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800">
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="../assets/vendor/%40fortawesome/fontawesome-pro/css/all.min.css">
+    <!-- Page plugins -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('kwor-admin/css/intlTelInput.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('kwor-admin/register.css') }}">
-    <link href="{{ asset('kwor-admin/css/sweetalert.css')}}"/>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.min.css">
+
+
 </head>
-    <body>
-        
+
+<body>
+
         
         <!--navbar-->
-             <nav class="reg-nav navbar fixed-top navbar-expand-lg navbar-dark">
-                 <div class="container">
-                 <a class="navbar-brand" href="{{URL('/')}}"><img src="{{ asset('kwor-admin/img/core-img/Josh%20logos.svg') }}" style="width: 150px; height:50px;"/></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class=" collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <ul class="navbar-nav ml-auto mt-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#screenshot">Screenshot</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-                        <li class="nav-item active"><a href="{{URL('/login')}}" class="nav-link">Login</a> </li>
-                        <li class="nav-item "><a class="nav-link" href="{{URL('/register')}}">Create Account</a></li>
-                        </ul>
-                      </div>
-                  </div>
-                </nav>  
                     
                 <!--form-->
-                
-                <div class="container" style="margin-top: 100px;">
-                    <div class="row form" style="border: 1px solid #00c851;">
-                        <div class="col-lg-6 col-md-6"  style="border-right: 1px solid #00C851;">
-                            <h3 style="margin-top: 50px; color: #00C851; ">Log Into Your Account</h3><br>
-                            <a href="{{ route('password.request') }}" style="color:  #00C851;">Forgot Password?</a><br>
-                            <a href="{{URL('/register')}}" style="color:  #00C851;">Create Account</a>
+            <main class="bg-primary">   
+            <div class="container h-100vh d-flex align-items-center">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5 col-xl-4">
+
+                        <div class="text-center mb-5">
+                            <h6 class="h3">Welcome back</h6>
+                            <p class="mb-0" style="color:#fff" >Sign in to your account to continue</p>
                         </div>
-                        <div class="col-lg-6 col-md-6">
+                        <span class="clearfix"></span>
                           
-                            <form class="text-center  p-5" method="post" action="{{ route('login') }}">
+                            <form role="form" method="post" action="{{ route('login') }}">
                               <!-- Default form register -->
                               @if (session('status'))
                         <div class="alert alert-success">
@@ -76,39 +66,69 @@
 
                             @csrf
 
-                                <p class="h4 mb-4"></p>
+                                <!-- <p class="h4 mb-4"></p> -->
                                 
                                 
-                                <div style="text-align: left;">
-                                    <label>PHONE NUMBER*</label><br>
-                                   <input type="tel" id="phone" value="+234" "defaultRegisterPhonePassword" class="form-control" name="email">
+                                <div class="form-group">
+                                    <label class="form-control-label">PHONE NUMBER*</label>
+                                    <div class="input-group input-group-transparent">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                                    </div>
+                                   <input type="tel" class="form-control" name="email">
                                    @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                                </div><br>
+                                </div>
+                                </div>
                                 
-                                 <div style="text-align: left;">
+                                <div class="form-group mb-4">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
                                  <!-- Password -->
-                                <label>PASSWORD*</label>
+                                        <label class="form-control-label">Password</label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="{{route('password.request')}}" class="small text-light text-unerline--dashed">Lost password?</a>
+                                    </div>
+                                    </div>
+                                    <div class="input-group input-group-transparent">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-key"></i></span>
+                                    </div>
                                 <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password">
-                                </div><br>
+                                <div class="input-group-append">
+                                        <span class="input-group-text">
+                    <i class="far fa-eye"></i>
+                </span>
+                                    </div>
+                                    </div>
+                            </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                                      <!-- Sign up button -->
-                                      <button class="btn  my-4 btn-block" type="submit" style="background-color: #00C851;">Log In</button>
-                               
+                                     <div class="text-center mb-3">
+                                         <button class="btn  my-4 btn-block" type="submit" style="background-color: #00C851;">Log In</button>
+                                      </div>
+
+                                      <div class="text-center">
+                                <small style="color:#fff;" >Not registered?</small>
+                                <a href="{{URL('/register')}}" class="small font-weight-bold" style="color:rgba(5, 79, 91, 1)" >Create account</a>
+                            </div>
 
                                </form>
 <!-- Default form register -->  
-                        </div>
+                        
                     </div>
-        </div><br><br>
-    
+                </div>
+            </div>
+        </div>
+    </main>
     
         
         
@@ -146,7 +166,15 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
     @include('sweet::alert')
-         
+    <script src="{{asset('assets/vendor/in-view/dist/in-view.min.js')}}"></script>
+
+
+
+
+
+<!-- Theme JS -->
+
+<script src="{{asset('assets/js/theme.min.js')}}"></script>
             
         
     
