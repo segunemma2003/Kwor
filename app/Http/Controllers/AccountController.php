@@ -115,6 +115,7 @@ class AccountController extends Controller
                 $account=Account::whereUser_id($user_id)->first();
                 $sender_id=$account->id;
                 //receiver_id
+                if(Account::whereAccount_number($request->account_number)->first()){
                 $Racc=Account::whereAccount_number($request->account_number)->first();
                 $user=User::whereId($Racc->user_id)->first();
                 $rid=$Racc->id;
@@ -175,6 +176,13 @@ class AccountController extends Controller
                     "message"=>'Wrong private key'
                 ]);
             }
+
+        }else{
+            return response()->json([
+                "status"=>407,
+                "message"=>'Number does not exist'
+            ]);
+        }
 
                 //
     }
