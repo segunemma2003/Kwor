@@ -22,10 +22,10 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="../assets/css/theme.min.css">
-
+    <link href="{{ asset('kwor-admin/css/sweetalert.css')}}"/>
      <!--CSS-->
-     <link rel="stylesheet" href="../css/style.css">
-     <link rel="stylesheet" href="../css/intlTelInput.css">
+     <link rel="stylesheet" href="{{asset('kwor-admin/css/style.css')}}">
+     <link rel="stylesheet" href="{{asset('css/intlTelInput.css')}}">
 
 
 </head>
@@ -38,7 +38,7 @@
         
                 <nav class="navbar navbar-main navbar-expand-lg navbar-sticky  navbar-dark" id="navbar-main" style="background-color: #005502;">
                     <div class="container">
-                        <a class="navbar-brand mr-lg-5" href="index.html">
+                        <a class="navbar-brand mr-lg-5" href="/">
                             <img alt="kwụọ" src="../assets/img/brand/" style="height: 50px;">
                         </a>
         
@@ -113,7 +113,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="input-text" placeholder="Last Name">
+                                        <input type="text" id="defaultRegisterFormLastName" name="lastName" class="form-control" placeholder="Last name">
+                                        @if ($errors->has('lastName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
+                                    </span>
+                                @endif
                                     </div>
                             </div>
                         </div>
@@ -121,16 +126,28 @@
                                 <div class="form-group col-xl-6 col-lg-12 col-sm-12 col-md-12">
                                     <label class="form-control-label">Phone number</label>
                                     <div class="input-group input-group-transparent">
-                                            <input type="tel" id="phone" value="+234" "defaultregisterphonepassword" class="form-control">
+                                    <input type="tel" id="phone" name="phone" value="+234" "defaultRegisterPhonePassword" class="form-control">
+                                   @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
                                         </div>
                                 </div>
+
+                                <input value="nigeria" name="country" type="hidden"> 
                                 <div class="form-group col-xl-6 col-lg-12 col-sm-12 col-md-12">
                                     <label class="form-control-label">Email address</label>
                                     <div class="input-group input-group-transparent">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-envelope"></i></span>
                                             </div>
-                                            <input type="email" class="form-control" id="input-email" placeholder="name@anyone.con">
+                                            <input type="email" id="input-email" class="form-control mb-4" placeholder="name@example.com" name="email">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif   
                                         </div>
                                 </div>
                             </div>
@@ -140,7 +157,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="input-password" placeholder="********">
+                                    <input type="password" id="input-password" class="form-control" placeholder="Password" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                
+                                    @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                     <i class="far fa-eye"></i>
@@ -154,13 +177,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="input-password-confirm" placeholder="********">
+                                    <input name="password_confirmation" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                                 </div>
                             </div>
                             <div class="my-4">
                                 <div class="custom-control custom-checkbox">
                                     <input class=""  type="checkbox">
-                                        <span>I agree to the <a href="terms.html" style="color: #005502;">Terms and Conditions</a> and <a href="privacy.html" style="color: #005502;">Privacy Policy</a>.</span>
+                                        <span>I agree to the <a href="{{URL('aterm')}}" style="color: #005502;">Terms and Conditions</a> and <a href="{{URl('aprivacy')}}" style="color: #005502;">Privacy Policy</a>.</span>
                                     </label>
                                 </div>
                             </div>
@@ -170,7 +193,7 @@
                                 </div>
                                 <div class="col-sm-5 text-sm-right">
                                     <span class="small d-sm-block d-md-inline text-green">Already registered?</span>
-                                    <a href="login.html" class="small font-weight-bold " style="color:#005502;">Sign in</a>
+                                    <a href="{{URL('login')}}" class="small font-weight-bold " style="color:#005502;">Sign in</a>
                                 </div>
                             </div>
                         </form>
@@ -190,14 +213,14 @@
 
 
     <!-- Core -->
-    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/in-view/dist/in-view.min.js"></script>
+    <script src="{{asset('kwor-admin/vendor/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('kwor-admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('kwor-admin/vendor/in-view/dist/in-view.min.js')}}"></script>
    
     <!--intl Tel inputs-->
-    <script src="../assets/js/intlTelInput.js"></script>
-    <script src="../assets/js/utils.js"></script>
-    <script src="../assets/js/style.js"></script>
+    <script src="{{--asset('kwor-admin/js/intlTelInput.js')--}}"></script>
+    <script src="{{asset('kwor-admin/js/utils.js')}}"></script>
+    <script src="{{asset('kwor-admin/js/style.js')}}"></script>
 
 
 
@@ -206,7 +229,8 @@
     <!-- Theme JS -->
 
     <script src="../assets/js/theme.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
+    @include('sweet::alert')
    
 
   </body>

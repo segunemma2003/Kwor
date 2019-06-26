@@ -1,0 +1,92 @@
+/* section.last{
+    background-image:url("../bg-img/users\ background.svg");
+    background-position:center center;
+    background-repeat:no-repeat;
+    width:100%;
+    height: auto;
+    
+} */
+section.powerful-features h3{
+    color: #005502;
+}
+
+section.powerful-features h4{
+    color: #005502;
+}
+
+section.powerful-features h5{
+    color: #005502;
+}
+
+section.bg-secondary h3{
+    color: #005502;
+}
+
+section.bg-secondary h5{
+    color: #005502;
+}
+
+section.slice h3{
+    color: #005502;
+}
+
+section.slice h4{
+    color: #005502;
+}
+
+footer li a{
+    color: #fff;
+}
+
+footer h6{
+    color: #fff;
+}
+
+footer p{
+    color: #fff;
+}
+
+footer i {
+    color: #fff;
+}
+
+input[type="number"]:focus{
+    border: 1px solid #005502;
+}
+
+input[type="password"]:focus{
+    border: 1px solid #005502;
+}
+
+input[type="text"]:focus{
+    border: 1px solid #005502;
+}
+
+input[type="email"]:focus{
+    border: 1px solid #005502;
+}
+
+form label{
+    color: #005502;
+}
+
+
+
+div.input-group-prepend:focus{
+    border: 1px solid #005502;
+}
+
+form i{
+    color: #005502;
+}
+.intl-tel-input { width: 100%; };
+
+a.btn-app-store:hover{
+    background-color: #005502;
+}
+
+.iti-flag {background-image: url("../assets/img/core-img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti-flag {background-image: url("../assets/img/core-img/flags@2x.png");}
+  }
