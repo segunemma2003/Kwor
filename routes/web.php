@@ -74,3 +74,10 @@ Route::group(['middleware'=>'auth'],function(){
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/pay','AccountController@redirectToGateWay')->name('pay');
 Route::get('payment/callback','AccountController@handleGatewayCallback');
+Route::get('/about',function(){
+    return view('about');
+})->name('about');
+
+Route::get('/contact',function(){
+    return view('contact');
+})->name('contact');
