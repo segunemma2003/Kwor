@@ -9,9 +9,13 @@ use App\Account;
 use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
+
+use App\Mail\ResetMail;
+
 use Session;
 use Nexmo;
 use Alert;
+use App\Password;
 // use Twilio\Jwt\ClientToken;
 // use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
@@ -74,6 +78,36 @@ class UserController extends Controller
             }
         }
         
+    }
+    public function forgotten(Request $request)
+    {
+        if(!User::wherePhone($request->phone)->exists()){
+            return response()->json([
+                "status"=>419,
+                "message"=>'email does not exist'
+            ]);
+        }
+        $user=User::wherePhone($request->phone)->first();
+
+        $user_token=new Password;
+        $user_token->email=$user->email;
+        $user_token->token=uniqid();
+        $user_token->save();
+        Mail::to($user->email)->send(new ResetMail($user_token));
+        return response()->json([
+            "status"=>201,
+            "message"=>"Check your mail to complete password reset"
+        ]);
+
+
+        
+    }
+    public function forgottend($id)
+    {
+        $user=Password::whereToken($id)->first();
+        $users=User::whereEmail($user->email)->first();
+        $user->delete();
+        return view('auth.passwords.reset',compact('users'));
     }
     //check if number exist
     public function genKeyExists($number){

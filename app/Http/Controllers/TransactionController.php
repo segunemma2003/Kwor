@@ -63,7 +63,7 @@ class TransactionController extends Controller
             $tt=Auth::user()->name;
             $message=["message"=>"{$tt} is requesting for {$request->amount}units {$request->purpose}",
         "data"=>$transaction];
-            event(new TransactionEvent($message));
+            // event(new TransactionEvent($message));
             $messages=[
                 'message'=>"{$tt} is requesting for {$request->amount} unit(s) for {$request->purpose}. visit your dashboard to reply"
             ];
@@ -207,7 +207,10 @@ class TransactionController extends Controller
     }
     public function request(Request $request)
     {
-        
+        $account=Account::whereId(1)->first();
+        $transaction=$account->accountR;
+        broadcast(new TransactionEvent($account,$transaction))->toOthers();
+
         $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();

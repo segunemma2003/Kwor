@@ -10,6 +10,7 @@ use App\Events\TransactionEvent;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/password/reseting/{id}','UserController@forgottend');
 Route::post('/ussd/callback','UssdController@index');
 Route::get('/aprivacy',function(){
     return view('privacy');
@@ -81,3 +82,14 @@ Route::get('/about',function(){
 Route::get('/contact',function(){
     return view('contact');
 })->name('contact');
+
+
+//flutterwave
+Route::post('/payzz', 'AccountController@initialize')->name('pay');
+Route::post('/rave/callback', 'AccountController@callback')->name('callback');
+Route::get('/f',function(){
+    return view('ttt');
+});
+Route::get('/ttt',function(){
+    return view('admin.index');
+});

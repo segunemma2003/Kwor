@@ -181,6 +181,7 @@ return [
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Aloha\Twilio\Support\Laravel\ServiceProvider::class,
+        KingFlamez\Rave\RaveServiceProvider::class,
     ],
 
     /*
@@ -239,6 +240,7 @@ return [
         'Paystack'=>Unicodeveloper\Paystack\Facades\Paystack::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'Twilio' => Aloha\Twilio\Support\Laravel\Facade::class,
+        'Rave' => KingFlamez\Rave\Facades\Rave::class,
     ],
 
 ];

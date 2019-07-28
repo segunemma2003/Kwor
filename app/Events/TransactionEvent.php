@@ -9,7 +9,8 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-
+use App\Account;
+use App\Transaction;
 class TransactionEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
@@ -19,9 +20,10 @@ class TransactionEvent implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($text)
+    public function __construct(Account $account,Transaction $transaction)
     {
-        $this->text=$text;
+        $this->account=$account;
+        $this->transaction=$transaction;
         //
     }
 
@@ -32,11 +34,13 @@ class TransactionEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('my-channel'.$this->text['data']['id']);
+        return new PrivateChannel('my-channel');
         // return new Channel('my-channel');
+        // return ['my-channel'];
     }
     public function broadcastAs()
     {
-        return 'transaction-alert';
+        // return 'transaction-alert';
+        return 'my-event';
     }
 }

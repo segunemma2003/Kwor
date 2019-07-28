@@ -12,6 +12,7 @@ use App\Mail\AlertMail;
 use Nexmo;
 use Auth;
 use QrCode;
+use Rave;
 class AccountController extends Controller
 {
     /**
@@ -268,4 +269,74 @@ class AccountController extends Controller
                    ->size(350)->generate($data); 
             return view('kwor-admin.qrcode',compact('qr','user'));
         }
+
+        public function initialize()
+        {
+            Rave::initialize(route('callback'));
+        }
+        public function callback()
+        {
+            $data = Rave::verifyTransaction(request()->txref);
+
+    dd($data);
+        }
+
+        //verifrave
+        public function verifyrave()
+        {
+          $txref = "rave_12345";
+          
+          $data = Rave::verifyTransaction($txref);
+      
+          $chargeResponsecode = $data->data->chargecode;
+          $chargeAmount = $data->data->amount;
+          $chargeCurrency = $data->data->currency;
+          
+          $amount = 4500;
+          $currency = "NGN";
+          if (($chargeResponsecode == "00" || $chargeResponsecode == "0") && ($chargeAmount == $amount)  && ($chargeCurrency == $currency)) {
+          // transaction was successful...
+          // please check other things like whether you already gave value for this ref
+          // if the email matches the customer who owns the product etc
+          //Give Value and return to Success page
+          
+              return redirect('/success');
+          
+          } else {
+              //Dont Give Value and return to Failure page
+          
+              return redirect('/failed');
+          }
+        }
+
+        //vazlidate bvnflll
+        public function validateBVN()
+  {
+    $bvn = "12345678901";
+
+    $data = Rave::validateBVN($bvn);
+
+    dd($data);
+
+    // {
+    //     "status": "success",
+    //     "message": "BVN-DETAILS",
+    //     "data": {
+    //         "bvn": "12345678901",
+    //         "first_name": "Wendy",
+    //         "middle_name": "Chucky",
+    //         "last_name": "Rhoades",
+    //         "date_of_birth": "01-01-1905",
+    //         "phone_number": "08012345678",
+    //         "registration_date": "01-01-1921",
+    //         "enrollment_bank": "044",
+    //         "enrollment_branch": "Idejo"
+    //     }
+
+
+    // }
+  }
+
+
+
 }
