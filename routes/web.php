@@ -21,7 +21,7 @@ Route::get('/aterm',function(){
 Route::get('/pusher', function () {
     $message='hey';
     \Alert::message('message','You are welcome to my site ');
-    event(new TransactionEvent($message));
+    // event(new TransactionEvent($message));
     return view('pusher');
 });
 Route::get('/user/qrcode',"AccountController@index")->middleware('auth');
