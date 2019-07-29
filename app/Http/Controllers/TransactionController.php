@@ -39,9 +39,11 @@ class TransactionController extends Controller
          }
          $result=[];
          foreach($transactions as $transact){
-            array_push($result,["sender"=>$transact->accountS->user->name]);
+            array_push($result,["sender"=>$transact->accountS->user->name,
+            "receiver"=>$transact->accountR->user->name
+            ]);
          }
-         return $result; 
+         return $transactions; 
         //  response()->json(
         //      [
         //     "sender"=>$transactions->accountS->name,
