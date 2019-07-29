@@ -11,4 +11,7 @@ class Transaction extends Model
     public function accountR(){
         return $this->belongsTo('App\Account','receiver_id');
     }
+    public function accountS(){
+        return $this->belongsTo('App\Account','sender_id');
+    }
 }
