@@ -43,3 +43,4 @@ Route::post('/user/verify/','UserController@verifyApi');
 Route::post('user/load','AccountController@LoadAccount');
 
 Route::post('/password/change','UserController@forgotten');
+Route::get('/transaction/{id}','TransactionController@transactions');

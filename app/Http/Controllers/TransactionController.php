@@ -20,6 +20,26 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function transactions($id)
+     {
+         if(!User::wherePhone($id)->exists()){
+             return response()->json([
+                "status"=>405,
+                "message"=>"user not found"
+             ]);
+         }
+         $user=User::wherePhone($id)->first();
+         $transactions=Transaction::whereSender_id($user->id)->orWhere('receiver_id',$user->id)->get();
+         if($transactions->isEmpty()){
+             return response()->json([
+                 "status"=>305,
+                 "message"=>"No transaction yet"
+             ]);
+         }
+         return $transactions;
+
+     }
     
     public function generateKey(){
         $number =uniqid();
@@ -337,4 +357,5 @@ class TransactionController extends Controller
             $allre=Transaction::whereReceiver_id($account->id)->get();
             return view('kwor-admin.transact',compact('allre','allta','transactions','stransact','transact'));
         }
+        
     }
