@@ -39,16 +39,27 @@ class TransactionController extends Controller
          }
          $result=[];
          foreach($transactions as $transact){
+             $status="";
+            if($transact->status==0){ $status="pending";
+            }elseif($transact->status==1){
+                $status="accepted";
+            }else{
+                $status="rejected";
+            }
             array_push($result,["sender"=>$transact->accountS->user->name,
-            "receiver"=>$transact->accountR->user->name
+            "receiver"=>$transact->accountR->user->name,
+            "amount"=>$transact->amount,
+            "reason_for_reject"=>$transact->reason_reject,
+            "reason_payment"=>$transact->reason_payment,
+            "status"=> $status,
+            "transaction_code"=>$transact->transaction_code,
+            "date_sent"=>$transact->created_at,
+            "date_replied"=>($status=="pending")?"pending":$transact->updated_at
             ]);
          }
-         return $transactions; 
-        //  response()->json(
-        //      [
-        //     "sender"=>$transactions->accountS->name,
-        //     "receiver"=>$transactions->accountR->name
-        //  ]);
+        //  return $transactions; 
+         response()->json(
+             $result);
 
      }
     
