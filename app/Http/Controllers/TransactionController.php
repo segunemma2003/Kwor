@@ -58,8 +58,8 @@ class TransactionController extends Controller
             ]);
          }
         //  return $transactions; 
-       return  response()->json(
-             $result);
+       return  response()->json(["status"=>201,
+             $result]);
 
      }
     
