@@ -37,10 +37,16 @@ class TransactionController extends Controller
                  "message"=>"No transaction yet"
              ]);
          }
-         return response()->json([
-            "sender"=>$transactions->accountS->name,
-            "receiver"=>$transactions->accountR->name
-         ]);
+         $result=[];
+         foreach($transactions as $transact){
+            array_push($result,["sender"=>$transact->accountS->name]);
+         }
+         return $result; 
+        //  response()->json(
+        //      [
+        //     "sender"=>$transactions->accountS->name,
+        //     "receiver"=>$transactions->accountR->name
+        //  ]);
 
      }
     
