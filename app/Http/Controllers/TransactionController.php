@@ -58,7 +58,7 @@ class TransactionController extends Controller
             ]);
          }
         //  return $transactions; 
-         response()->json(
+       return  response()->json(
              $result);
 
      }
