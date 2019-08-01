@@ -214,6 +214,12 @@ class AccountController extends Controller
               if($transaction->save())
               
               {
+                $message=[
+                    'name'=>auth()->user()->name,
+                    "type"=>'fund',
+                    'message'=>"you have successfully funded your account. Your new account balance is {$account->balance}"
+                ];
+                Mail::to(auth()->user()->email)->send(new AlertMail($message));
                   return response()->json([
                         "status"=>201,
                         "message"=>"Units added",
