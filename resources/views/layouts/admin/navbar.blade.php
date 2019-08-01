@@ -20,16 +20,57 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li class="active">
+                        <li>
                             <a class="has-arrow" href="index.html">
 								   <i class="icon nalika-home icon-wrap"></i>
 								   <span class="mini-click-non">Dashboard</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard</span></a></li>
-                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">All users</span></a></li>
-                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">All Accounts</span></a></li>
-                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Transaction history</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{route('admin')}}"><span class="mini-sub-pro">Dashboard</span></a></li>
+                                <li><a title="Product List" href="{{route('analytics')}}"><span class="mini-sub-pro">Analyics</span></a></li>
+                                <!-- <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">All Accounts</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Transaction history</span></a></li> -->
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="index.html">
+								   <i class="icon nalika-home icon-wrap"></i>
+								   <span class="mini-click-non">Categories</span>
+								</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="{{route('category')}}"><span class="mini-sub-pro">View Categories</span></a></li>
+                                <li><a title="Product List" href="{{route('category.add')}}"><span class="mini-sub-pro">Add Category</span></a></li>
+                                <!-- <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">All Accounts</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Transaction history</span></a></li> -->
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="index.html">
+								   <i class="icon nalika-home icon-wrap"></i>
+								   <span class="mini-click-non">Products</span>
+								</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="{{route('products')}}"><span class="mini-sub-pro">View Products</span></a></li>
+                                <li><a title="Product List" href="{{route('product.add')}}"><span class="mini-sub-pro">Add Products</span></a></li>
+                                <!-- <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">All Accounts</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Transaction history</span></a></li> -->
+                                
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="index.html">
+								   <i class="icon nalika-home icon-wrap"></i>
+								   <span class="mini-click-non">Transactions</span>
+								</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="{{route('transaction')}}"><span class="mini-sub-pro">View Transactions</span></a></li>
+                                <li><a title="Product List" href="{{route('transaction.pend')}}"><span class="mini-sub-pro">View Pending Transactions</span></a></li>
+                                <!-- <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro"></span></a></li> -->
+                                <li><a title="Product Detail" href="{{route('transaction.history')}}"><span class="mini-sub-pro">Transaction history</span></a></li>
+                                <li><a title="Product Detail" href="{{route('transaction.request')}}"><span class="mini-sub-pro">View order</span></a></li>
                                 
                             </ul>
                         </li>

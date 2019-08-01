@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href=""><img class="main-logo" src="admin/img/logo/logo.png" alt="" /></a>
+                        <a href=""><img class="main-logo" src="{{ asset('admin/img/logo/logo.png')}}" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -163,15 +163,15 @@
 															<i class="icon nalika-down-arrow nalika-angle-dw nalika-icon"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
-                                                        </li>
+                                                        <!-- <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a> -->
+                                                        <!-- </li> -->
                                                         <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                                                         </li>
                                                         <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
                                                         </li>
                                                         <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
                                                         </li>
-                                                        <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
+                                                        <li><a href=""><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
                                                         </li>
                                                     </ul>
                                                 </li>

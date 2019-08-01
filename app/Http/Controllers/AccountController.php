@@ -69,10 +69,16 @@ class AccountController extends Controller
                     $transaction->save();
                     $tt=Auth::user()->name;
                     $message=[
+                        'account'=>$Racc,
+                        'name'=>$user->name,
+                        "type"=>'credit',
                         'message'=>"{$tt} transferred {$request->amount} unit(s) to you for {$request->purpose}. Your new account balance is {$Racc->balance}"
                     ];
                     Mail::to($user->email)->send(new AlertMail($message));
                     $messages=[
+                        'account'=>$account,
+                        'type'=>'debit',
+                        'name'=>Auth::user()->name,
                         'message'=>"you just transferred {$request->amount} unit(s) to {$user->name} for {$request->purpose}. Your new account balance is {$account->balance}"
                     ];
                     Mail::to(Auth::user()->email)->send(new AlertMail($messages));
@@ -140,10 +146,16 @@ class AccountController extends Controller
                     $transaction->save();
                     $tt=$tE->name;
                     $message=[
+                        'account'=>$Racc,
+                        'name'=>$user->name,
+                        "type"=>'credit',
                         'message'=>"{$tt} transferred {$request->amount} unit(s) to you for {$request->purpose}. Your new account balance is {$Racc->balance}"
                     ];
                     Mail::to($user->email)->send(new AlertMail($message));
                     $messages=[
+                        'account'=>$account,
+                        'type'=>'debit',
+                        'name'=>Auth::user()->name,
                         'message'=>"you just transferred {$request->amount} unit(s) to {$user->name} for {$request->purpose}. Your new account balance is {$account->balance}"
                     ];
                     Mail::to($tE->email)->send(new AlertMail($messages));

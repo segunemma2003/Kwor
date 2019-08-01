@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.2 | Nalika - Material Admin Template</title>
+    <title>KWUO</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -15,56 +15,69 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('admin/css/font-awesome.min.css')}}">
 	<!-- nalika Icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/nalika-icon.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/nalika-icon.css')}}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/owl.carousel.css">
-    <link rel="stylesheet" href="admin/css/owl.theme.css">
-    <link rel="stylesheet" href="admin/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/owl.transitions.css')}}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/animate.css')}}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/normalize.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/normalize.css')}}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{asset('admin/css/meanmenu.min.css')}}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/main.css">
+    <link rel="stylesheet" href="{{asset('admin/css/main.css')}}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/morrisjs/morris.css')}}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="admin/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/metisMenu/metisMenu-vertical.css')}}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="admin/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/calendar/fullcalendar.print.min.css')}}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/style.css">
+    <link rel="stylesheet" href="{{asset('admin/style.css')}}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/responsive.css')}}">
     <!-- modernizr JS
-		============================================ -->
-    <script src="admin/js/vendor/modernizr-2.8.3.min.js"></script>
+    ============================================ -->
+    <link href="{{asset('css/sweetalert.css')}}">
+    <script src="{{ asset('admin/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1320840451402430',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
       @include('layouts.admin.navbar')
     
       @include('layouts.admin.header')
@@ -77,57 +90,59 @@
 
 <!-- jquery
 		============================================ -->
-    <script src="admin/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{asset('admin/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="admin/js/bootstrap.min.js"></script>
+    <script src="{{ asset('admin/js/bootstrap.min.js')}}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="admin/js/wow.min.js"></script>
+    <script src="{{ asset('admin/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="admin/js/jquery-price-slider.js"></script>
+    <script src="{{ asset('admin/js/jquery-price-slider.js')}}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="admin/js/jquery.meanmenu.js"></script>
+    <script src="{{ asset('admin/js/jquery.meanmenu.js')}}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="admin/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('admin/js/owl.carousel.min.js')}}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="admin/js/jquery.sticky.js"></script>
+    <script src="{{asset('admin/js/jquery.sticky.js')}}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="admin/js/jquery.scrollUp.min.js"></script>
+    <script src="{{ asset('admin/js/jquery.scrollUp.min.js')}}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="admin/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="admin/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="{{ asset('admin/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{asset('admin/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="admin/js/metisMenu/metisMenu.min.js"></script>
-    <script src="admin/js/metisMenu/metisMenu-active.js"></script>
+    <script src="{{ asset('admin/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{ asset('admin/js/metisMenu/metisMenu-active.js')}}"></script>
     <!-- sparkline JS
 		============================================ -->
-    <script src="admin/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="admin/js/sparkline/jquery.charts-sparkline.js"></script>
+    <script src="{{ asset('admin/js/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{ asset('admin/js/sparkline/jquery.charts-sparkline.js')}}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="admin/js/calendar/moment.min.js"></script>
-    <script src="admin/js/calendar/fullcalendar.min.js"></script>
-    <script src="admin/js/calendar/fullcalendar-active.js"></script>
+    <script src="{{asset('admin/js/calendar/moment.min.js')}}"></script>
+    <script src="{{asset('admin/js/calendar/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('admin/js/calendar/fullcalendar-active.js')}}"></script>
 	<!-- float JS
 		============================================ -->
-    <script src="admin/js/flot/jquery.flot.js"></script>
-    <script src="admin/js/flot/jquery.flot.resize.js"></script>
-    <script src="admin/js/flot/curvedLines.js"></script>
-    <script src="admin/js/flot/flot-active.js"></script>
+    <script src="{{asset('admin/js/flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('admin/js/flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{asset('admin/js/flot/curvedLines.js')}}"></script>
+    <script src="{{asset('admin/js/flot/flot-active.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="admin/js/plugins.js"></script>
+    <script src="{{ asset('admin/js/plugins.js')}}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="admin/js/main.js"></script>
+    <script src="{{ asset('admin/js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha256-KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.14.0/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
