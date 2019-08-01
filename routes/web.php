@@ -85,8 +85,8 @@ Route::get('/contact',function(){
 
 
 //flutterwave
-Route::post('/payzz', 'AccountController@initialize')->name('pay');
-Route::post('/rave/callback', 'AccountController@callback')->name('callback');
+// Route::post('/payzz', 'AccountController@initialize')->name('pay');
+// Route::post('/rave/callback', 'AccountController@callback')->name('callback');
 Route::get('/f',function(){
     return view('ttt');
 });
