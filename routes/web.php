@@ -92,7 +92,9 @@ Route::post('/qt',function(){
             'body'=>'Alert'
         ]
         ];
-Pushy::sendPushNotification('hello','a6345d0278adc55d3474f5',$options);
+        $data = array('message' => 'Hello World!');
+        $to =array('c11f6f0daaef33d87ae965');
+Pushy::sendPushNotification($data,$to,$options);
 });
 
 

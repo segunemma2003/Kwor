@@ -8,8 +8,7 @@ class Pushy{
 
     static public function sendPushNotification($data, $to, $options) {
         // Insert your Secret API Key here
-        $apiKey = '5dff6c666fd68733845bdcea75b6296350f7c1da9abf1aae734878bd27b5e9bd';
-
+        $apiKey='5dff6c666fd68733845bdcea75b6296350f7c1da9abf1aae734878bd27b5e9bd';
         // Default post data to provided options or empty array
         $post = $options ?: array();
 
@@ -21,42 +20,35 @@ class Pushy{
         $headers = array(
             'Content-Type: application/json'
         );
-        $post['content-type']="application/json";
+
         // Initialize curl handle
-        $client=new Client();
-        $res=$client->post('https://api.pushy.me/push?api_key='.$apiKey,$post);
-        // var_dump($res);
-        // if($res->getStatusCode()==200){
-        //     return $res->getBody()->getContents();
-        // }
-        return $res->send();
+        $ch = curl_init();
 
         // Set URL to Pushy endpoint
-        
+        curl_setopt($ch, CURLOPT_URL, 'https://api.pushy.me/push?api_key=' . $apiKey);
 
         // Set request method to POST
-      
-        
+        curl_setopt($ch, CURLOPT_POST, true);
 
         // Set our custom headers
-        // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         // Get the response back as string instead of printing it
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         // Set post data as JSON
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post, JSON_UNESCAPED_UNICODE));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post, JSON_UNESCAPED_UNICODE));
 
         // Actually send the push
-        // $result = curl_exec($ch);
+        $result = curl_exec($ch);
 
         // Display errors
-        // if (curl_errno($ch)) {
-        //     echo curl_error($ch);
-        // }
+        if (curl_errno($ch)) {
+            echo curl_error($ch);
+        }
 
         // Close curl handle
-        // curl_close($ch);
+        curl_close($ch);
 
         // Debug API response
         //echo $result;
