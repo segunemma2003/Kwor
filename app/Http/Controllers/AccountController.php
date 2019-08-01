@@ -13,6 +13,7 @@ use Nexmo;
 use Auth;
 use QrCode;
 use Rave;
+use App\CustomClass\Pushy;
 class AccountController extends Controller
 {
     /**
