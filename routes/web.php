@@ -1,5 +1,6 @@
 <?php
 use App\Events\TransactionEvent;
+use App\CustomClass\Pushy;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +83,17 @@ Route::get('/about',function(){
 Route::get('/contact',function(){
     return view('contact');
 })->name('contact');
+
+Route::post('/qt',function(){
+    $options=[
+        'notification'=>[
+            'badge'=>1,
+            'sound'=>'ping.aiff',
+            'body'=>'Alert'
+        ]
+        ];
+Pushy::sendPushNotification('hello','a6345d0278adc55d3474f5',$options);
+});
 
 
 //flutterwave

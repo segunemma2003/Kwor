@@ -21,6 +21,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/ussd/*',
         'broadcasting/auth',
-        'rave/callback'
+        'rave/callback',
+        '/qt'
     ];
 }

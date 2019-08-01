@@ -117,7 +117,13 @@ class UserController extends Controller
     public function register(Request $request)
     {
         // var_dump(User::wherePhone($request->phone)->exists());
-        if(User::wherePhone($request->phone)->exists() || User::whereEmail($request->email)->exists()){
+        if(Android::whereToken($request->token)->exists()){
+            return response()->json([
+                "status"=>"415",
+                "message"=>"Device token already exist. you can click on forgot password to recover your password"
+            ]);
+        }
+        elseif(User::wherePhone($request->phone)->exists() || User::whereEmail($request->email)->exists()){
             
             return response()->json([
                 "status"=>"405",
