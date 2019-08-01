@@ -51,7 +51,7 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">kwụọ for agents</a>
+                            <!-- <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">kwụọ for agents</a> -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" role="button">Support</a>
@@ -60,11 +60,11 @@
 
                     <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL('/login')}}" target="_blank">Log in</a>
+                            <!-- <a class="nav-link" href="{{--URL('/login')--}}" target="_blank">Log in</a> -->
                         </li>
                         <li class="nav-item mr-0">
-                            <a href="{{URL('/register')}}" target="_blank" class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex">
-                                <span class="btn-inner--text">Register</span>
+                            <!-- <a href="{{--URL('/register')--}}" target="_blank" class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex"> -->
+                                <!-- <span class="btn-inner--text">Register</span> -->
                             </a>
                         </li>
                     </ul>
