@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\UserEmail;
 
 use App\Mail\ResetMail;
-
+use App\Android;
 use Session;
 use Nexmo;
 use Alert;
@@ -158,6 +158,10 @@ class UserController extends Controller
                 //     'from'=>'+18139060805'
                 // ]);
                     // Twilio::message($message,$op='otp only',false,true,false);
+                    $pushy=new Android;
+                    $pushy->user_id=$user->id;
+                    $pushy->token=$request->token;
+                    $pushy->save();
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
                     

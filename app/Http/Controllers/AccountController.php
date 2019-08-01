@@ -75,12 +75,28 @@ class AccountController extends Controller
                         'message'=>"{$tt} transferred {$request->amount} unit(s) to you for {$request->purpose}. Your new account balance is {$Racc->balance}"
                     ];
                     Mail::to($user->email)->send(new AlertMail($message));
+                    $options=[
+                        'notification'=>[
+                            'badge'=>1,
+                            'sound'=>'ping.aiff',
+                            'body'=>'Alert'
+                        ]
+                        ];
+                    Pushy::sendPushNotification($message['message'],$user->android->token,$options);
                     $messages=[
                         'account'=>$account,
                         'type'=>'debit',
                         'name'=>Auth::user()->name,
                         'message'=>"you just transferred {$request->amount} unit(s) to {$user->name} for {$request->purpose}. Your new account balance is {$account->balance}"
                     ];
+                    $option=[
+                        'notification'=>[
+                            'badge'=>1,
+                            'sound'=>'ping.aiff',
+                            'body'=>'Alert'
+                        ]
+                        ];
+                        Pushy::sendPushNotification($messages['message'],auth()->user()->android->token,$options);
                     Mail::to(Auth::user()->email)->send(new AlertMail($messages));
                     // $mess=Nexmo::message()->send([
                     //     'to'=>$user->phone,

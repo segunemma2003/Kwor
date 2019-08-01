@@ -38,4 +38,8 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Account');
     }
+    public function android()
+    {
+        $this->hasOne('App\Android');
+    }
 }

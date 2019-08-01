@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.31.1/dist/sweetalert2.all.min.js"></script>
-   
+    <script src="https://sdk.pushy.me/web/1.0.4/pushy-sdk.js"></script>
   </head>
     <body>
     @include('sweet::alert')
@@ -58,5 +58,19 @@ channel.bind('my-event', function(data) {
     <script src="{{asset('kwor-admin/js/charts-home.js') }}"></script>
     <script src="{{asset('kwor-admin/js/front.js')}}"></script>
     <script src="{{asset('kwor-admin/js/charts-custom.js') }}"></script>
+    <script>
+    Pushy.register({ appId: 'a6345d0278adc55d3474f5' }).then(function (deviceToken) {
+    // Print device token to console
+    console.log('Pushy device token: ' + deviceToken);
+
+    // Send the token to your backend server via an HTTP GET request
+    //fetch('https://your.api.hostname/register/device?token=' + deviceToken);
+
+    // Succeeded, optionally do something to alert the user
+}).catch(function (err) {
+    // Handle registration errors
+    console.error(err);
+});
+</script>
     </body>
 </html>
