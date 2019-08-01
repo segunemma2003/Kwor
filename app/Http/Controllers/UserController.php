@@ -16,6 +16,7 @@ use Session;
 use Nexmo;
 use Alert;
 use App\Password;
+use App\CustomClass\Pushy;
 // use Twilio\Jwt\ClientToken;
 // use GuzzleHttp\Exception\GuzzleException;
 // use GuzzleHttp\Client;
@@ -170,7 +171,14 @@ class UserController extends Controller
                     $pushy->save();
                     QrCode::size(500)->format('png')->generate($account->account_number, public_path("images/qrcodes/{$account->account_number}.png"));
                     Mail::to($request->email)->send(new UserEmail($user));
-                    
+                    $options=[
+                        'notification'=>[
+                            'badge'=>1,
+                            'sound'=>'ping.aiff',
+                            'body'=>'Alert'
+                        ]
+                        ];
+                Pushy::sendPushNotification('hello',$request->token,$options);
                     return response()->json([
                         "status"=>201,
                         "message"=>"you have successfully registered into our system",

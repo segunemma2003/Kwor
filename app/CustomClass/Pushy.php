@@ -21,18 +21,15 @@ class Pushy{
         $headers = array(
             'Content-Type: application/json'
         );
-
+        $post['content-type']="application/json";
         // Initialize curl handle
         $client=new Client();
-        $res=$client->post('https://api.pushy.me/push?api_key='.$apiKey,
-        ['form_params'=>
-        $post
-        ]);
-        var_dump($res);
-        if($res->getStatusCode()==200){
-            return $res->getBody()->getContents();
-        }
-        
+        $res=$client->post('https://api.pushy.me/push?api_key='.$apiKey,$post);
+        // var_dump($res);
+        // if($res->getStatusCode()==200){
+        //     return $res->getBody()->getContents();
+        // }
+        return $res->send();
 
         // Set URL to Pushy endpoint
         
