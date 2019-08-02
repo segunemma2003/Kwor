@@ -331,12 +331,23 @@ class TransactionController extends Controller
                  $transact->status=$request->response;
                  if($transact->save())
                  {
-                    $message="{$userR->name} could not credit account";
+                    $message="{$userR->name} rejected your request";
                     // event(new TransactionEvent($message));
+                    $options=[
+                        'notification'=>[
+                            'badge'=>1,
+                            'sound'=>'ping.aiff',
+                            'body'=>'Alert'
+                        ]
+                        ];
+                Pushy::sendPushNotification(['response'=> $message],$userS->android->token,$options);
                      return response()->json([
                         "status"=>202,
                         "message"=>"request is successfully rejected"
                      ]);
+
+
+                     
                  }
              }elseif($request->response==1)
              {
@@ -350,8 +361,16 @@ class TransactionController extends Controller
                         {
                             $transact->status=1;
                             if($transact->save()){
-                                $message="{$userR->name} is has accepted and credited your account with {$transact->amount}units";
+                                $message="{$userR->name}  has accepted and credited your account with {$transact->amount}units";
                                 // event(new TransactionEvent($message));
+                                $options=[
+                                    'notification'=>[
+                                        'badge'=>1,
+                                        'sound'=>'ping.aiff',
+                                        'body'=>'Alert'
+                                    ]
+                                    ];
+                            Pushy::sendPushNotification(['response'=> $message],$userS->android->token,$options);
                                 return response()->json([
                                 "status"=>201,
                                 "message"=>"{$userS->name} has successfully transferred {$transact->amount} to {$userR->name}"
@@ -369,6 +388,14 @@ class TransactionController extends Controller
                         $transact->status=2;
                     if($transact->save()){
                         $message="{$userR->name} could not credit account";
+                        $options=[
+                            'notification'=>[
+                                'badge'=>1,
+                                'sound'=>'ping.aiff',
+                                'body'=>'Alert'
+                            ]
+                            ];
+                    Pushy::sendPushNotification(['response'=> $message],$userS->android->token,$options);
                     // event(new TransactionEvent($message));
                         return response()->json([
                             "status"=>401,
