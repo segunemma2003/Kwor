@@ -178,7 +178,7 @@ class UserController extends Controller
                             'body'=>'Alert'
                         ]
                         ];
-                Pushy::sendPushNotification($user->verified_link,$request->token,$options);
+                Pushy::sendPushNotification([$user->verified_link],$request->token,$options);
                     return response()->json([
                         "status"=>201,
                         "message"=>"you have successfully registered into our system",
