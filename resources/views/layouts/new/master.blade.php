@@ -48,13 +48,13 @@
                 <div class="collapse navbar-collapse" id="navbar-main-collapse">
                     <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">About</a>
+                            <!-- <a class="nav-link" href="#">About</a> -->
                         </li>
                         <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
                             <!-- <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">kwụọ for agents</a> -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" role="button">Support</a>
+                            <!-- <a class="nav-link" href="#" role="button">Support</a> -->
                         </li>
                     </ul>
 

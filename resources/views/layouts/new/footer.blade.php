@@ -10,29 +10,29 @@
                 <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                     <h6 class="heading mb-3">Company</h6>
                     <ul class="list-unstyled">
-                        <li><a href="{{URL('about')}}">About</a>
+                        <!-- <li><a href="{{-- URL('about') --}}">About</a> -->
                         </li>
-                        <li><a href="{{URL('contact')}}">Contact</a>
+                        <!-- <li><a href="{{-- URL('contact') --}}">Contact</a> -->
                         </li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Support</a></li>
+                        <!-- <li><a href="#">Blog</a></li> -->
+                        <!-- <li><a href="#">Support</a></li> -->
                     </ul>
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                     <h6 class="heading mb-3">Legal</h6>
                     <ul class="list-unstyled text-small">
-                        <li><a href="{{URL('/aterm')}}">Terms of service</a>
+                        <!-- <li><a href="{{URL('/aterm')}}">Terms of service</a> -->
                         </li>
-                        <li><a href="{{URL('/aprivacy')}}">Privacy policy</a>
+                        <!-- <li><a href="{{URL('/aprivacy')}}">Privacy policy</a> -->
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-4 mb-5 mb-lg-0">
                     <h6 class="heading mb-3">Developers</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#">API</a>
+                        <!-- <li><a href="#">API</a> -->
                         </li>
-                        <li><a href="#">Documentation</a>
+                        <!-- <li><a href="#">Documentation</a> -->
                         </li>
                     </ul>
                 </div>
