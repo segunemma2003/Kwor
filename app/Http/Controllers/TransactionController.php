@@ -13,6 +13,7 @@ use App\Events\TransactionEvent;
 use Auth;
 use Alert;
 use Nexmo;
+use App\CustomClass\Pushy;
 class TransactionController extends Controller
 {
     /**
@@ -249,11 +250,18 @@ class TransactionController extends Controller
     }
     public function request(Request $request)
     {
-        $account=Account::whereId(1)->first();
-        $transaction=$account->accountR;
-        broadcast(new TransactionEvent($account,$transaction))->toOthers();
+        // $account=Account::whereId($request->sender)->first();
+        // $transaction=$account->accountR;
+        // broadcast(new TransactionEvent($account,$transaction))->toOthers();
 
-        $sen=Account::whereAccount_number($request->sender)->first();
+        
+        if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exists()){
+            return response()->json([
+                "status"=>405,
+                "message"=>"your sender_id or your receiver_id is wrong"
+            ]);
+         }else{
+            $sen=Account::whereAccount_number($request->sender)->first();
         $se=$sen->user_id;
         $sender_id=User::whereId($se)->first();
         // var_dump($sen->id);
@@ -261,12 +269,6 @@ class TransactionController extends Controller
         $re=$rec->user_id;
         // var_dump($rec->id);
         $receiver_id=User::whereId($re)->first();
-        if(!Account::whereAccount_number($request->sender)->exists() || !Account::whereAccount_number($request->receiver)->exists()){
-            return response()->json([
-                "status"=>405,
-                "message"=>"your sender_id or your receiver_id is wrong"
-            ]);
-         }else{
             $transaction=new Transaction;
             $transaction->sender_id=$sen->id;
             $transaction->receiver_id=$rec->id;
@@ -278,7 +280,21 @@ class TransactionController extends Controller
         //get the account
         // User::find(2)->notify(new TransactionAlert);
         
-            $message="{$sender_id->name} is requesting for {$request->amount}units";
+            $message=[
+                "message"=>"{$sender_id->name} is requesting for {$request->amount}units",
+                "sender_account"=>$request->sender,
+                "receiver_account"=>$request->receiver,
+                "amount"=>$request->amount,
+                "purpose"=>$request->purpose
+            ];
+            $options=[
+                'notification'=>[
+                    'badge'=>1,
+                    'sound'=>'ping.aiff',
+                    'body'=>'Alert'
+                ]
+                ];
+        Pushy::sendPushNotification(['request'=> $message],$receiver_id->android->token,$options);
             // event(new TransactionEvent($message));
             return response()->json([
                 "status"=>"201",
