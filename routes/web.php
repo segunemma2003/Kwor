@@ -93,7 +93,7 @@ Route::post('/qt',function(){
         ]
         ];
         $data = array('message' => 'Hello World!');
-        $to =array('c11f6f0daaef33d87ae965');
+        $to =array('210ec5993a2bfe39e091e9');
 Pushy::sendPushNotification('tt',$to,$options);
 });
 
