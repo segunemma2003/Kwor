@@ -40,6 +40,6 @@ class User extends Authenticatable
     }
     public function android()
     {
-        $this->hasOne('App\Android');
+        $this->hasOne('App\Android','user_id');
     }
 }
