@@ -12,8 +12,7 @@ return [
     |
     */
 
-    'api_key'    => function_exists('env') ? env('NEXMO_KEY', '1372b82f') : '1372b82f',
-    'api_secret' => function_exists('env') ? env('NEXMO_SECRET', 'FrTNfy66eoDXVl2S') : 'FrTNfy66eoDXVl2S',
+
 
     /*
     |--------------------------------------------------------------------------
